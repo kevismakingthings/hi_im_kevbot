@@ -1,0 +1,150 @@
+; Engine configuration file.
+; It's best edited using the editor UI and not directly,
+; since the parameters that go here are not all obvious.
+;
+; Format:
+;   [section] ; section goes between []
+;   param=value ; assign values to parameters
+
+config_version=5
+
+[application]
+
+config/name="kev_bot_skate"
+run/main_scene="uid://b6ybu0ehebp2l"
+config/features=PackedStringArray("4.7", "Forward Plus")
+run/max_fps=120
+boot_splash/bg_color=Color(0.67200994, 0.48494917, 0.3154659, 1)
+boot_splash/image="uid://dp6wicnuayupf"
+config/icon="res://icon.svg"
+
+[autoload]
+
+ShaderRegistry="*uid://b3mcg6cnmg7xf"
+LitManager="*uid://brf2hvdtyyw3q"
+
+[display]
+
+window/size/viewport_width=640
+window/size/viewport_height=640
+window/size/initial_position_type=0
+window/size/borderless=true
+window/stretch/mode="viewport"
+window/stretch/scale_mode="integer"
+
+[editor_plugins]
+
+enabled=PackedStringArray("res://addons/lit/plugin.cfg", "res://addons/richtext2/plugin.cfg")
+
+[gui]
+
+theme/default_font_multichannel_signed_distance_field=true
+
+[input]
+
+move_right={
+"deadzone": 0.2,
+"events": [Object(InputEventKey,"resource_local_to_scene":false,"resource_name":"","device":-1,"window_id":0,"alt_pressed":false,"shift_pressed":false,"ctrl_pressed":false,"meta_pressed":false,"pressed":false,"keycode":0,"physical_keycode":4194321,"key_label":0,"unicode":0,"location":0,"echo":false,"script":null)
+]
+}
+move_left={
+"deadzone": 0.2,
+"events": [Object(InputEventKey,"resource_local_to_scene":false,"resource_name":"","device":-1,"window_id":0,"alt_pressed":false,"shift_pressed":false,"ctrl_pressed":false,"meta_pressed":false,"pressed":false,"keycode":0,"physical_keycode":4194319,"key_label":0,"unicode":0,"location":0,"echo":false,"script":null)
+]
+}
+move_up={
+"deadzone": 0.2,
+"events": [Object(InputEventKey,"resource_local_to_scene":false,"resource_name":"","device":-1,"window_id":0,"alt_pressed":false,"shift_pressed":false,"ctrl_pressed":false,"meta_pressed":false,"pressed":false,"keycode":0,"physical_keycode":4194320,"key_label":0,"unicode":0,"location":0,"echo":false,"script":null)
+]
+}
+move_down={
+"deadzone": 0.2,
+"events": [Object(InputEventKey,"resource_local_to_scene":false,"resource_name":"","device":-1,"window_id":0,"alt_pressed":false,"shift_pressed":false,"ctrl_pressed":false,"meta_pressed":false,"pressed":false,"keycode":0,"physical_keycode":4194322,"key_label":0,"unicode":0,"location":0,"echo":false,"script":null)
+]
+}
+
+[physics]
+
+3d/physics_engine="Jolt Physics"
+
+[rendering]
+
+textures/canvas_textures/default_texture_filter=0
+rendering_device/driver.windows="d3d12"
+renderer/rendering_method="gl_compatibility"
+environment/defaults/default_clear_color=Color(0.41692007, 0.45476472, 0.4679399, 1)
+viewport/transparent_background=true
+2d/snap/snap_2d_transforms_to_pixel=true
+2d/snap/snap_2d_vertices_to_pixel=true
+
+[richer_text_label]
+
+fonts={
+&"Jersey10": "res://ASSETS/fonts/Jersey10-Regular.ttf",
+&"TurretRoad": "res://ASSETS/fonts/TurretRoad-Regular.ttf",
+&"TurretRoad-ExtraBold": "res://ASSETS/fonts/TurretRoad-ExtraBold.ttf",
+&"TurretRoad-ExtraLight": "res://ASSETS/fonts/TurretRoad-ExtraLight.ttf",
+&"TurretRoad-Light": "res://ASSETS/fonts/TurretRoad-Light.ttf",
+&"TurretRoad-Medium": "res://ASSETS/fonts/TurretRoad-Medium.ttf"
+}
+
+[shader_globals]
+
+lit_light_data={
+"filter": "nearest",
+"repeat": "disable",
+"type": "sampler2D",
+"value": ""
+}
+lit_light_count={
+"type": "int",
+"value": 0
+}
+lit_viewport_size={
+"type": "vec2",
+"value": Vector2(0, 0)
+}
+lit_canvas_scale={
+"type": "float",
+"value": 1.0
+}
+lit_ambient_color={
+"type": "color",
+"value": Color(1, 1, 1, 1)
+}
+lit_ambient_energy={
+"type": "float",
+"value": 1.0
+}
+lit_shadow_steps_max={
+"type": "int",
+"value": 64
+}
+lit_shadow_step_scaling={
+"type": "bool",
+"value": false
+}
+lit_tile_size={
+"type": "int",
+"value": 64
+}
+lit_tile_grid={
+"type": "ivec2",
+"value": Vector2i(0, 0)
+}
+lit_directional_count={
+"type": "int",
+"value": 0
+}
+lit_tile_headers={
+"filter": "nearest",
+"repeat": "disable",
+"type": "sampler2D",
+"value": ""
+}
+lit_tile_indices={
+"filter": "nearest",
+"repeat": "disable",
+"type": "sampler2D",
+"value": ""
+}

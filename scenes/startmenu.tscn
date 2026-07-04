@@ -1,0 +1,542 @@
+[gd_scene format=3 uid="uid://c1gua3abg63au"]
+
+[ext_resource type="Script" uid="uid://cttnat7ld7epu" path="res://scripts/startmenu.gd" id="1_t0y3k"]
+[ext_resource type="Material" uid="uid://bfjqwmmb5s8n" path="res://ASSETS/shaders/start_pixel.tres" id="2_ihhoq"]
+[ext_resource type="Theme" uid="uid://bw8c8fo1kwtq2" path="res://ASSETS/visual_presets/new_theme.tres" id="3_ag814"]
+[ext_resource type="FontFile" uid="uid://brqopop4c63ot" path="res://ASSETS/fonts/TurretRoad-ExtraBold.ttf" id="3_cy0qo"]
+[ext_resource type="Script" uid="uid://djrtgftop1i8a" path="res://addons/lit/nodes/lit_post_process.gd" id="3_qpdwg"]
+[ext_resource type="Script" uid="uid://d16jnf3xho2be" path="res://addons/richtext2/text_effects/anims/rte_prickle.gd" id="7_fndww"]
+[ext_resource type="Script" uid="uid://c10axptl1tx1s" path="res://scripts/startmenubutton.gd" id="7_lqn8n"]
+[ext_resource type="Script" uid="uid://b6mbstaftpedd" path="res://addons/richtext2/rich_text_animation.gd" id="8_kbbg3"]
+[ext_resource type="FontFile" uid="uid://6cav8337i5bf" path="res://ASSETS/fonts/Jersey10-Regular.ttf" id="9_5eiq6"]
+[ext_resource type="Script" uid="uid://i8bg2nawwnn0" path="res://addons/richtext2/text_effects/effects/rte_sin.gd" id="9_aj0wn"]
+[ext_resource type="Script" uid="uid://dtbtq2iowg33y" path="res://addons/lit/nodes/lit_canvas_modulate.gd" id="10_qpdwg"]
+[ext_resource type="Script" uid="uid://7156lwdhmrod" path="res://addons/lit/nodes/lit_directional_light_2d.gd" id="12_qpdwg"]
+
+[sub_resource type="Gradient" id="Gradient_lqn8n"]
+offsets = PackedFloat32Array(0, 0.6167048, 0.74485123)
+colors = PackedColorArray(0.06839872, 0.17319503, 0.23709422, 1, 0.20203337, 0.26048717, 0.35192364, 1, 0.21709338, 0.34103617, 0.6614291, 1)
+
+[sub_resource type="FastNoiseLite" id="FastNoiseLite_lqn8n"]
+noise_type = 3
+seed = 22
+frequency = 0.0487
+offset = Vector3(0, 0, 218.22)
+fractal_lacunarity = 0.78
+fractal_gain = 16.56
+fractal_ping_pong_strength = 2.35
+
+[sub_resource type="NoiseTexture2D" id="NoiseTexture2D_fndww"]
+width = 200
+height = 63
+noise = SubResource("FastNoiseLite_lqn8n")
+color_ramp = SubResource("Gradient_lqn8n")
+in_3d_space = true
+
+[sub_resource type="FastNoiseLite" id="FastNoiseLite_fndww"]
+noise_type = 3
+seed = 22
+frequency = 0.0487
+offset = Vector3(0, 0, -265.04)
+fractal_lacunarity = 0.78
+fractal_gain = 16.56
+fractal_ping_pong_strength = 2.35
+
+[sub_resource type="NoiseTexture2D" id="NoiseTexture2D_2qj7i"]
+width = 200
+height = 63
+noise = SubResource("FastNoiseLite_fndww")
+color_ramp = SubResource("Gradient_lqn8n")
+in_3d_space = true
+
+[sub_resource type="RichTextEffect" id="RichTextEffect_qpdwg"]
+resource_name = "prickle"
+script = ExtResource("7_fndww")
+metadata/rt = 1742649499137
+
+[sub_resource type="FontVariation" id="FontVariation_h6xd7"]
+base_font = ExtResource("9_5eiq6")
+variation_embolden = -0.45
+spacing_glyph = 1
+
+[sub_resource type="FontVariation" id="FontVariation_aj0wn"]
+base_font = ExtResource("9_5eiq6")
+variation_embolden = 1.5
+
+[sub_resource type="FontVariation" id="FontVariation_5eiq6"]
+base_font = ExtResource("9_5eiq6")
+variation_embolden = 1.5
+variation_transform = Transform2D(1, 0.25, 0, 1, 0, 0)
+
+[sub_resource type="FontVariation" id="FontVariation_2egik"]
+base_font = ExtResource("9_5eiq6")
+variation_embolden = -0.25
+variation_transform = Transform2D(1, 0.25, 0, 1, 0, 0)
+
+[sub_resource type="RichTextEffect" id="RichTextEffect_dfktg"]
+resource_name = "sin"
+script = ExtResource("9_aj0wn")
+metadata/rt = 1743068929560
+
+[sub_resource type="Animation" id="Animation_qpdwg"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("SubViewportContainer/SubViewport/LitPostProcess:dither_strength")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [1.0]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("SubViewportContainer/SubViewport/LitPostProcess:focus_amount")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [0.02000000000000001]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("SubViewportContainer/SubViewport/RicherTextLabel:scale")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(1, 1)]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("SubViewportContainer/SubViewport/LitDirectionalLight2D:energy")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [5.92]
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("SubViewportContainer/LitCanvasModulate:ambient_energy")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [3.63]
+}
+tracks/5/type = "value"
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/path = NodePath("SubViewportContainer/SubViewport/RicherTextLabel:visible_ratio")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [0.0]
+}
+
+[sub_resource type="Animation" id="Animation_aj0wn"]
+resource_name = "start"
+length = 2.9666667
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("SubViewportContainer/SubViewport/LitPostProcess:dither_strength")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.8666667),
+"transitions": PackedFloat32Array(0.3077861, 1),
+"update": 0,
+"values": [1.0, 0.0]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("SubViewportContainer/SubViewport/LitPostProcess:focus_amount")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.85837334),
+"transitions": PackedFloat32Array(0.26794332, 1),
+"update": 0,
+"values": [-1.0, 0.02000000000000001]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("SubViewportContainer/SubViewport/RicherTextLabel:scale")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(1.9333333, 2.8666666),
+"transitions": PackedFloat32Array(0.40612623, 1),
+"update": 0,
+"values": [Vector2(0, 0), Vector2(1, 1)]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("SubViewportContainer/SubViewport/LitDirectionalLight2D:energy")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(1.3901917, 2.7523928),
+"transitions": PackedFloat32Array(0.43527532, 1),
+"update": 0,
+"values": [0.0, 5.92]
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("SubViewportContainer/LitCanvasModulate:ambient_energy")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0.56666666, 1.2666667),
+"transitions": PackedFloat32Array(0.5, 1),
+"update": 0,
+"values": [0.0, 3.63]
+}
+tracks/5/type = "value"
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/path = NodePath("SubViewportContainer/SubViewport/RicherTextLabel:visible_ratio")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/keys = {
+"times": PackedFloat32Array(2.1333334, 2.8666666),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [0.0, 1.0]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_5eiq6"]
+_data = {
+&"RESET": SubResource("Animation_qpdwg"),
+&"start": SubResource("Animation_aj0wn")
+}
+
+[node name="startmenu" type="Control" unique_id=1325499262]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+focus_mode = 2
+mouse_filter = 1
+script = ExtResource("1_t0y3k")
+metadata/_edit_vertical_guides_ = [640.0, 320.0]
+metadata/_edit_horizontal_guides_ = [640.0]
+
+[node name="SubViewportContainer" type="SubViewportContainer" parent="." unique_id=232402658]
+process_mode = 3
+material = ExtResource("2_ihhoq")
+custom_minimum_size = Vector2(640, 640)
+propagate_maximum_size = false
+layout_mode = 0
+offset_left = -27.999998
+offset_top = -22.0
+offset_right = 612.0
+offset_bottom = 618.0
+scale = Vector2(1.084327, 1.084327)
+stretch = true
+
+[node name="SubViewport" type="SubViewport" parent="SubViewportContainer" unique_id=672479010]
+process_mode = 3
+transparent_bg = true
+handle_input_locally = false
+size = Vector2i(640, 640)
+render_target_update_mode = 4
+
+[node name="startbutton" type="Button" parent="SubViewportContainer/SubViewport" unique_id=1885971184]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -99.0
+offset_top = -61.0
+offset_right = 109.0
+offset_bottom = 10.0
+grow_horizontal = 2
+grow_vertical = 2
+focus_neighbor_top = NodePath("../aboutbutton")
+focus_neighbor_bottom = NodePath("../aboutbutton")
+mouse_default_cursor_shape = 2
+theme = ExtResource("3_ag814")
+theme_override_colors/font_color = Color(0.5449751, 0.5449739, 0.5449743, 1)
+theme_override_colors/font_pressed_color = Color(0.9999998, 0.90424305, 0.9565417, 1)
+theme_override_colors/font_hover_color = Color(0.9197499, 0.91975, 0.9197499, 1)
+theme_override_colors/font_outline_color = Color(0.038457446, 0.16453803, 0.16453782, 1)
+theme_override_colors/icon_normal_color = Color(0.5042184, 0.50421846, 0.50421846, 1)
+theme_override_colors/icon_pressed_color = Color(0.86504203, 0.69648564, 0.9192285, 1)
+theme_override_constants/outline_size = 2
+theme_override_fonts/font = ExtResource("3_cy0qo")
+theme_override_font_sizes/font_size = 27
+text = "PLAY"
+icon = SubResource("NoiseTexture2D_fndww")
+icon_alignment = 1
+script = ExtResource("7_lqn8n")
+
+[node name="aboutbutton" type="Button" parent="SubViewportContainer/SubViewport" unique_id=1270099157]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -99.0
+offset_top = 36.0
+offset_right = 109.0
+offset_bottom = 107.0
+grow_horizontal = 2
+grow_vertical = 2
+focus_neighbor_top = NodePath("../startbutton")
+focus_neighbor_bottom = NodePath("../startbutton")
+theme = ExtResource("3_ag814")
+theme_override_colors/font_color = Color(0.51774925, 0.51774925, 0.51774925, 1)
+theme_override_colors/font_pressed_color = Color(0.9999998, 0.90424305, 0.9565417, 1)
+theme_override_colors/font_hover_color = Color(0.9272218, 0.9272217, 0.9272217, 1)
+theme_override_colors/font_outline_color = Color(0.055151723, 0.2029885, 0.20583361, 1)
+theme_override_colors/icon_normal_color = Color(0.5132329, 0.5132329, 0.5132329, 1)
+theme_override_colors/icon_pressed_color = Color(0.86504203, 0.69648564, 0.9192285, 1)
+theme_override_constants/outline_size = 2
+theme_override_fonts/font = ExtResource("3_cy0qo")
+theme_override_font_sizes/font_size = 27
+text = "ABOUT"
+icon = SubResource("NoiseTexture2D_2qj7i")
+icon_alignment = 1
+script = ExtResource("7_lqn8n")
+
+[node name="RicherTextLabel2" type="RichTextLabel" parent="SubViewportContainer/SubViewport" unique_id=1739330355]
+custom_minimum_size = Vector2(0, 70)
+clip_contents = false
+offset_left = 52.567165
+offset_top = 84.84525
+offset_right = 590.56714
+offset_bottom = 260.84525
+theme_override_colors/font_outline_color = Color(0.19999999, 0.19999999, 0.19999999, 1)
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 0.249)
+theme_override_constants/shadow_outline_size = 7
+theme_override_constants/shadow_offset_x = 5
+theme_override_constants/shadow_offset_y = 5
+theme_override_font_sizes/normal_font_size = 63
+theme_override_font_sizes/bold_font_size = 63
+theme_override_font_sizes/bold_italics_font_size = 63
+theme_override_font_sizes/italics_font_size = 63
+theme_override_font_sizes/mono_font_size = 63
+bbcode_enabled = true
+fit_content = true
+custom_effects = [SubResource("RichTextEffect_qpdwg")]
+script = ExtResource("8_kbbg3")
+animation = "prickle"
+progress = 1.0
+visible_character = 17
+_transforms = Array[Transform2D]([Transform2D(1, 0, 0, 1, 0, 0), Transform2D(1, 0, 0, 1, 67, 54), Transform2D(1, 0, 0, 1, 105, 54), Transform2D(1, 0, 0, 1, 115, 54), Transform2D(1, 0, 0, 1, 128, 54), Transform2D(1, 0, 0, 1, 153, 54), Transform2D(1, 0, 0, 1, 164, 54), Transform2D(1, 0, 0, 1, 174, 54), Transform2D(1, 0, 0, 1, 223, 54), Transform2D(1, 0, 0, 1, 248, 54), Transform2D(1, 0, 0, 1, 282, 54), Transform2D(1, 0, 0, 1, 317, 54), Transform2D(1, 0, 0, 1, 350, 54), Transform2D(1, 0, 0, 1, 387, 54), Transform2D(1, 0, 0, 1, 427, 54), Transform2D(1, 0, 0, 1, 461, 54), Transform2D(1, 0, 0, 1, 496, 54)])
+_char_size = Array[Vector2]([Vector2(0, 0), Vector2(34, 38), Vector2(6, 38), Vector2(10, 38), Vector2(0, 38), Vector2(7, 38), Vector2(7, 38), Vector2(47, 38), Vector2(0, 38), Vector2(31, 38), Vector2(33, 38), Vector2(31, 38), Vector2(33, 38), Vector2(37, 38), Vector2(32, 38), Vector2(23, 38), Vector2(0, 38)])
+_alpha = Array[float]([1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0])
+_alpha_goal = Array[float]([1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0])
+_forced_finish_delay = -0.02125422222177221
+animation = "prickle"
+default_wait_time = 0.69
+play_on_bbcode = true
+play_speed = 20.0
+fade_out = false
+fade_in_speed = 10.0
+fade_out_speed = 120.0
+ctc_offset = Vector2(1, -0.5)
+ctc_on_finished = false
+ctc_on_wait = false
+shortcut_expression = true
+shortcut_bookmark = true
+signal_quotes = true
+signal_stars = true
+bbcode = "[w] Hi, I'm Kev_Bot!"
+effects = 2
+alignment = 1
+color = Color(1, 1, 1, 1)
+emoji_scale = 1.0
+font = "TurretRoad-Medium"
+font_auto_setup = true
+font_size = 63
+font_bold_weight = 1.5
+font_italics_slant = 0.25
+font_italics_weight = -0.25
+shadow_enabled = true
+shadow_offset = 0.09
+shadow_alpha = 0.249
+shadow_outline_size = 0.1
+outline_size = 0
+outline_mode = 1
+outline_adjust = 0.8
+outline_hue_adjust = 0.0125
+nicer_quotes_enabled = true
+nicer_quotes_format = "“%s”"
+markdown_enabled = true
+markdown_format_bold = "[b]%s[]"
+markdown_format_italics = "[i]%s[]"
+markdown_format_bold_italics = "[bi]%s[]"
+markdown_format_highlight = "[green;sin]%s[]"
+markdown_format_bold2 = "[b]*%s*[]"
+markdown_format_italics2 = "[i;gray]*%s*[]"
+markdown_format_bold_italics2 = "%s"
+context_enabled = true
+context_path = NodePath("/root/State")
+context_state = {}
+context_rich_objects = true
+context_rich_ints = true
+context_rich_array = true
+autostyle_numbers = false
+autostyle_numbers_tag = "[salmon]%s[]"
+autostyle_numbers_pad_decimals = true
+autostyle_numbers_decimals = 2
+autostyle_emojis = true
+effect_weight = 0.0
+image_path = "res://"
+image_resize_to_font_size = true
+image_scale = 1.0
+meta_auto_https = true
+meta_cursor = 2
+override_bbcodeEnabled = true
+override_clipContents = false
+override_fitContent = true
+metadata/_custom_type_script = "uid://b6mbstaftpedd"
+metadata/rand = Array[int]([626026857, 10123811, 162284795, 2866109023, 2175606039, 2048954, 1289825565, 1799902737, 3781716546, 937669608, 4266539988, 2039334840])
+metadata/mouse_position = Vector2(1205.5029, 215.12231)
+metadata/frame = 863085
+
+[node name="RicherTextLabel" type="RichTextLabel" parent="SubViewportContainer/SubViewport" unique_id=1779814064]
+custom_minimum_size = Vector2(0, 36)
+clip_contents = false
+offset_left = 396.55936
+offset_top = 152.16812
+offset_right = 550.5924
+offset_bottom = 319.86804
+pivot_offset_ratio = Vector2(0.49, 0)
+theme_override_colors/font_outline_color = Color(1, 1, 1, 1)
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 0.25)
+theme_override_constants/shadow_outline_size = 4
+theme_override_constants/shadow_offset_x = 3
+theme_override_constants/shadow_offset_y = 3
+theme_override_constants/outline_size = 1
+theme_override_fonts/normal_font = SubResource("FontVariation_h6xd7")
+theme_override_fonts/bold_font = SubResource("FontVariation_aj0wn")
+theme_override_fonts/bold_italics_font = SubResource("FontVariation_5eiq6")
+theme_override_fonts/italics_font = SubResource("FontVariation_2egik")
+theme_override_font_sizes/normal_font_size = 33
+theme_override_font_sizes/bold_font_size = 33
+theme_override_font_sizes/bold_italics_font_size = 33
+theme_override_font_sizes/italics_font_size = 33
+theme_override_font_sizes/mono_font_size = 33
+bbcode_enabled = true
+text = "Version 0.1!"
+fit_content = true
+custom_effects = [SubResource("RichTextEffect_dfktg")]
+visible_characters = 0
+visible_ratio = 0.0
+metadata/rand = Array[int]([626026857, 10123811, 162284795, 2866109023, 2175606039, 2048954, 1289825565, 1799902737, 3781716546, 937669608, 4266539988, 2039334840])
+
+[node name="ColorRect" type="ColorRect" parent="SubViewportContainer/SubViewport" unique_id=1967811112]
+visible = false
+z_index = -58
+offset_left = -75.0
+offset_top = -56.0
+offset_right = 778.0
+offset_bottom = 772.0
+mouse_filter = 2
+color = Color(0.5764706, 0.5764706, 0.5764706, 0.6117647)
+
+[node name="LitPostProcess" type="CanvasLayer" parent="SubViewportContainer/SubViewport" unique_id=961769287]
+layer = 29
+visible = false
+follow_viewport_enabled = true
+follow_viewport_scale = 5.02
+script = ExtResource("3_qpdwg")
+threshold_cutoff = 0.0
+bloom_enabled = true
+bloom_threshold = 0.66
+bloom_intensity = 0.4
+bloom_radius = 0.62
+halation_enabled = true
+halation_threshold = 0.88
+halation_intensity = 0.1
+halation_radius = 5.04
+halation_tint = Color(0.6088001, 0.5261909, 0.71251607, 1)
+glitch_intensity = 0.06
+glitch_block_size = 28.0
+glitch_rgb_shift = 18.5
+exposure = 1.04
+contrast = 1.79
+pixelate_size = 1.0
+posterize_levels = 3.0
+halftone_dot_size = 21.5
+halftone_amount = 0.0
+dither_enabled = true
+dither_levels = 2.0
+dither_scale = 2.0
+crt_enabled = true
+crt_curvature = 0.14
+crt_scanline_strength = 0.12
+crt_scanline_count = 86.0
+crt_mask_strength = 0.21
+crt_aberration = 0.0
+crt_vignette = 0.64
+crt_brightness = 1.31
+aberration_enabled = true
+aberration_amount = 3.6
+aberration_edge_falloff = 0.7
+leaks_enabled = true
+leaks_intensity = 0.33
+leaks_speed = 2.01
+leaks_color1 = Color(0.95980734, 0.3078863, 0.46127218, 1)
+leaks_color2 = Color(3.657937e-06, 0.88957703, 0.7511777, 1)
+grain_enabled = true
+grain_intensity = 0.154
+grain_size = 1.8
+grain_luminance_response = 0.0
+grain_colored = true
+focus_enabled = true
+focus_amount = 0.02000000000000001
+focus_dream = 0.39
+metadata/_custom_type_script = "uid://djrtgftop1i8a"
+
+[node name="LitDirectionalLight2D" type="Node2D" parent="SubViewportContainer/SubViewport" unique_id=183053100]
+visible = false
+z_index = 61
+position = Vector2(316, 468)
+script = ExtResource("12_qpdwg")
+energy = 5.92
+metadata/_custom_type_script = "uid://7156lwdhmrod"
+
+[node name="LitCanvasModulate" type="Node2D" parent="SubViewportContainer" unique_id=354927271]
+visible = false
+script = ExtResource("10_qpdwg")
+color = Color(0.98234254, 0.9823423, 0.9823424, 1)
+ambient_energy = 3.63
+metadata/_custom_type_script = "uid://dtbtq2iowg33y"
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="." unique_id=2117445509]
+libraries/ = SubResource("AnimationLibrary_5eiq6")
+autoplay = &"start"
+
+[connection signal="pressed" from="SubViewportContainer/SubViewport/startbutton" to="." method="_on_startbutton_pressed"]
+[connection signal="pressed" from="SubViewportContainer/SubViewport/aboutbutton" to="." method="_on_aboutbutton_pressed"]

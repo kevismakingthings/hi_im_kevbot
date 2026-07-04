@@ -1,0 +1,9 @@
+[gd_resource type="ShaderMaterial" format=3 uid="uid://c5bysfmsgrys4"]
+
+[ext_resource type="Shader" uid="uid://cenlcmcfyfvt0" path="res://ASSETS/shaders/blurdim.gdshader" id="1_n4dpw"]
+
+[resource]
+shader = ExtResource("1_n4dpw")
+shader_parameter/blur = 0.0
+shader_parameter/dim = 0.0
+shader_parameter/dim_color = Color(0, 0, 0, 1)

@@ -1,0 +1,8 @@
+[gd_resource type="FontVariation" format=3 uid="uid://ch8cdsc6046hv"]
+
+[ext_resource type="FontFile" uid="uid://6cav8337i5bf" path="res://ASSETS/fonts/Jersey10-Regular.ttf" id="1_4w86q"]
+
+[resource]
+base_font = ExtResource("1_4w86q")
+variation_embolden = -0.78
+spacing_glyph = 1
