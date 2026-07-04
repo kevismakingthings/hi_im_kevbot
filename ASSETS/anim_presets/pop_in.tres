@@ -1,0 +1,11 @@
+[gd_resource type="Resource" script_class="TweenPreset" format=3 uid="uid://t382qd1s2wkw"]
+
+[ext_resource type="Script" uid="uid://dtbw45hxo75yf" path="res://scripts/TweenPreset.gd" id="1_rek0b"]
+
+[resource]
+script = ExtResource("1_rek0b")
+to_value = Vector2(1, 1)
+duration = 0.35
+trans = 10
+use_from = true
+from_value = Vector2(0, 0)

@@ -1,0 +1,11 @@
+[gd_resource type="ShaderMaterial" format=3 uid="uid://bnv4c5fcrrhiv"]
+
+[ext_resource type="Shader" uid="uid://dvbr5ga3j7d0i" path="res://ASSETS/shaders/kev.gdshader" id="1_tuvoo"]
+
+[resource]
+shader = ExtResource("1_tuvoo")
+shader_parameter/color_a = Color(0.9782178, 0.895913, 0.8329989, 0.23921569)
+shader_parameter/color_b = Color(0.46513456, 0.50067544, 0.5931099, 0.16470589)
+shader_parameter/speed = 0.43
+shader_parameter/cell_size = 7.63
+shader_parameter/bands = 2.83

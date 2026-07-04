@@ -1,0 +1,17 @@
+[gd_resource type="StyleBoxTexture" format=3 uid="uid://bkusnqc6bxc34"]
+
+[sub_resource type="FastNoiseLite" id="FastNoiseLite_uhd8p"]
+noise_type = 3
+seed = 2
+frequency = 0.0487
+offset = Vector3(0, 0, 182.43)
+fractal_lacunarity = 0.78
+fractal_gain = 10.62
+fractal_ping_pong_strength = 2.35
+
+[sub_resource type="NoiseTexture2D" id="NoiseTexture2D_lqn8n"]
+noise = SubResource("FastNoiseLite_uhd8p")
+as_normal_map = true
+
+[resource]
+texture = SubResource("NoiseTexture2D_lqn8n")

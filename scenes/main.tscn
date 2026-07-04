@@ -1,0 +1,46 @@
+[gd_scene format=3 uid="uid://b6ybu0ehebp2l"]
+
+[ext_resource type="Script" uid="uid://dka1iwwr2rpk5" path="res://scripts/main.gd" id="1_o5qli"]
+[ext_resource type="Script" uid="uid://bq6qtjhd5io2d" path="res://scripts/warmup_viewport.gd" id="3_sugp2"]
+[ext_resource type="Material" uid="uid://cc0qf51qyhvoa" path="res://ASSETS/shaders/blurdim_mat.tres" id="3_tefeu"]
+
+[node name="Main" type="Node2D" unique_id=1089091352]
+process_mode = 3
+z_as_relative = false
+script = ExtResource("1_o5qli")
+
+[node name="warmup" type="SubViewport" parent="." unique_id=2061225792]
+size = Vector2i(2, 2)
+render_target_update_mode = 1
+script = ExtResource("3_sugp2")
+
+[node name="Game" type="Node" parent="." unique_id=1125625234]
+process_mode = 1
+
+[node name="StartLayer" type="CanvasLayer" parent="." unique_id=222226514]
+process_mode = 3
+layer = 10
+
+[node name="BlurLayer" type="CanvasLayer" parent="." unique_id=1194453682]
+process_mode = 3
+layer = 20
+
+[node name="SecondBlur" type="ColorRect" parent="BlurLayer" unique_id=1235757847]
+visible = false
+top_level = true
+clip_children = 2
+light_mask = 30
+visibility_layer = 16
+z_index = 28
+z_as_relative = false
+material = ExtResource("3_tefeu")
+offset_left = -3131.0
+offset_top = -2683.0
+offset_right = -2460.0
+offset_bottom = -2026.0
+scale = Vector2(12.006104, 13.497955)
+mouse_behavior_recursive = 1
+
+[node name="AboutLayer" type="CanvasLayer" parent="." unique_id=2025510304]
+process_mode = 3
+layer = 30

@@ -1,0 +1,10 @@
+[gd_resource type="Resource" script_class="TweenPreset" format=3 uid="uid://qk874p3eg3i1"]
+
+[ext_resource type="Script" uid="uid://dtbw45hxo75yf" path="res://scripts/TweenPreset.gd" id="1_88lux"]
+
+[resource]
+script = ExtResource("1_88lux")
+property = "modulate:a"
+to_value = Vector2(1, 1)
+duration = 1.0
+from_value = 0.0

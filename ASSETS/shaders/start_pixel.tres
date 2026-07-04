@@ -1,0 +1,8 @@
+[gd_resource type="ShaderMaterial" format=3 uid="uid://bfjqwmmb5s8n"]
+
+[ext_resource type="Shader" uid="uid://d108ctky0gtpy" path="res://ASSETS/shaders/pixelator.gdshader" id="1_uu7wq"]
+
+[resource]
+shader = ExtResource("1_uu7wq")
+shader_parameter/pixel_size = 1.0
+shader_parameter/blur_amount = 0.0

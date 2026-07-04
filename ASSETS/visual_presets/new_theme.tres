@@ -1,0 +1,7 @@
+[gd_resource type="Theme" format=3 uid="uid://bw8c8fo1kwtq2"]
+
+[ext_resource type="FontFile" uid="uid://cv8kb1hnnrwsk" path="res://ASSETS/fonts/TurretRoad-Medium.ttf" id="1_amlv4"]
+
+[resource]
+default_font = ExtResource("1_amlv4")
+default_font_size = 20
