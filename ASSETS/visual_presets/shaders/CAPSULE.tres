@@ -1,0 +1,16 @@
+[gd_resource type="ShaderMaterial" format=3 uid="uid://cd58qvfey3ygy"]
+
+[ext_resource type="Shader" uid="uid://dar0576cj1d1i" path="res://ASSETS/shaders/capsule_loading.gdshader" id="1_fx4d5"]
+[ext_resource type="Texture2D" uid="uid://ca423rigukkn0" path="res://ASSETS/images/bayer8x8.png" id="2_b6t0k"]
+
+[resource]
+shader = ExtResource("1_fx4d5")
+shader_parameter/value = 0.0
+shader_parameter/fill_color = Color(1, 1, 1, 0.7176471)
+shader_parameter/bg_color = Color(0.63116133, 0.3668591, 0.4976939, 1)
+shader_parameter/border_width = -7.58
+shader_parameter/border_color = Color(0.12156863, 0.12156863, 0.12156863, 1)
+shader_parameter/use_dither = true
+shader_parameter/bayer_tex = ExtResource("2_b6t0k")
+shader_parameter/dither_scale = 4.0
+shader_parameter/rect_size = Vector2(200, 30)

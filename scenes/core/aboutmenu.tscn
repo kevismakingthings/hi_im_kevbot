@@ -1,0 +1,1643 @@
+[gd_scene format=3 uid="uid://cdofph607va34"]
+
+[ext_resource type="Script" uid="uid://b0ovc8k4xa5g2" path="res://scripts/scene_logic/aboutmenu.gd" id="1_ontn0"]
+[ext_resource type="Theme" uid="uid://bw8c8fo1kwtq2" path="res://ASSETS/visual_presets/style_box/new_theme.tres" id="2_5jp5k"]
+[ext_resource type="Texture2D" uid="uid://dwmrj6iftjvjt" path="res://ASSETS/sprites/kevjig.png" id="2_haoiw"]
+[ext_resource type="Texture2D" uid="uid://dl6hq1glwssvp" path="res://ASSETS/sprites/kevshake.png" id="2_oeksf"]
+[ext_resource type="Material" uid="uid://bnv4c5fcrrhiv" path="res://ASSETS/visual_presets/shaders/about_backdrop.tres" id="2_q1idn"]
+[ext_resource type="FontFile" uid="uid://6cav8337i5bf" path="res://ASSETS/fonts/Jersey10-Regular.ttf" id="4_0ji0d"]
+[ext_resource type="Shader" uid="uid://clcv012uaynww" path="res://ASSETS/shaders/squiggle.gdshader" id="6_fhdrp"]
+[ext_resource type="Script" uid="uid://cheklf3dc1f7d" path="res://scripts/object_logic/skillspassionsbutton.gd" id="6_q1idn"]
+[ext_resource type="Texture2D" uid="uid://dj4fypmx1keie" path="res://ASSETS/sprites/justk.png" id="7_p20tw"]
+[ext_resource type="Texture2D" uid="uid://hh0luyaejkqr" path="res://ASSETS/sprites/kevtalk_SHEETE.png" id="8_kle74"]
+[ext_resource type="Texture2D" uid="uid://dlqnuowy7ofdx" path="res://ASSETS/sprites/mail.png" id="8_p20tw"]
+[ext_resource type="Script" uid="uid://blpod821kuyc3" path="res://scripts/object_logic/dock_buttons.gd" id="9_q1idn"]
+[ext_resource type="Texture2D" uid="uid://cehk0q2s5qfjq" path="res://ASSETS/sprites/backsprite.png" id="10_8mt73"]
+[ext_resource type="Resource" uid="uid://qk874p3eg3i1" path="res://ASSETS/anim_presets/fade_in.tres" id="10_kle74"]
+[ext_resource type="Texture2D" uid="uid://bj3s3fy2ndn8a" path="res://ASSETS/sprites/youtube.png" id="11_geruh"]
+[ext_resource type="Material" uid="uid://c8yg2nbsdsrju" path="res://ASSETS/visual_presets/shaders/squiggly.tres" id="11_q5b0x"]
+[ext_resource type="Texture2D" uid="uid://bdaidrbh6bmqv" path="res://ASSETS/sprites/spotify.png" id="12_0ji0d"]
+[ext_resource type="Script" uid="uid://bf3vfy3rir883" path="res://scripts/object_logic/icon_hover.gd" id="12_geruh"]
+[ext_resource type="Texture2D" uid="uid://dt6n0c4wos4ow" path="res://ASSETS/sprites/soundcloud-export.png" id="14_t6kni"]
+[ext_resource type="Texture2D" uid="uid://dibvipk6enk5t" path="res://ASSETS/sprites/frames.png" id="15_q80qm"]
+[ext_resource type="Texture2D" uid="uid://dy43xlfbdwb5i" path="res://ASSETS/sprites/camera-export.png" id="16_q1idn"]
+
+[sub_resource type="Gradient" id="Gradient_lg8x2"]
+offsets = PackedFloat32Array(0, 0.77904564)
+colors = PackedColorArray(1, 1, 1, 1, 0, 0, 0, 1)
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_337yx"]
+gradient = SubResource("Gradient_lg8x2")
+fill = 1
+fill_from = Vector2(0.50365853, 0.49634147)
+fill_to = Vector2(0.1402439, 0.11829268)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_pcwul"]
+bg_color = Color(0.6, 0.6, 0.6, 0)
+anti_aliasing = false
+
+[sub_resource type="Theme" id="Theme_lg8x2"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_t6kni"]
+bg_color = Color(0.40392157, 0.6117647, 0.6901961, 0.81960785)
+border_width_left = 2
+border_width_top = 2
+border_width_right = 14
+border_width_bottom = 6
+border_color = Color(0.121614136, 0.30541164, 0.41110045, 1)
+corner_radius_top_left = 21
+corner_radius_top_right = 20
+corner_radius_bottom_right = 24
+corner_radius_bottom_left = 18
+corner_detail = 10
+expand_margin_left = 16.0
+expand_margin_top = 16.0
+expand_margin_right = 16.0
+expand_margin_bottom = 16.0
+shadow_size = 5
+shadow_offset = Vector2(5.41, 4.68)
+anti_aliasing = false
+anti_aliasing_size = 0.01
+
+[sub_resource type="FontVariation" id="FontVariation_0ji0d"]
+base_font = ExtResource("4_0ji0d")
+variation_embolden = -0.07
+spacing_glyph = 2
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_h6xd7"]
+bg_color = Color(0.23529412, 0.24705882, 0.3372549, 0.7294118)
+border_width_right = 13
+border_color = Color(0.51938653, 0.53478307, 0.6654085, 1)
+corner_radius_top_left = 14
+corner_radius_bottom_left = 13
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_d400r"]
+bg_color = Color(0.3286169, 0.34368184, 0.4573642, 0.9607843)
+border_width_right = 13
+border_color = Color(0.8801166, 0.9057318, 1.1234614, 1)
+corner_radius_top_left = 14
+corner_radius_bottom_left = 13
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_6f83v"]
+bg_color = Color(0.3286169, 0.34368184, 0.4573642, 0.9607843)
+border_width_right = 13
+border_color = Color(0.8801166, 0.9057318, 1.1234614, 1)
+corner_radius_top_left = 14
+corner_radius_bottom_left = 13
+
+[sub_resource type="FontVariation" id="FontVariation_t6kni"]
+base_font = ExtResource("4_0ji0d")
+variation_embolden = -0.42
+spacing_glyph = 2
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_0ji0d"]
+bg_color = Color(0.14117648, 0.25882354, 0.19607843, 0.7607843)
+border_width_right = 13
+border_color = Color(0.2980765, 0.4908592, 0.38964322, 1)
+corner_radius_top_left = 14
+corner_radius_bottom_left = 13
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_q5b0x"]
+bg_color = Color(0.3137255, 0.5176471, 0.40784314, 0.9372549)
+border_width_right = 13
+border_color = Color(0.2980765, 0.4908592, 0.38964322, 1)
+corner_radius_top_left = 14
+corner_radius_bottom_left = 13
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_fhdrp"]
+bg_color = Color(0.3137255, 0.5176471, 0.40784314, 0.9372549)
+border_width_right = 13
+border_color = Color(0.2980765, 0.4908592, 0.38964322, 1)
+corner_radius_top_left = 14
+corner_radius_bottom_left = 13
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_q1idn"]
+bg_color = Color(0.37254903, 0.26666668, 0.13725491, 0.8862745)
+border_width_right = 13
+border_color = Color(0.9140168, 0.57710326, 0.2154918, 1)
+corner_radius_top_left = 14
+corner_radius_bottom_left = 13
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_obb54"]
+bg_color = Color(0.78272367, 0.5987239, 0.38035023, 0.8862745)
+border_width_right = 13
+border_color = Color(0.9140168, 0.57710326, 0.2154918, 1)
+corner_radius_top_left = 14
+corner_radius_bottom_left = 13
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_gv0m5"]
+bg_color = Color(0.63274944, 0.4689867, 0.27105975, 0.8862745)
+border_width_right = 13
+border_color = Color(0.9140168, 0.57710326, 0.2154918, 1)
+corner_radius_top_left = 14
+corner_radius_bottom_left = 13
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_gybju"]
+bg_color = Color(0.37254903, 0.26666668, 0.13725491, 0.8862745)
+border_width_right = 13
+border_color = Color(0.9140168, 0.57710326, 0.2154918, 1)
+corner_radius_top_left = 14
+corner_radius_bottom_left = 13
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_8mt73"]
+bg_color = Color(0.40392157, 0.6117647, 0.6901961, 1)
+border_width_left = 12
+border_width_top = 2
+border_width_right = 12
+border_width_bottom = 12
+border_color = Color(0.12156863, 0.30588236, 0.4117647, 1)
+corner_radius_top_left = 119
+corner_radius_top_right = 122
+corner_detail = 10
+shadow_size = 6
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_v8h42"]
+bg_color = Color(0.7754197, 0.49995556, 0.37187055, 1)
+border_width_left = 8
+border_width_top = 5
+border_width_right = 8
+border_width_bottom = 5
+border_color = Color(0.269203, 0.33691287, 0.3420244, 1)
+corner_radius_top_left = 24
+corner_radius_top_right = 24
+corner_radius_bottom_right = 24
+corner_radius_bottom_left = 24
+corner_detail = 20
+shadow_offset = Vector2(24, 24)
+anti_aliasing = false
+anti_aliasing_size = 0.01
+
+[sub_resource type="FastNoiseLite" id="FastNoiseLite_lfv4p"]
+noise_type = 0
+
+[sub_resource type="NoiseTexture2D" id="NoiseTexture2D_sqf45"]
+noise = SubResource("FastNoiseLite_lfv4p")
+seamless = true
+seamless_blend_skirt = 1.0
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_d400r"]
+shader = ExtResource("6_fhdrp")
+shader_parameter/scale = Vector2(1, 1)
+shader_parameter/strength = 0.13
+shader_parameter/fps = 6.0
+shader_parameter/noise = SubResource("NoiseTexture2D_sqf45")
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_pcwul"]
+atlas = ExtResource("2_haoiw")
+region = Rect2(64, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_v8h42"]
+atlas = ExtResource("2_oeksf")
+region = Rect2(0, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_n2ipv"]
+atlas = ExtResource("2_oeksf")
+region = Rect2(64, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_6c65f"]
+atlas = ExtResource("2_oeksf")
+region = Rect2(128, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_p20tw"]
+atlas = ExtResource("2_oeksf")
+region = Rect2(0, 64, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_bf3f6"]
+atlas = ExtResource("2_oeksf")
+region = Rect2(64, 64, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_8mt73"]
+atlas = ExtResource("2_haoiw")
+region = Rect2(0, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_6fhwl"]
+atlas = ExtResource("2_oeksf")
+region = Rect2(128, 64, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_q5b0x"]
+atlas = ExtResource("8_kle74")
+region = Rect2(0, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_fhdrp"]
+atlas = ExtResource("8_kle74")
+region = Rect2(64, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_d400r"]
+atlas = ExtResource("8_kle74")
+region = Rect2(128, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_6f83v"]
+atlas = ExtResource("8_kle74")
+region = Rect2(192, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_obb54"]
+atlas = ExtResource("8_kle74")
+region = Rect2(256, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_gv0m5"]
+atlas = ExtResource("8_kle74")
+region = Rect2(0, 64, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_gybju"]
+atlas = ExtResource("8_kle74")
+region = Rect2(64, 64, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_1fyrw"]
+atlas = ExtResource("8_kle74")
+region = Rect2(128, 64, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_movtj"]
+atlas = ExtResource("8_kle74")
+region = Rect2(192, 64, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_nf40o"]
+atlas = ExtResource("8_kle74")
+region = Rect2(256, 64, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_pbq4o"]
+atlas = ExtResource("8_kle74")
+region = Rect2(0, 128, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_u3ndl"]
+atlas = ExtResource("8_kle74")
+region = Rect2(64, 128, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_kn2qb"]
+atlas = ExtResource("8_kle74")
+region = Rect2(128, 128, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_bce7g"]
+atlas = ExtResource("8_kle74")
+region = Rect2(192, 128, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_6nfiu"]
+atlas = ExtResource("8_kle74")
+region = Rect2(256, 128, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_sev8b"]
+atlas = ExtResource("8_kle74")
+region = Rect2(0, 192, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_111a3"]
+atlas = ExtResource("8_kle74")
+region = Rect2(64, 192, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_s47wa"]
+atlas = ExtResource("8_kle74")
+region = Rect2(128, 192, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_wxbax"]
+atlas = ExtResource("8_kle74")
+region = Rect2(192, 192, 64, 64)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_h6xd7"]
+animations = [{
+"frames": [{
+"duration": 12.0,
+"texture": SubResource("AtlasTexture_pcwul")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_v8h42")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_n2ipv")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_6c65f")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_p20tw")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_bf3f6")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_8mt73")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_8mt73")
+}, {
+"duration": 6.0,
+"texture": SubResource("AtlasTexture_6fhwl")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_q5b0x")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_fhdrp")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_d400r")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_6f83v")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_obb54")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_gv0m5")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_gybju")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_1fyrw")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_movtj")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_nf40o")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_pbq4o")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_u3ndl")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_kn2qb")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_bce7g")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_6nfiu")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_sev8b")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_111a3")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_s47wa")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_wxbax")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_q5b0x")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_fhdrp")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_d400r")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_6f83v")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_obb54")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_gv0m5")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_gybju")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_1fyrw")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_8mt73")
+}, {
+"duration": 6.0,
+"texture": SubResource("AtlasTexture_6fhwl")
+}],
+"loop": 0,
+"name": &"default",
+"speed": 12.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_q5b0x")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_fhdrp")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_d400r")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_6f83v")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_obb54")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_gv0m5")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_gybju")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_1fyrw")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_movtj")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_nf40o")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_pbq4o")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_u3ndl")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_kn2qb")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_bce7g")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_6nfiu")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_sev8b")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_111a3")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_s47wa")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_wxbax")
+}],
+"loop": 1,
+"name": &"new_animation",
+"speed": 12.0
+}]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_geruh"]
+bg_color = Color(0.8333913, 0.8333913, 0.83339125, 1)
+border_width_left = 2
+border_width_top = 2
+border_width_right = 12
+border_width_bottom = 9
+border_color = Color(0.12156863, 0.30588236, 0.4117647, 1)
+corner_radius_top_left = 65
+corner_radius_top_right = 93
+corner_radius_bottom_right = 107
+corner_radius_bottom_left = 82
+corner_detail = 3
+expand_margin_left = 16.0
+expand_margin_top = 16.0
+expand_margin_right = 16.0
+expand_margin_bottom = 16.0
+shadow_offset = Vector2(-1.39, 0)
+anti_aliasing = false
+anti_aliasing_size = 0.01
+
+[sub_resource type="FontVariation" id="FontVariation_mdjd3"]
+base_font = ExtResource("4_0ji0d")
+variation_embolden = -0.01
+spacing_glyph = 1
+
+[sub_resource type="Animation" id="Animation_kle74"]
+length = 0.001
+
+[sub_resource type="Animation" id="Animation_geruh"]
+resource_name = "kevtalk"
+length = 8.25
+step = 0.041666668
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("../../talkpanel/talking:visible_ratio")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(3.2083333, 3.3749998, 6.8033333),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [0.0, 0.142, 2.0948277]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("../../talkpanel:modulate")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(2.7083333, 3.0416667),
+"transitions": PackedFloat32Array(0.5743491, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 0), Color(1, 1, 1, 1)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("../../talkpanel:position")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(2.7083333, 2.9583333, 3.0416667),
+"transitions": PackedFloat32Array(0.53588665, 3.0314329, 1),
+"update": 0,
+"values": [Vector2(25, 180), Vector2(25, 230), Vector2(25, 220)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_q80qm"]
+_data = {
+&"RESET": SubResource("Animation_kle74"),
+&"kevtalk": SubResource("Animation_geruh")
+}
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_ontn0"]
+bg_color = Color(0.40392157, 0.6117647, 0.6901961, 0.81960785)
+border_width_left = 2
+border_width_top = 2
+border_width_right = 3
+border_width_bottom = 3
+border_color = Color(0.121614136, 0.30541164, 0.41110045, 1)
+corner_radius_top_left = 126
+corner_radius_top_right = 54
+corner_radius_bottom_right = 124
+corner_radius_bottom_left = 63
+corner_detail = 10
+expand_margin_left = 17.0
+expand_margin_top = 12.0
+expand_margin_right = 2.0
+expand_margin_bottom = 16.0
+shadow_size = 1
+shadow_offset = Vector2(5.41, 4.68)
+anti_aliasing = false
+anti_aliasing_size = 0.01
+
+[sub_resource type="Animation" id="Animation_q5b0x"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 1)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath(".:size")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(607, 17)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath(".:position")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(20, 598)]
+}
+
+[sub_resource type="Animation" id="Animation_fhdrp"]
+resource_name = "dockappear"
+length = 2.4333334
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0.8666667, 2.1666665),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 0.05490196), Color(1, 1, 1, 1)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath(".:size")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0.8666667, 1.2, 2.2666667),
+"transitions": PackedFloat32Array(1.6245048, 0.4665165, 1),
+"update": 0,
+"values": [Vector2(30, 17), Vector2(158.81934, 17), Vector2(607, 17)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath(".:position")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0.8666667, 2.2333333),
+"transitions": PackedFloat32Array(0.40612617, 1),
+"update": 0,
+"values": [Vector2(20, 670), Vector2(20, 598)]
+}
+
+[sub_resource type="Animation" id="Animation_d400r"]
+resource_name = "dockdisappear"
+length = 0.73333335
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.6),
+"transitions": PackedFloat32Array(0.40612623, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 1), Color(1, 1, 1, 0.05490196)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath(".:position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.2, 0.6),
+"transitions": PackedFloat32Array(1.5157169, 0.4352752, 1.6245048),
+"update": 0,
+"values": [Vector2(20, 598), Vector2(20.852133, 604.1354), Vector2(30, 670)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath(".:size")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0, 0.6),
+"transitions": PackedFloat32Array(0.28717452, 0.40612617),
+"update": 0,
+"values": [Vector2(607, 17), Vector2(20, 17)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_d400r"]
+_data = {
+&"RESET": SubResource("Animation_q5b0x"),
+&"dockappear": SubResource("Animation_fhdrp"),
+&"dockdisappear": SubResource("Animation_d400r")
+}
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_pbq4o"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_u3ndl"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_kn2qb"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_nf40o"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_337yx"]
+bg_color = Color(0.06859854, 0.06859854, 0.06859854, 0.7294118)
+corner_radius_top_left = 9
+corner_radius_top_right = 9
+corner_radius_bottom_right = 9
+corner_radius_bottom_left = 9
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_q5b0x"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_fhdrp"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_d400r"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_1fyrw"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_qujjm"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_yuin3"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_qnjyl"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_moslq"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_in182"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_6f83v"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_obb54"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_gv0m5"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_gybju"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_bce7g"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_6nfiu"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_sev8b"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_111a3"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_s47wa"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_kle74"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_wxbax"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_fo561"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_wjrl6"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_r86ls"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_b38k7"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_j8b2o"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_pmayn"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_ygkcm"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_ypnqc"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_tysdr"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_txbgk"]
+
+[node name="aboutmenu" type="Control" unique_id=445201638]
+process_mode = 3
+z_index = 9
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+focus_neighbor_left = NodePath("fullpanel/DockButtons/back_button")
+focus_neighbor_top = NodePath("fullpanel/skillspassions/MusicAudio")
+focus_neighbor_right = NodePath("fullpanel/DockButtons/back_button")
+focus_neighbor_bottom = NodePath("fullpanel/skillspassions/MusicAudio")
+focus_mode = 2
+script = ExtResource("1_ontn0")
+metadata/_edit_horizontal_guides_ = [640.0, 603.0]
+metadata/_edit_vertical_guides_ = [640.0]
+
+[node name="PointLight2D" type="PointLight2D" parent="." unique_id=292769176]
+top_level = true
+z_index = 47
+position = Vector2(-540, 780)
+scale = Vector2(23.256388, 21.173445)
+energy = 0.0
+range_layer_max = 492
+shadow_enabled = true
+texture = SubResource("GradientTexture2D_337yx")
+offset = Vector2(0.96, 0)
+texture_scale = 0.91
+
+[node name="fullpanel" type="Node2D" parent="." unique_id=947172359]
+top_level = true
+visibility_layer = 1040
+z_index = 100
+
+[node name="backpanel" type="Panel" parent="fullpanel" unique_id=303823066]
+z_index = -8
+material = ExtResource("2_q1idn")
+offset_left = -1.0
+offset_top = 1.0
+offset_right = 639.0
+offset_bottom = 641.0
+pivot_offset = Vector2(320, 320)
+focus_neighbor_left = NodePath("../DockButtons/photoinstabutton")
+focus_neighbor_top = NodePath("../skillspassions/MusicAudio")
+focus_neighbor_right = NodePath("../skillspassions/MusicAudio")
+focus_neighbor_bottom = NodePath("../DockButtons/back_button")
+focus_mode = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_pcwul")
+
+[node name="skillspassions" type="Panel" parent="fullpanel" unique_id=973015777]
+visibility_layer = 2
+z_index = -8
+anchors_preset = 2
+anchor_top = 1.0
+anchor_bottom = 1.0
+offset_left = 387.0
+offset_top = 25.0
+offset_right = 602.0
+offset_bottom = 333.0
+grow_vertical = 0
+theme = SubResource("Theme_lg8x2")
+theme_override_styles/panel = SubResource("StyleBoxFlat_t6kni")
+
+[node name="skillstext" type="RichTextLabel" parent="fullpanel/skillspassions" unique_id=898614458]
+z_index = 7
+layout_mode = 0
+offset_left = 9.000007
+offset_top = -1.0
+offset_right = 222.34991
+offset_bottom = 34.929382
+scale = Vector2(0.95617557, 1.0297984)
+mouse_filter = 2
+theme = ExtResource("2_5jp5k")
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 0)
+theme_override_constants/line_separation = 1
+theme_override_constants/outline_size = 2
+theme_override_fonts/normal_font = SubResource("FontVariation_0ji0d")
+theme_override_font_sizes/normal_font_size = 31
+text = "Skills / Passions"
+scroll_active = false
+text_direction = 1
+
+[node name="learn more" type="RichTextLabel" parent="fullpanel/skillspassions" unique_id=1108793293]
+z_index = 7
+layout_mode = 0
+offset_left = 17.000006
+offset_top = 349.0
+offset_right = 270.09158
+offset_bottom = 382.01617
+scale = Vector2(0.95617557, 1.0297984)
+theme = ExtResource("2_5jp5k")
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 0)
+theme_override_constants/line_separation = 1
+theme_override_constants/outline_size = 2
+theme_override_fonts/normal_font = SubResource("FontVariation_0ji0d")
+theme_override_font_sizes/normal_font_size = 22
+text = "Click to learn more!"
+scroll_active = false
+text_direction = 1
+
+[node name="MusicAudio" type="Button" parent="fullpanel/skillspassions" unique_id=1744496972]
+layout_mode = 0
+offset_left = -14.9999695
+offset_top = 37.0
+offset_right = 230.00003
+offset_bottom = 87.0
+focus_neighbor_left = NodePath("../../DockButtons/back_button")
+focus_neighbor_top = NodePath("../SkateFilm")
+focus_neighbor_right = NodePath("../../DockButtons/back_button")
+focus_neighbor_bottom = NodePath("../DevTinker")
+mouse_default_cursor_shape = 2
+theme_override_styles/normal = SubResource("StyleBoxFlat_h6xd7")
+theme_override_styles/hover = SubResource("StyleBoxFlat_d400r")
+theme_override_styles/focus = SubResource("StyleBoxFlat_6f83v")
+script = ExtResource("6_q1idn")
+
+[node name="MusicAudioText" type="RichTextLabel" parent="fullpanel/skillspassions/MusicAudio" unique_id=444927922]
+z_index = 7
+layout_mode = 0
+offset_left = 20.99997
+offset_top = 11.0
+offset_right = 223.89157
+offset_bottom = 40.131912
+scale = Vector2(0.95617557, 1.0297984)
+mouse_filter = 1
+theme = ExtResource("2_5jp5k")
+theme_override_colors/default_color = Color(0.5176471, 0.53333336, 0.6666667, 1)
+theme_override_colors/font_outline_color = Color(0.3489705, 0.28526464, 0.58656615, 1)
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 0)
+theme_override_constants/line_separation = 1
+theme_override_constants/paragraph_separation = -1
+theme_override_constants/shadow_outline_size = 24
+theme_override_constants/shadow_offset_x = 20
+theme_override_constants/outline_size = 2
+theme_override_fonts/normal_font = SubResource("FontVariation_t6kni")
+theme_override_font_sizes/normal_font_size = 23
+text = "Music + Audio"
+scroll_active = false
+text_direction = 1
+
+[node name="DevTinker" type="Button" parent="fullpanel/skillspassions" unique_id=1507068581]
+z_index = 2
+layout_mode = 0
+offset_left = -15.0
+offset_top = 91.0
+offset_right = 230.0
+offset_bottom = 141.0
+focus_neighbor_left = NodePath("../../DockButtons/back_button")
+focus_neighbor_top = NodePath("../MusicAudio")
+focus_neighbor_right = NodePath("../../DockButtons/back_button")
+focus_neighbor_bottom = NodePath("../PhotoArt")
+mouse_default_cursor_shape = 2
+theme_override_styles/normal = SubResource("StyleBoxFlat_0ji0d")
+theme_override_styles/hover = SubResource("StyleBoxFlat_q5b0x")
+theme_override_styles/focus = SubResource("StyleBoxFlat_fhdrp")
+script = ExtResource("6_q1idn")
+
+[node name="DevTinkerText" type="RichTextLabel" parent="fullpanel/skillspassions/DevTinker" unique_id=2043742304]
+z_index = 7
+layout_mode = 0
+offset_left = 21.0
+offset_top = 11.0
+offset_right = 223.8916
+offset_bottom = 41.102966
+scale = Vector2(0.95617557, 1.0297984)
+mouse_filter = 2
+theme = ExtResource("2_5jp5k")
+theme_override_colors/default_color = Color(0.29803923, 0.49019608, 0.3882353, 1)
+theme_override_colors/font_selected_color = Color(1, 1, 1, 0)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 0)
+theme_override_constants/line_separation = 1
+theme_override_constants/paragraph_separation = -1
+theme_override_constants/shadow_outline_size = 24
+theme_override_constants/shadow_offset_x = 20
+theme_override_constants/outline_size = 1
+theme_override_fonts/normal_font = SubResource("FontVariation_t6kni")
+theme_override_font_sizes/normal_font_size = 23
+text = "Dev + Tinker
+"
+scroll_active = false
+text_direction = 1
+
+[node name="PhotoArt" type="Button" parent="fullpanel/skillspassions" unique_id=1833419501]
+z_index = 4
+layout_mode = 0
+offset_left = -15.0
+offset_top = 145.0
+offset_right = 230.0
+offset_bottom = 195.0
+mouse_default_cursor_shape = 2
+theme_override_styles/normal = SubResource("StyleBoxFlat_q1idn")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_obb54")
+theme_override_styles/hover = SubResource("StyleBoxFlat_gv0m5")
+theme_override_styles/focus = SubResource("StyleBoxFlat_gybju")
+script = ExtResource("6_q1idn")
+
+[node name="PhotoArtText" type="RichTextLabel" parent="fullpanel/skillspassions/PhotoArt" unique_id=1469015519]
+z_index = 7
+layout_mode = 0
+offset_left = 20.99997
+offset_top = 11.0
+offset_right = 223.89157
+offset_bottom = 201.32852
+scale = Vector2(0.95617557, 1.0297984)
+mouse_filter = 2
+theme = ExtResource("2_5jp5k")
+theme_override_colors/default_color = Color(0.9137255, 0.5764706, 0.21568628, 1)
+theme_override_colors/font_outline_color = Color(0.35322228, 0.22777256, 0.059523433, 1)
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 0)
+theme_override_constants/line_separation = 1
+theme_override_constants/paragraph_separation = -1
+theme_override_constants/shadow_outline_size = 24
+theme_override_constants/shadow_offset_x = 20
+theme_override_constants/outline_size = 2
+theme_override_fonts/normal_font = SubResource("FontVariation_t6kni")
+theme_override_font_sizes/normal_font_size = 23
+text = "Photography + Art"
+scroll_active = false
+text_direction = 1
+
+[node name="SkateFilm" type="Button" parent="fullpanel/skillspassions" unique_id=1787079071]
+layout_mode = 0
+offset_left = -15.0
+offset_top = 199.0
+offset_right = 230.0
+offset_bottom = 249.0
+focus_neighbor_left = NodePath("../../DockButtons/back_button")
+focus_neighbor_top = NodePath("../PhotoArt")
+focus_neighbor_right = NodePath("../../DockButtons/back_button")
+focus_neighbor_bottom = NodePath("../MusicAudio")
+script = ExtResource("6_q1idn")
+
+[node name="SkateFilmText" type="RichTextLabel" parent="fullpanel/skillspassions/SkateFilm" unique_id=1282882859]
+z_index = 7
+layout_mode = 0
+offset_left = 20.99997
+offset_top = 11.0
+offset_right = 223.89157
+offset_bottom = 201.32852
+scale = Vector2(0.95617557, 1.0297984)
+theme = ExtResource("2_5jp5k")
+theme_override_colors/default_color = Color(0.28694552, 0.28694552, 0.28694552, 1)
+theme_override_colors/font_outline_color = Color(0.7458934, 0.67529994, 0.811885, 1)
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 0)
+theme_override_constants/line_separation = 1
+theme_override_constants/paragraph_separation = -1
+theme_override_constants/shadow_outline_size = 24
+theme_override_constants/shadow_offset_x = 20
+theme_override_constants/outline_size = 2
+theme_override_fonts/normal_font = SubResource("FontVariation_t6kni")
+theme_override_font_sizes/normal_font_size = 23
+text = "Skate + Film
+"
+scroll_active = false
+text_direction = 1
+
+[node name="kevPanel" type="Panel" parent="fullpanel" unique_id=908046048]
+clip_children = 2
+visibility_layer = 4
+z_index = -3
+offset_left = 42.0
+offset_top = 32.0
+offset_right = 329.0
+offset_bottom = 219.0
+mouse_default_cursor_shape = 2
+theme = SubResource("Theme_lg8x2")
+theme_override_styles/panel = SubResource("StyleBoxFlat_8mt73")
+
+[node name="kevMask" type="Panel" parent="fullpanel" unique_id=285258073]
+clip_children = 1
+visibility_layer = 4
+z_index = 10
+offset_left = 56.0
+offset_top = -118.0
+offset_right = 312.0
+offset_bottom = 90.97432
+scale = Vector2(1, 1.5600003)
+mouse_default_cursor_shape = 2
+theme = SubResource("Theme_lg8x2")
+theme_override_styles/panel = SubResource("StyleBoxFlat_v8h42")
+
+[node name="kevface" type="AnimatedSprite2D" parent="fullpanel/kevMask" unique_id=1588699568]
+visibility_layer = 4
+z_index = 110
+z_as_relative = false
+material = SubResource("ShaderMaterial_d400r")
+position = Vector2(118, -49.358963)
+scale = Vector2(6.015625, 3.8561692)
+sprite_frames = SubResource("SpriteFrames_h6xd7")
+
+[node name="talkpanel" type="Panel" parent="fullpanel" unique_id=987746952]
+modulate = Color(1, 1, 1, 0)
+visibility_layer = 2
+z_index = 221
+anchors_preset = 2
+anchor_top = 1.0
+anchor_bottom = 1.0
+offset_left = 25.0
+offset_top = 180.0
+offset_right = 353.48657
+offset_bottom = 237.9999
+grow_vertical = 0
+scale = Vector2(0.99851876, 1)
+mouse_default_cursor_shape = 2
+theme = SubResource("Theme_lg8x2")
+theme_override_styles/panel = SubResource("StyleBoxFlat_geruh")
+
+[node name="talking" type="RichTextLabel" parent="fullpanel/talkpanel" unique_id=1323499755]
+z_index = 24
+material = ExtResource("11_q5b0x")
+layout_mode = 0
+offset_left = 20.029669
+offset_top = -5.0
+offset_right = 343.67148
+offset_bottom = 58.119156
+scale = Vector2(0.95617557, 1.0297984)
+theme = ExtResource("2_5jp5k")
+theme_override_colors/default_color = Color(0.21184179, 0.18449093, 0.28021896, 1)
+theme_override_colors/font_shadow_color = Color(0.62046957, 0.6204696, 0.62046957, 1)
+theme_override_constants/line_separation = 1
+theme_override_constants/shadow_outline_size = 1
+theme_override_fonts/normal_font = SubResource("FontVariation_mdjd3")
+theme_override_font_sizes/normal_font_size = 24
+text = "Hi there, name's Kev_Bot! This is where I live! Pretty cozy, huh?"
+scroll_active = false
+visible_characters = 0
+visible_characters_behavior = 1
+visible_ratio = 0.0
+text_direction = 1
+
+[node name="kevtalk" type="AnimationPlayer" parent="fullpanel/talkpanel" unique_id=762014616]
+root_node = NodePath("../../DockButtons/musicinstabutton")
+libraries/ = SubResource("AnimationLibrary_q80qm")
+autoplay = &"kevtalk"
+
+[node name="Dock" type="Panel" parent="fullpanel" unique_id=2063453390]
+top_level = true
+z_index = -10
+anchors_preset = 2
+anchor_top = 1.0
+anchor_bottom = 1.0
+offset_left = 20.0
+offset_top = -42.0
+offset_right = 627.0
+offset_bottom = -25.0
+grow_vertical = 0
+mouse_default_cursor_shape = 2
+theme = SubResource("Theme_lg8x2")
+theme_override_styles/panel = SubResource("StyleBoxFlat_ontn0")
+
+[node name="DockAnimations" type="AnimationPlayer" parent="fullpanel/Dock" unique_id=636911906]
+libraries/ = SubResource("AnimationLibrary_d400r")
+autoplay = &"dockappear"
+
+[node name="DockButtons" type="Control" parent="fullpanel" unique_id=520735069]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 42.550003
+offset_bottom = 40.0
+script = ExtResource("9_q1idn")
+fadein = ExtResource("10_kle74")
+
+[node name="back_button" type="Button" parent="fullpanel/DockButtons" unique_id=775130346]
+top_level = true
+z_index = 348
+material = ExtResource("11_q5b0x")
+layout_mode = 0
+offset_left = 7.0000005
+offset_top = 554.00006
+offset_right = 89.47145
+offset_bottom = 628.68585
+scale = Vector2(0.8000012, 0.8000012)
+focus_neighbor_left = NodePath("../photoinstabutton")
+focus_neighbor_top = NodePath("../../skillspassions/SkateFilm")
+focus_neighbor_right = NodePath("../emailbutton")
+focus_neighbor_bottom = NodePath("../../skillspassions/MusicAudio")
+mouse_default_cursor_shape = 2
+theme_override_styles/normal = SubResource("StyleBoxEmpty_pbq4o")
+theme_override_styles/pressed = SubResource("StyleBoxEmpty_u3ndl")
+theme_override_styles/hover = SubResource("StyleBoxEmpty_kn2qb")
+theme_override_styles/focus = SubResource("StyleBoxEmpty_nf40o")
+icon = ExtResource("10_8mt73")
+flat = true
+icon_alignment = 1
+expand_icon = true
+script = ExtResource("12_geruh")
+
+[node name="backshadow" type="Sprite2D" parent="fullpanel/DockButtons/back_button" unique_id=1802373073]
+visible = false
+modulate = Color(0, 0, 0, 0.4117647)
+top_level = true
+z_index = 109
+position = Vector2(27.999996, 623)
+scale = Vector2(0.4409327, 0.17476967)
+skew = 0.9721483
+texture = ExtResource("10_8mt73")
+offset = Vector2(6.75, -69.16)
+
+[node name="backhint" type="RichTextLabel" parent="fullpanel/DockButtons/back_button" unique_id=1803332607]
+modulate = Color(1, 1, 1, 0.80784315)
+layout_mode = 1
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -76.34114
+offset_top = -25.317234
+offset_right = -14.145142
+offset_bottom = -5.466404
+grow_horizontal = 0
+scale = Vector2(1.2675791, 1.2675791)
+theme_override_colors/default_color = Color(1, 1, 1, 0.7294118)
+theme_override_fonts/normal_font = ExtResource("4_0ji0d")
+theme_override_font_sizes/normal_font_size = 15
+theme_override_styles/normal = SubResource("StyleBoxFlat_337yx")
+text = "Go Back"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="emailbutton" type="Button" parent="fullpanel/DockButtons" unique_id=1790612896]
+process_mode = 3
+top_level = true
+z_index = 348
+material = ExtResource("11_q5b0x")
+layout_mode = 0
+offset_left = 93.0
+offset_top = 552.0
+offset_right = 174.9997
+offset_bottom = 633.99994
+scale = Vector2(0.7714738, 0.7714738)
+focus_neighbor_left = NodePath("../back_button")
+focus_neighbor_top = NodePath("../../skillspassions/SkateFilm")
+focus_neighbor_right = NodePath("../musicinstabutton")
+focus_neighbor_bottom = NodePath("../../skillspassions/MusicAudio")
+theme = ExtResource("2_5jp5k")
+theme_override_styles/normal = SubResource("StyleBoxEmpty_q5b0x")
+theme_override_styles/pressed = SubResource("StyleBoxEmpty_fhdrp")
+theme_override_styles/hover = SubResource("StyleBoxEmpty_d400r")
+theme_override_styles/focus = SubResource("StyleBoxEmpty_1fyrw")
+icon = ExtResource("8_p20tw")
+icon_alignment = 1
+expand_icon = true
+script = ExtResource("12_geruh")
+
+[node name="emailshadow" type="Sprite2D" parent="fullpanel/DockButtons/emailbutton" unique_id=1069870190]
+visible = false
+modulate = Color(0, 0, 0, 0.4)
+top_level = true
+z_index = 262
+position = Vector2(142.00009, 606)
+scale = Vector2(-0.03340298, 0.06283491)
+skew = 1.1013027
+texture = ExtResource("8_p20tw")
+offset = Vector2(6.75, -69.16)
+
+[node name="emailhint" type="RichTextLabel" parent="fullpanel/DockButtons/emailbutton" unique_id=1257371998]
+modulate = Color(1, 1, 1, 0.80784315)
+layout_mode = 1
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -139.73761
+offset_top = -31.651165
+offset_right = 9.519287
+offset_bottom = -10.054974
+grow_horizontal = 0
+scale = Vector2(1.2632577, 1.3386216)
+theme_override_colors/default_color = Color(1, 1, 1, 0.7294118)
+theme_override_fonts/normal_font = ExtResource("4_0ji0d")
+theme_override_font_sizes/normal_font_size = 15
+theme_override_styles/normal = SubResource("StyleBoxFlat_337yx")
+text = "Reach me through email!"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="musicinstabutton" type="Button" parent="fullpanel/DockButtons" unique_id=695256529]
+process_mode = 3
+top_level = true
+z_index = 348
+material = ExtResource("11_q5b0x")
+layout_mode = 0
+offset_left = 176.0
+offset_top = 555.6281
+offset_right = 258.0
+offset_bottom = 637.6376
+scale = Vector2(0.70429814, 0.70429814)
+focus_neighbor_left = NodePath("../emailbutton")
+focus_neighbor_top = NodePath("../../skillspassions/SkateFilm")
+focus_neighbor_right = NodePath("../youtubebutton")
+focus_neighbor_bottom = NodePath("../../skillspassions/MusicAudio")
+theme = ExtResource("2_5jp5k")
+theme_override_styles/normal = SubResource("StyleBoxEmpty_qujjm")
+theme_override_styles/pressed = SubResource("StyleBoxEmpty_yuin3")
+theme_override_styles/hover = SubResource("StyleBoxEmpty_qnjyl")
+theme_override_styles/disabled = SubResource("StyleBoxEmpty_moslq")
+theme_override_styles/focus = SubResource("StyleBoxEmpty_in182")
+icon = ExtResource("7_p20tw")
+icon_alignment = 1
+expand_icon = true
+script = ExtResource("12_geruh")
+
+[node name="musicinstashadow" type="Sprite2D" parent="fullpanel/DockButtons/musicinstabutton" unique_id=2095242371]
+visible = false
+modulate = Color(0, 0, 0, 0.4117647)
+top_level = true
+z_index = 109
+position = Vector2(181.99994, 622.00006)
+scale = Vector2(0.275, 0.109)
+skew = 0.9721483
+texture = ExtResource("7_p20tw")
+offset = Vector2(6.75, -69.16)
+
+[node name="musicinstahint" type="RichTextLabel" parent="fullpanel/DockButtons/musicinstabutton" unique_id=467439594]
+modulate = Color(1, 1, 1, 0.80784315)
+layout_mode = 1
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -119.038246
+offset_top = -65.31326
+offset_right = -19.038246
+offset_bottom = -25.313263
+grow_horizontal = 0
+scale = Vector2(1.41731, 1.41731)
+theme_override_colors/default_color = Color(1, 1, 1, 0.7294118)
+theme_override_fonts/normal_font = ExtResource("4_0ji0d")
+theme_override_font_sizes/normal_font_size = 15
+theme_override_styles/normal = SubResource("StyleBoxFlat_337yx")
+text = "Music Instagram
+@kev.bot.prod"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="youtubebutton" type="Button" parent="fullpanel/DockButtons" unique_id=908229320]
+process_mode = 3
+top_level = true
+z_index = 348
+material = ExtResource("11_q5b0x")
+layout_mode = 0
+offset_left = 246.0
+offset_top = 546.6281
+offset_right = 328.00024
+offset_bottom = 628.6281
+scale = Vector2(0.8754221, 0.8754221)
+focus_neighbor_left = NodePath("../musicinstabutton")
+focus_neighbor_top = NodePath("../../skillspassions/SkateFilm")
+focus_neighbor_right = NodePath("../spotifybutton")
+focus_neighbor_bottom = NodePath("../../skillspassions/MusicAudio")
+theme = ExtResource("2_5jp5k")
+theme_override_styles/normal = SubResource("StyleBoxEmpty_6f83v")
+theme_override_styles/pressed = SubResource("StyleBoxEmpty_obb54")
+theme_override_styles/hover = SubResource("StyleBoxEmpty_gv0m5")
+theme_override_styles/focus = SubResource("StyleBoxEmpty_gybju")
+icon = ExtResource("11_geruh")
+icon_alignment = 1
+expand_icon = true
+script = ExtResource("12_geruh")
+
+[node name="youtubeshadow" type="Sprite2D" parent="fullpanel/DockButtons/youtubebutton" unique_id=1074919039]
+visible = false
+modulate = Color(0, 0, 0, 0.4)
+z_index = -7
+position = Vector2(13.349635, 93.447426)
+scale = Vector2(0.73, 0.73)
+skew = 0.93375117
+texture = ExtResource("11_geruh")
+offset = Vector2(6.75, -69.16)
+
+[node name="youtubehint" type="RichTextLabel" parent="fullpanel/DockButtons/youtubebutton" unique_id=1034592673]
+modulate = Color(1, 1, 1, 0.80784315)
+layout_mode = 1
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -107.02863
+offset_top = -18.202572
+offset_right = 23.801842
+offset_bottom = 4.9927406
+grow_horizontal = 0
+scale = Vector2(1.0842834, 1.0842834)
+theme_override_colors/default_color = Color(1, 1, 1, 0.7294118)
+theme_override_fonts/normal_font = ExtResource("4_0ji0d")
+theme_override_font_sizes/normal_font_size = 15
+theme_override_styles/normal = SubResource("StyleBoxFlat_337yx")
+text = "My music on YouTube"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="spotifybutton" type="Button" parent="fullpanel/DockButtons" unique_id=2031387882]
+process_mode = 3
+top_level = true
+z_index = 348
+material = ExtResource("11_q5b0x")
+layout_mode = 0
+offset_left = 334.0
+offset_top = 553.6282
+offset_right = 416.0006
+offset_bottom = 635.6251
+scale = Vector2(0.68028873, 0.68028873)
+focus_neighbor_left = NodePath("../youtubebutton")
+focus_neighbor_top = NodePath("../../skillspassions/SkateFilm")
+focus_neighbor_right = NodePath("../soundcloudbutton")
+focus_neighbor_bottom = NodePath("../../skillspassions/MusicAudio")
+theme = ExtResource("2_5jp5k")
+theme_override_styles/normal = SubResource("StyleBoxEmpty_bce7g")
+theme_override_styles/pressed = SubResource("StyleBoxEmpty_6nfiu")
+theme_override_styles/hover = SubResource("StyleBoxEmpty_sev8b")
+theme_override_styles/disabled = SubResource("StyleBoxEmpty_111a3")
+theme_override_styles/focus = SubResource("StyleBoxEmpty_s47wa")
+icon = ExtResource("12_0ji0d")
+icon_alignment = 1
+expand_icon = true
+script = ExtResource("12_geruh")
+
+[node name="spotifyshadow" type="Sprite2D" parent="fullpanel/DockButtons/spotifybutton" unique_id=1434471297]
+visible = false
+modulate = Color(0, 0, 0, 0.4)
+z_index = -7
+position = Vector2(3.0805092, 127.84133)
+scale = Vector2(1.1459682, 0.59533876)
+skew = 0.6719518
+texture = ExtResource("12_0ji0d")
+offset = Vector2(6.75, -69.16)
+
+[node name="spotifyhint" type="RichTextLabel" parent="fullpanel/DockButtons/spotifybutton" unique_id=1054014092]
+modulate = Color(1, 1, 1, 0.80784315)
+layout_mode = 1
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -123.58756
+offset_top = -43.1272
+offset_right = -3.8953934
+offset_bottom = -19.931889
+grow_horizontal = 0
+scale = Vector2(1.4798753, 1.4798753)
+theme_override_colors/default_color = Color(1, 1, 1, 0.7294118)
+theme_override_fonts/normal_font = ExtResource("4_0ji0d")
+theme_override_font_sizes/normal_font_size = 15
+theme_override_styles/normal = SubResource("StyleBoxFlat_337yx")
+text = "My music on Spotify"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="soundcloudbutton" type="Button" parent="fullpanel/DockButtons" unique_id=1561146132]
+process_mode = 3
+top_level = true
+z_index = 348
+material = ExtResource("11_q5b0x")
+layout_mode = 0
+offset_left = 402.0
+offset_top = 542.62805
+offset_right = 482.0
+offset_bottom = 642.62805
+scale = Vector2(0.8082579, 0.8082579)
+focus_neighbor_left = NodePath("../spotifybutton")
+focus_neighbor_top = NodePath("../../skillspassions/SkateFilm")
+focus_neighbor_right = NodePath("../framesbutton")
+focus_neighbor_bottom = NodePath("../../skillspassions/MusicAudio")
+theme = ExtResource("2_5jp5k")
+theme_override_styles/normal = SubResource("StyleBoxEmpty_kle74")
+theme_override_styles/pressed = SubResource("StyleBoxEmpty_wxbax")
+theme_override_styles/hover = SubResource("StyleBoxEmpty_fo561")
+theme_override_styles/focus = SubResource("StyleBoxEmpty_wjrl6")
+icon = ExtResource("14_t6kni")
+icon_alignment = 1
+expand_icon = true
+script = ExtResource("12_geruh")
+
+[node name="soundcloudshadow" type="Sprite2D" parent="fullpanel/DockButtons/soundcloudbutton" unique_id=38499823]
+visible = false
+modulate = Color(0, 0, 0, 0.38039216)
+top_level = true
+z_index = 109
+position = Vector2(434, 619)
+scale = Vector2(0.73, 0.73)
+skew = 0.9721483
+texture = ExtResource("14_t6kni")
+offset = Vector2(6.75, -69.16)
+
+[node name="soundcloudhint" type="RichTextLabel" parent="fullpanel/DockButtons/soundcloudbutton" unique_id=1562001807]
+modulate = Color(1, 1, 1, 0.80784315)
+layout_mode = 1
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -128.703
+offset_top = -21.362143
+offset_right = 25.627563
+offset_bottom = 4.1099644
+grow_horizontal = 0
+scale = Vector2(1.1059994, 1.1059994)
+theme_override_colors/default_color = Color(1, 1, 1, 0.7294118)
+theme_override_fonts/normal_font = ExtResource("4_0ji0d")
+theme_override_font_sizes/normal_font_size = 15
+theme_override_styles/normal = SubResource("StyleBoxFlat_337yx")
+text = "Music + Demos / Bootlegs"
+fit_content = true
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="framesbutton" type="Button" parent="fullpanel/DockButtons" unique_id=1187615704]
+process_mode = 3
+top_level = true
+z_index = 348
+material = ExtResource("11_q5b0x")
+layout_mode = 0
+offset_left = 477.99997
+offset_top = 603.62805
+offset_right = 818.00006
+offset_bottom = 698.62805
+rotation = -0.9094144
+scale = Vector2(0.25205284, 0.25205284)
+focus_neighbor_left = NodePath("../soundcloudbutton")
+focus_neighbor_top = NodePath("../../skillspassions/SkateFilm")
+focus_neighbor_right = NodePath("../photoinstabutton")
+focus_neighbor_bottom = NodePath("../../skillspassions/MusicAudio")
+theme = ExtResource("2_5jp5k")
+theme_override_styles/normal = SubResource("StyleBoxEmpty_r86ls")
+theme_override_styles/pressed = SubResource("StyleBoxEmpty_b38k7")
+theme_override_styles/hover = SubResource("StyleBoxEmpty_j8b2o")
+theme_override_styles/focus = SubResource("StyleBoxEmpty_pmayn")
+icon = ExtResource("15_q80qm")
+icon_alignment = 1
+script = ExtResource("12_geruh")
+
+[node name="frameshadow" type="Sprite2D" parent="fullpanel/DockButtons/framesbutton" unique_id=482010080]
+visible = false
+modulate = Color(0, 0, 0, 0.38039216)
+top_level = true
+z_index = 109
+position = Vector2(528.99994, 617.00006)
+scale = Vector2(0.73, 0.73)
+skew = 0.9721483
+texture = ExtResource("15_q80qm")
+offset = Vector2(6.75, -69.16)
+
+[node name="frameshint" type="RichTextLabel" parent="fullpanel/DockButtons/framesbutton" unique_id=2124197052]
+modulate = Color(1, 1, 1, 0.80784315)
+layout_mode = 1
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -62.23355
+offset_top = -295.4766
+offset_right = 57.458588
+offset_bottom = -259.4766
+grow_horizontal = 0
+rotation = 0.90408057
+scale = Vector2(3.8661098, 3.8661098)
+theme_override_colors/default_color = Color(1, 1, 1, 0.7294118)
+theme_override_fonts/normal_font = ExtResource("4_0ji0d")
+theme_override_font_sizes/normal_font_size = 15
+theme_override_styles/normal = SubResource("StyleBoxFlat_337yx")
+text = "My Skate Instagram
+@duck.truck.kev"
+fit_content = true
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="photoinstabutton" type="Button" parent="fullpanel/DockButtons" unique_id=70242977]
+process_mode = 3
+top_level = true
+z_index = 348
+material = ExtResource("11_q5b0x")
+layout_mode = 0
+offset_left = 553.0
+offset_top = 547.6281
+offset_right = 635.0005
+offset_bottom = 629.6272
+scale = Vector2(0.79714555, 0.79714555)
+focus_neighbor_left = NodePath("../framesbutton")
+focus_neighbor_top = NodePath("../../skillspassions/SkateFilm")
+focus_neighbor_right = NodePath("../back_button")
+focus_neighbor_bottom = NodePath("../../skillspassions/MusicAudio")
+theme = ExtResource("2_5jp5k")
+theme_override_styles/normal = SubResource("StyleBoxEmpty_ygkcm")
+theme_override_styles/pressed = SubResource("StyleBoxEmpty_ypnqc")
+theme_override_styles/hover = SubResource("StyleBoxEmpty_tysdr")
+theme_override_styles/focus = SubResource("StyleBoxEmpty_txbgk")
+icon = ExtResource("16_q1idn")
+icon_alignment = 1
+expand_icon = true
+script = ExtResource("12_geruh")
+
+[node name="photoinstashadow" type="Sprite2D" parent="fullpanel/DockButtons/photoinstabutton" unique_id=2062066230]
+visible = false
+modulate = Color(0, 0, 0, 0.38039216)
+top_level = true
+z_index = 97
+position = Vector2(577.00006, 621)
+scale = Vector2(0.16971315, 0.06943687)
+skew = 0.9721483
+texture = ExtResource("16_q1idn")
+offset = Vector2(6.75, -69.16)
+
+[node name="photoinstahint" type="RichTextLabel" parent="fullpanel/DockButtons/photoinstabutton" unique_id=1357294182]
+modulate = Color(1, 1, 1, 0.80784315)
+layout_mode = 1
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -109.74559
+offset_top = -47.783108
+offset_right = 3.355423
+offset_bottom = -11.783108
+grow_horizontal = 0
+scale = Vector2(1.2554965, 1.2554965)
+theme_override_colors/default_color = Color(1, 1, 1, 0.7294118)
+theme_override_fonts/normal_font = ExtResource("4_0ji0d")
+theme_override_font_sizes/normal_font_size = 15
+theme_override_styles/normal = SubResource("StyleBoxFlat_337yx")
+text = "My Photo Instagram
+@kev.bot.dcim"
+fit_content = true
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="CanvasModulate" type="CanvasModulate" parent="fullpanel" unique_id=479103861]
+z_index = 250
+rotation = -1.350044
+color = Color(0.2723073, 0.2723077, 0.27230757, 1)
+
+[connection signal="gui_input" from="." to="." method="_on_gui_input"]
+[connection signal="mouse_entered" from="fullpanel/skillspassions/MusicAudio" to="fullpanel/skillspassions/MusicAudio" method="_on_mouse_entered"]
+[connection signal="pressed" from="fullpanel/skillspassions/MusicAudio" to="fullpanel/skillspassions/MusicAudio" method="_on_pressed"]
+[connection signal="pressed" from="fullpanel/skillspassions/DevTinker" to="fullpanel/skillspassions/DevTinker" method="_on_pressed"]
+[connection signal="pressed" from="fullpanel/skillspassions/PhotoArt" to="fullpanel/skillspassions/PhotoArt" method="_on_pressed"]
+[connection signal="pressed" from="fullpanel/skillspassions/SkateFilm" to="fullpanel/skillspassions/SkateFilm" method="_on_pressed"]
+[connection signal="button_down" from="fullpanel/DockButtons/back_button" to="fullpanel/DockButtons/back_button" method="_on_button_down"]
+[connection signal="button_up" from="fullpanel/DockButtons/back_button" to="fullpanel/DockButtons/back_button" method="_on_button_up"]
+[connection signal="focus_entered" from="fullpanel/DockButtons/back_button" to="fullpanel/DockButtons/back_button" method="_on_focus_entered"]
+[connection signal="focus_exited" from="fullpanel/DockButtons/back_button" to="fullpanel/DockButtons/back_button" method="_on_focus_exited"]
+[connection signal="pressed" from="fullpanel/DockButtons/back_button" to="." method="_on_back_button_pressed"]
+[connection signal="button_down" from="fullpanel/DockButtons/emailbutton" to="fullpanel/DockButtons/emailbutton" method="_on_button_down"]
+[connection signal="button_up" from="fullpanel/DockButtons/emailbutton" to="fullpanel/DockButtons/emailbutton" method="_on_button_up"]
+[connection signal="focus_entered" from="fullpanel/DockButtons/emailbutton" to="fullpanel/DockButtons/emailbutton" method="_on_focus_entered"]
+[connection signal="focus_exited" from="fullpanel/DockButtons/emailbutton" to="fullpanel/DockButtons/emailbutton" method="_on_focus_exited"]
+[connection signal="pressed" from="fullpanel/DockButtons/emailbutton" to="." method="_on_emailbutton_pressed"]
+[connection signal="button_down" from="fullpanel/DockButtons/musicinstabutton" to="fullpanel/DockButtons/musicinstabutton" method="_on_button_down"]
+[connection signal="button_up" from="fullpanel/DockButtons/musicinstabutton" to="fullpanel/DockButtons/musicinstabutton" method="_on_button_up"]
+[connection signal="focus_entered" from="fullpanel/DockButtons/musicinstabutton" to="fullpanel/DockButtons/musicinstabutton" method="_on_focus_entered"]
+[connection signal="focus_exited" from="fullpanel/DockButtons/musicinstabutton" to="fullpanel/DockButtons/musicinstabutton" method="_on_focus_exited"]
+[connection signal="pressed" from="fullpanel/DockButtons/musicinstabutton" to="." method="_on_musicinstabutton_pressed"]
+[connection signal="button_down" from="fullpanel/DockButtons/youtubebutton" to="fullpanel/DockButtons/youtubebutton" method="_on_button_down"]
+[connection signal="button_up" from="fullpanel/DockButtons/youtubebutton" to="fullpanel/DockButtons/youtubebutton" method="_on_button_up"]
+[connection signal="focus_entered" from="fullpanel/DockButtons/youtubebutton" to="fullpanel/DockButtons/youtubebutton" method="_on_focus_entered"]
+[connection signal="focus_exited" from="fullpanel/DockButtons/youtubebutton" to="fullpanel/DockButtons/youtubebutton" method="_on_focus_exited"]
+[connection signal="pressed" from="fullpanel/DockButtons/youtubebutton" to="." method="_on_youtubebutton_pressed"]
+[connection signal="button_down" from="fullpanel/DockButtons/spotifybutton" to="fullpanel/DockButtons/spotifybutton" method="_on_button_down"]
+[connection signal="button_up" from="fullpanel/DockButtons/spotifybutton" to="fullpanel/DockButtons/spotifybutton" method="_on_button_up"]
+[connection signal="focus_entered" from="fullpanel/DockButtons/spotifybutton" to="fullpanel/DockButtons/spotifybutton" method="_on_focus_entered"]
+[connection signal="focus_exited" from="fullpanel/DockButtons/spotifybutton" to="fullpanel/DockButtons/spotifybutton" method="_on_focus_exited"]
+[connection signal="pressed" from="fullpanel/DockButtons/spotifybutton" to="." method="_on_spotifybutton_pressed"]
+[connection signal="button_down" from="fullpanel/DockButtons/soundcloudbutton" to="fullpanel/DockButtons/soundcloudbutton" method="_on_button_down"]
+[connection signal="button_up" from="fullpanel/DockButtons/soundcloudbutton" to="fullpanel/DockButtons/soundcloudbutton" method="_on_button_up"]
+[connection signal="focus_entered" from="fullpanel/DockButtons/soundcloudbutton" to="fullpanel/DockButtons/soundcloudbutton" method="_on_focus_entered"]
+[connection signal="focus_exited" from="fullpanel/DockButtons/soundcloudbutton" to="fullpanel/DockButtons/soundcloudbutton" method="_on_focus_exited"]
+[connection signal="pressed" from="fullpanel/DockButtons/soundcloudbutton" to="." method="_on_soundcloudbutton_pressed"]
+[connection signal="button_down" from="fullpanel/DockButtons/framesbutton" to="fullpanel/DockButtons/framesbutton" method="_on_button_down"]
+[connection signal="button_up" from="fullpanel/DockButtons/framesbutton" to="fullpanel/DockButtons/framesbutton" method="_on_button_up"]
+[connection signal="focus_entered" from="fullpanel/DockButtons/framesbutton" to="fullpanel/DockButtons/framesbutton" method="_on_focus_entered"]
+[connection signal="focus_exited" from="fullpanel/DockButtons/framesbutton" to="fullpanel/DockButtons/framesbutton" method="_on_focus_exited"]
+[connection signal="pressed" from="fullpanel/DockButtons/framesbutton" to="." method="_on_framesbutton_pressed"]
+[connection signal="button_down" from="fullpanel/DockButtons/photoinstabutton" to="fullpanel/DockButtons/photoinstabutton" method="_on_button_down"]
+[connection signal="button_up" from="fullpanel/DockButtons/photoinstabutton" to="fullpanel/DockButtons/photoinstabutton" method="_on_button_up"]
+[connection signal="focus_entered" from="fullpanel/DockButtons/photoinstabutton" to="fullpanel/DockButtons/photoinstabutton" method="_on_focus_entered"]
+[connection signal="focus_exited" from="fullpanel/DockButtons/photoinstabutton" to="fullpanel/DockButtons/photoinstabutton" method="_on_focus_exited"]
+[connection signal="pressed" from="fullpanel/DockButtons/photoinstabutton" to="." method="_on_photoinstabutton_pressed"]

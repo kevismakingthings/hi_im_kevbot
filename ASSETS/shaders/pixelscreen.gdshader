@@ -3,7 +3,7 @@ shader_type canvas_item;
 uniform sampler2D screen_tex : hint_screen_texture, filter_linear_mipmap;
 uniform float pixel_size : hint_range(1.0, 32.0) = 6.0;
 uniform float blur_lod   : hint_range(0.0, 6.0) = 2.5;
-uniform vec2  rect_size  = vec2(200.0, 120.0);
+uniform vec2  rect_size  = vec2(200.0, 30.0);
 // corner radii in px, clockwise from top-left: (TL, TR, BR, BL)
 uniform vec4  corners = vec4(16.0, 24.0, 8.0, 16.0);
 uniform float edge_width : hint_range(1.0, 32.0) = 8.0;   // dither band thickness (px)

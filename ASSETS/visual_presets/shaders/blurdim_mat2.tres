@@ -1,0 +1,11 @@
+[gd_resource type="ShaderMaterial" format=3 uid="uid://c5bysfmsgrys4"]
+
+[ext_resource type="Shader" uid="uid://dsiv3enn0perm" path="res://ASSETS/shaders/pixelscreen.gdshader" id="1_n4dpw"]
+
+[resource]
+shader = ExtResource("1_n4dpw")
+shader_parameter/pixel_size = 4.000000142499999
+shader_parameter/blur_lod = 0.0
+shader_parameter/rect_size = Vector2(200, 16)
+shader_parameter/corners = Vector4(0, 0, 0, 0)
+shader_parameter/edge_width = 1.0

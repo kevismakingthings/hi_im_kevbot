@@ -1,0 +1,689 @@
+[gd_scene format=3 uid="uid://cxequ6ebemyfc"]
+
+[ext_resource type="Script" uid="uid://dbp3r7rx821fn" path="res://scripts/object_logic/DetailPanel.gd" id="1_46jya"]
+[ext_resource type="StyleBox" uid="uid://cdbmtgpeu1uq1" path="res://ASSETS/visual_presets/style_box/musicaudiotop.tres" id="2_au1nl"]
+[ext_resource type="Script" uid="uid://5hv4pjs1xcht" path="res://addons/richtext2/text_effects/anims/rte_fader.gd" id="2_n4xg8"]
+[ext_resource type="Script" uid="uid://b6mbstaftpedd" path="res://addons/richtext2/rich_text_animation.gd" id="3_au1nl"]
+[ext_resource type="Script" uid="uid://diw5njl7cgqi5" path="res://addons/richtext2/text_effects/effects/rte_sparkle.gd" id="4_2aaut"]
+[ext_resource type="Script" uid="uid://2f4fi75scxes" path="res://addons/richtext2/richer_text_label.gd" id="5_jjht0"]
+[ext_resource type="StyleBox" uid="uid://x3y35brutdat" path="res://ASSETS/visual_presets/style_box/musicaudiobottom.tres" id="7_2aaut"]
+[ext_resource type="PackedScene" uid="uid://bmt5uu0osb842" path="res://scenes/component/SkillBarDisplay.tscn" id="8_n4xg8"]
+[ext_resource type="Texture2D" uid="uid://ctus4vhmk8nbl" path="res://ASSETS/images/albumctry1.png" id="8_yfsjw"]
+
+[sub_resource type="RichTextEffect" id="RichTextEffect_n4xg8"]
+resource_name = "fader"
+script = ExtResource("2_n4xg8")
+metadata/rt = 285747613653694
+
+[sub_resource type="RichTextEffect" id="RichTextEffect_au1nl"]
+resource_name = "sparkle"
+script = ExtResource("4_2aaut")
+metadata/rt = 285748033083275
+
+[sub_resource type="Animation" id="Animation_0guim"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(0, 0)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath(".:modulate")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 1)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("SkillsPanel:position")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(11, 203)]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("ProjectsPanel:position")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(275, 202)]
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("SkillsPanel:modulate")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 1)]
+}
+tracks/5/type = "value"
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/path = NodePath("ProjectsPanel:modulate")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 1)]
+}
+tracks/6/type = "value"
+tracks/6/imported = false
+tracks/6/enabled = true
+tracks/6/path = NodePath("BoxContainer/Blurb:visible_ratio")
+tracks/6/interp = 1
+tracks/6/loop_wrap = true
+tracks/6/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [1.4230769]
+}
+
+[sub_resource type="Animation" id="Animation_0owdw"]
+resource_name = "hidedetailpanel"
+length = 0.3
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("ProjectsPanel:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.13327679),
+"transitions": PackedFloat32Array(0.20306304, 1),
+"update": 0,
+"values": [Vector2(275, 202), Vector2(220, -20.032623)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("SkillsPanel:position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.13333334),
+"transitions": PackedFloat32Array(0.23325792, 1),
+"update": 0,
+"values": [Vector2(11, 203), Vector2(51, -20.032627)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("SkillsPanel:modulate")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 1)]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("ProjectsPanel:modulate")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 1)]
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("BoxContainer:position")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(0, -3.25)]
+}
+tracks/5/type = "value"
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/path = NodePath("BoxContainer:modulate")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 1)]
+}
+tracks/6/type = "value"
+tracks/6/imported = false
+tracks/6/enabled = true
+tracks/6/path = NodePath(".:position")
+tracks/6/interp = 1
+tracks/6/loop_wrap = true
+tracks/6/keys = {
+"times": PackedFloat32Array(0.033333335, 0.3),
+"transitions": PackedFloat32Array(0.4061262, 1),
+"update": 0,
+"values": [Vector2(0, 0), Vector2(0, -194)]
+}
+tracks/7/type = "value"
+tracks/7/imported = false
+tracks/7/enabled = true
+tracks/7/path = NodePath(".:modulate")
+tracks/7/interp = 1
+tracks/7/loop_wrap = true
+tracks/7/keys = {
+"times": PackedFloat32Array(0.033333335, 0.3),
+"transitions": PackedFloat32Array(0.4061262, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 1), Color(1, 1, 1, 0)]
+}
+
+[sub_resource type="Animation" id="Animation_kelwb"]
+resource_name = "showdetailpanel"
+length = 2.8333333
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.96666664),
+"transitions": PackedFloat32Array(0.26794332, 1),
+"update": 0,
+"values": [Vector2(0, -450), Vector2(0, 0)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath(".:modulate")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0.1, 0.95),
+"transitions": PackedFloat32Array(0.25000003, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 0), Color(1, 1, 1, 1)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("SkillsPanel:position")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0.29999998, 0.9627787),
+"transitions": PackedFloat32Array(0.32987702, 1),
+"update": 0,
+"values": [Vector2(200, 0), Vector2(11, 203)]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("ProjectsPanel:position")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0.43333313, 1.1),
+"transitions": PackedFloat32Array(0.32987702, 1),
+"update": 0,
+"values": [Vector2(200, 0), Vector2(275, 202)]
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("SkillsPanel:modulate")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0.33333334, 0.93333334),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 0), Color(1, 1, 1, 1)]
+}
+tracks/5/type = "value"
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/path = NodePath("ProjectsPanel:modulate")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/keys = {
+"times": PackedFloat32Array(0.46666667, 1.0666667),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 0), Color(1, 1, 1, 1)]
+}
+tracks/6/type = "value"
+tracks/6/imported = false
+tracks/6/enabled = true
+tracks/6/path = NodePath("BoxContainer/Blurb:visible_ratio")
+tracks/6/interp = 1
+tracks/6/loop_wrap = true
+tracks/6/keys = {
+"times": PackedFloat32Array(0.3, 2.7),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [0.0, 1.4230769]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_0owdw"]
+_data = {
+&"RESET": SubResource("Animation_0guim"),
+&"hidedetailpanel": SubResource("Animation_0owdw"),
+&"showdetailpanel": SubResource("Animation_kelwb")
+}
+
+[node name="DetailPanel" type="Control" unique_id=416812095]
+custom_minimum_size = Vector2(640, 450)
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_bottom = -190.0
+grow_horizontal = 2
+grow_vertical = 2
+offset_transform_enabled = true
+offset_transform_position_ratio = Vector2(0, 0.06)
+offset_transform_visual_only = false
+focus_mode = 2
+script = ExtResource("1_46jya")
+metadata/_edit_horizontal_guides_ = [1280.0]
+
+[node name="TopPanel" type="Panel" parent="." unique_id=1492151174]
+z_index = 308
+custom_minimum_size = Vector2(450, 150)
+layout_mode = 1
+anchors_preset = -1
+anchor_right = 1.0
+anchor_bottom = 0.43100002
+offset_bottom = -8.950012
+grow_horizontal = 2
+size_flags_horizontal = 3
+size_flags_vertical = 0
+offset_transform_position_ratio = Vector2(0, -0.06)
+offset_transform_scale = Vector2(0.88, 0.88)
+theme_override_styles/panel = ExtResource("2_au1nl")
+
+[node name="BoxContainer" type="BoxContainer" parent="TopPanel" unique_id=1152657212]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_top = 3.0
+offset_bottom = 23.0
+grow_horizontal = 2
+grow_vertical = 2
+vertical = true
+
+[node name="Title" type="RichTextLabel" parent="TopPanel/BoxContainer" unique_id=771085416]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(0, 67)
+clip_contents = false
+layout_mode = 2
+offset_transform_enabled = true
+offset_transform_position_ratio = Vector2(0, 0.14)
+theme_override_colors/font_outline_color = Color(0.19999999, 0.19999999, 0.19999999, 1)
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 0.25)
+theme_override_constants/shadow_outline_size = 12
+theme_override_constants/shadow_offset_x = 6
+theme_override_constants/shadow_offset_y = 6
+theme_override_constants/outline_size = 4
+theme_override_font_sizes/normal_font_size = 62
+theme_override_font_sizes/bold_font_size = 62
+theme_override_font_sizes/bold_italics_font_size = 62
+theme_override_font_sizes/italics_font_size = 62
+theme_override_font_sizes/mono_font_size = 62
+bbcode_enabled = true
+fit_content = true
+scroll_active = false
+horizontal_alignment = 1
+vertical_alignment = 1
+custom_effects = [SubResource("RichTextEffect_n4xg8")]
+script = ExtResource("3_au1nl")
+progress = 0.5058265714264097
+visible_character = 7
+_triggers = {
+-1: [[1001, {}]]
+}
+_transforms = Array[Transform2D]([Transform2D(1, 0, 0, 1, 0, 0), Transform2D(1, 0, 0, 1, 183, 50), Transform2D(1, 0, 0, 1, 217, 50), Transform2D(1, 0, 0, 1, 243, 50), Transform2D(1, 0, 0, 1, 266, 50), Transform2D(1, 0, 0, 1, 276, 50), Transform2D(1, 0, 0, 1, 303, 50), Transform2D(1, 0, 0, 1, 316, 50), Transform2D(1, 0, 0, 1, 340, 50), Transform2D(1, 0, 0, 1, 353, 50), Transform2D(1, 0, 0, 1, 380, 50), Transform2D(1, 0, 0, 1, 406, 50), Transform2D(1, 0, 0, 1, 433, 50), Transform2D(1, 0, 0, 1, 470, 50)])
+_char_size = Array[Vector2]([Vector2(0, 0), Vector2(32, 33), Vector2(26, 33), Vector2(22, 33), Vector2(9, 33), Vector2(26, 33), Vector2(0, 33), Vector2(22, 33), Vector2(0, 33), Vector2(26, 33), Vector2(26, 33), Vector2(26, 33), Vector2(9, 33), Vector2(0, 33)])
+_alpha = Array[float]([1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 0.8333333333333334, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0])
+_alpha_goal = Array[float]([1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0])
+_forced_finish_delay = -0.02991977777777776
+default_wait_time = 0.3
+play_on_bbcode = true
+play_speed = 12.0
+fade_out = false
+fade_in_speed = 10.0
+fade_out_speed = 120.0
+ctc_offset = Vector2(1, -0.5)
+ctc_on_finished = false
+ctc_on_wait = false
+shortcut_expression = true
+shortcut_bookmark = true
+signal_quotes = true
+signal_stars = true
+bbcode = "[w][wave connected = 0 amp=10 freq=2] Music [/wave]+ Audio"
+effects = 2
+alignment = 1
+color = Color(1, 1, 1, 1)
+emoji_scale = 1.0
+font = "Jersey10"
+font_auto_setup = true
+font_size = 62
+font_bold_weight = 1.5
+font_italics_slant = 0.25
+font_italics_weight = -0.25
+shadow_enabled = true
+shadow_offset = 0.11
+shadow_alpha = 0.25
+shadow_outline_size = 0.19
+outline_size = 4
+outline_mode = 1
+outline_adjust = 0.8
+outline_hue_adjust = 0.586
+nicer_quotes_enabled = true
+nicer_quotes_format = "“%s”"
+markdown_enabled = true
+markdown_format_bold = "[b]%s[]"
+markdown_format_italics = "[i]%s[]"
+markdown_format_bold_italics = "[bi]%s[]"
+markdown_format_highlight = "[green;sin]%s[]"
+markdown_format_bold2 = "[b]*%s*[]"
+markdown_format_italics2 = "[i;gray]*%s*[]"
+markdown_format_bold_italics2 = "%s"
+context_enabled = true
+context_path = NodePath("/root/State")
+context_state = {}
+context_rich_objects = true
+context_rich_ints = true
+context_rich_array = true
+autostyle_numbers = true
+autostyle_numbers_tag = "[salmon]%s[]"
+autostyle_numbers_pad_decimals = true
+autostyle_numbers_decimals = 2
+autostyle_emojis = true
+effect_weight = 0.0
+image_path = "res://"
+image_resize_to_font_size = true
+image_scale = 1.0
+meta_auto_https = true
+meta_cursor = 2
+override_bbcodeEnabled = true
+override_clipContents = false
+override_fitContent = true
+metadata/_custom_type_script = "uid://b6mbstaftpedd"
+metadata/mouse_position = Vector2(1096.439, 307.008)
+metadata/frame = 66617
+metadata/rand = Array[int]([3097586401, 1309234114, 3830720363, 374577371, 3455014534, 2163798670, 2442522859, 2184928277, 1431439875, 3799855216, 3141224243, 2775596644, 2840074197])
+
+[node name="Blurb" type="RichTextLabel" parent="TopPanel/BoxContainer" unique_id=1137182776]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(0, 60)
+clip_contents = false
+layout_mode = 2
+offset_transform_enabled = true
+offset_transform_position_ratio = Vector2(0, 0.02)
+offset_transform_scale = Vector2(0.93, 0.93)
+theme_override_colors/font_outline_color = Color(0.33200002, 0.33200002, 0.33200002, 1)
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 0.25)
+theme_override_constants/shadow_outline_size = 3
+theme_override_constants/shadow_offset_x = 4
+theme_override_constants/shadow_offset_y = 4
+theme_override_constants/outline_size = 3
+theme_override_font_sizes/normal_font_size = 27
+theme_override_font_sizes/bold_font_size = 27
+theme_override_font_sizes/bold_italics_font_size = 27
+theme_override_font_sizes/italics_font_size = 27
+theme_override_font_sizes/mono_font_size = 27
+bbcode_enabled = true
+fit_content = true
+scroll_following = true
+custom_effects = [SubResource("RichTextEffect_au1nl")]
+script = ExtResource("5_jjht0")
+bbcode = "3+ years experience in music production, audio engineering, sound design. Always looking to find the [wave amp=15 freq=2;peach_puff;sparkle;hue 0.5]feeling[] within the waveform."
+effects = 2
+alignment = 1
+color = Color(1, 1, 1, 1)
+emoji_scale = 1.0
+font = "Jersey10"
+font_auto_setup = true
+font_size = 27
+font_bold_weight = 1.5
+font_italics_slant = 0.25
+font_italics_weight = -0.25
+shadow_enabled = true
+shadow_offset = 0.18
+shadow_alpha = 0.25
+shadow_outline_size = 0.1
+outline_size = 3
+outline_mode = 1
+outline_adjust = 0.668
+outline_hue_adjust = 0.841
+nicer_quotes_enabled = true
+nicer_quotes_format = "“%s”"
+markdown_enabled = true
+markdown_format_bold = "[b]%s[]"
+markdown_format_italics = "[i]%s[]"
+markdown_format_bold_italics = "[bi]%s[]"
+markdown_format_highlight = "[green;sin]%s[]"
+markdown_format_bold2 = "[b]*%s*[]"
+markdown_format_italics2 = "[i;gray]*%s*[]"
+markdown_format_bold_italics2 = "%s"
+context_enabled = true
+context_path = NodePath("/root/State")
+context_state = {}
+context_rich_objects = true
+context_rich_ints = true
+context_rich_array = true
+autostyle_numbers = false
+autostyle_numbers_tag = ""
+autostyle_numbers_pad_decimals = true
+autostyle_numbers_decimals = 2
+autostyle_emojis = true
+effect_weight = 0.0
+image_path = "res://"
+image_resize_to_font_size = true
+image_scale = 1.0
+meta_auto_https = true
+meta_cursor = 2
+override_bbcodeEnabled = true
+override_clipContents = false
+override_fitContent = true
+metadata/_custom_type_script = "uid://2f4fi75scxes"
+
+[node name="SkillsPanel" type="Panel" parent="TopPanel" unique_id=1672463020]
+unique_name_in_owner = true
+z_index = -3
+custom_minimum_size = Vector2(200, 200)
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.047000002
+anchor_top = 0.342
+anchor_right = 0.35900003
+anchor_bottom = 0.78700006
+offset_left = -19.080002
+offset_top = 139.73
+offset_right = 21.176544
+offset_bottom = 257.4057
+grow_vertical = 2
+size_flags_horizontal = 4
+offset_transform_position_ratio = Vector2(0, -0.06)
+offset_transform_scale = Vector2(0.88, 0.88)
+theme_override_styles/panel = ExtResource("7_2aaut")
+
+[node name="ScrollContainer" type="ScrollContainer" parent="TopPanel/SkillsPanel" unique_id=1122485287]
+layout_mode = 1
+anchors_preset = -1
+anchor_top = 0.03
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 19.968277
+offset_top = 8.999985
+offset_right = -19.968277
+offset_bottom = -10.0
+grow_horizontal = 2
+grow_vertical = 2
+pivot_offset_ratio = Vector2(0.5, 0.5)
+horizontal_scroll_mode = 0
+
+[node name="VBoxContainer" type="VBoxContainer" parent="TopPanel/SkillsPanel/ScrollContainer" unique_id=748738173]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="SkillCaption9" parent="TopPanel/SkillsPanel/ScrollContainer/VBoxContainer" unique_id=808135523 instance=ExtResource("8_n4xg8")]
+custom_minimum_size = Vector2(200, 23)
+layout_mode = 2
+theme_override_font_sizes/normal_font_size = 16
+theme_override_font_sizes/bold_font_size = 16
+theme_override_font_sizes/bold_italics_font_size = 16
+theme_override_font_sizes/italics_font_size = 16
+theme_override_font_sizes/mono_font_size = 16
+text = ""
+
+[node name="ProjectsPanel" type="Panel" parent="TopPanel" unique_id=1010352078]
+unique_name_in_owner = true
+z_index = -5
+custom_minimum_size = Vector2(200, 200)
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.426
+anchor_top = 0.35300002
+anchor_right = 1.0
+anchor_bottom = 0.78700006
+offset_left = 2.3599854
+offset_top = 136.695
+offset_right = -15.048767
+offset_bottom = 256.40717
+grow_horizontal = 0
+grow_vertical = 2
+size_flags_horizontal = 10
+size_flags_vertical = 2
+offset_transform_position_ratio = Vector2(0, -0.06)
+offset_transform_scale = Vector2(0.88, 0.88)
+theme_override_styles/panel = ExtResource("7_2aaut")
+
+[node name="AlbumCover" type="TextureRect" parent="TopPanel/ProjectsPanel" unique_id=141502822]
+layout_mode = 1
+anchors_preset = 2
+anchor_top = 1.0
+anchor_bottom = 1.0
+offset_left = 21.0
+offset_top = -134.00201
+offset_right = 149.0
+offset_bottom = -6.002014
+grow_vertical = 0
+scale = Vector2(0.75, 0.75)
+texture = ExtResource("8_yfsjw")
+
+[node name="ProjectCaption" type="RichTextLabel" parent="TopPanel/ProjectsPanel" unique_id=1857982001]
+custom_minimum_size = Vector2(0, 36)
+clip_contents = false
+layout_mode = 1
+anchors_preset = 10
+anchor_right = 1.0
+offset_top = 10.0
+offset_bottom = 82.0
+grow_horizontal = 2
+theme_override_colors/font_outline_color = Color(0.19999999, 0.19999999, 0.19999999, 1)
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 0.25)
+theme_override_constants/shadow_outline_size = 4
+theme_override_constants/shadow_offset_x = 3
+theme_override_constants/shadow_offset_y = 3
+theme_override_constants/outline_size = 3
+theme_override_font_sizes/normal_font_size = 33
+theme_override_font_sizes/bold_font_size = 33
+theme_override_font_sizes/bold_italics_font_size = 33
+theme_override_font_sizes/italics_font_size = 33
+theme_override_font_sizes/mono_font_size = 33
+bbcode_enabled = true
+fit_content = true
+script = ExtResource("5_jjht0")
+bbcode = "[b]My mixtape release!"
+effects = 2
+alignment = 1
+color = Color(1, 1, 1, 1)
+emoji_scale = 1.0
+font = "Jersey10"
+font_auto_setup = true
+font_size = 33
+font_bold_weight = -0.41
+font_italics_slant = 0.25
+font_italics_weight = -0.25
+shadow_enabled = true
+shadow_offset = 0.1
+shadow_alpha = 0.25
+shadow_outline_size = 0.1
+outline_size = 3
+outline_mode = 1
+outline_adjust = 0.8
+outline_hue_adjust = 0.0125
+nicer_quotes_enabled = true
+nicer_quotes_format = "“%s”"
+markdown_enabled = true
+markdown_format_bold = "[b]%s[]"
+markdown_format_italics = "[i]%s[]"
+markdown_format_bold_italics = "[bi]%s[]"
+markdown_format_highlight = "[green;sin]%s[]"
+markdown_format_bold2 = "[b]*%s*[]"
+markdown_format_italics2 = "[i;gray]*%s*[]"
+markdown_format_bold_italics2 = "%s"
+context_enabled = true
+context_path = NodePath("/root/State")
+context_state = {}
+context_rich_objects = true
+context_rich_ints = true
+context_rich_array = true
+autostyle_numbers = false
+autostyle_numbers_tag = ""
+autostyle_numbers_pad_decimals = true
+autostyle_numbers_decimals = 2
+autostyle_emojis = true
+effect_weight = 0.0
+image_path = "res://"
+image_resize_to_font_size = true
+image_scale = 1.0
+meta_auto_https = true
+meta_cursor = 2
+override_bbcodeEnabled = true
+override_clipContents = false
+override_fitContent = true
+metadata/_custom_type_script = "uid://2f4fi75scxes"
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="TopPanel" unique_id=124142460]
+libraries/ = SubResource("AnimationLibrary_0owdw")
+autoplay = &"showdetailpanel"
+
+[connection signal="focus_entered" from="." to="." method="_on_focus_entered"]
+[connection signal="focus_exited" from="." to="." method="_on_focus_exited"]
+[connection signal="gui_input" from="." to="." method="_on_gui_input"]

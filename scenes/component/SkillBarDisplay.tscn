@@ -1,0 +1,141 @@
+[gd_scene format=3 uid="uid://bmt5uu0osb842"]
+
+[ext_resource type="FontFile" uid="uid://6cav8337i5bf" path="res://ASSETS/fonts/Jersey10-Regular.ttf" id="1_j5ep6"]
+[ext_resource type="Script" uid="uid://73owktvrqpx1" path="res://scripts/object_logic/skill_bar_display.gd" id="2_j5ep6"]
+[ext_resource type="Material" uid="uid://c5bysfmsgrys4" path="res://ASSETS/visual_presets/shaders/blurdim_mat2.tres" id="3_rktvo"]
+[ext_resource type="Shader" uid="uid://bscqtefngpyvk" path="res://ASSETS/shaders/animatedgradient.gdshader" id="4_rif2r"]
+
+[sub_resource type="FontVariation" id="FontVariation_eb11i"]
+base_font = ExtResource("1_j5ep6")
+variation_embolden = -0.42
+
+[sub_resource type="FontVariation" id="FontVariation_rktvo"]
+base_font = ExtResource("1_j5ep6")
+variation_embolden = -0.42
+variation_transform = Transform2D(1, 0.25, 0, 1, 0, 0)
+
+[sub_resource type="FontVariation" id="FontVariation_rif2r"]
+base_font = ExtResource("1_j5ep6")
+variation_embolden = -0.25
+variation_transform = Transform2D(1, 0.25, 0, 1, 0, 0)
+
+[sub_resource type="Theme" id="Theme_h6xd7"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_337yx"]
+draw_center = false
+border_width_left = 4
+border_width_top = 4
+border_width_right = 4
+border_width_bottom = 4
+corner_radius_top_left = 8
+corner_radius_top_right = 8
+corner_radius_bottom_right = 8
+corner_radius_bottom_left = 8
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_mrbgn"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_bv572"]
+
+[sub_resource type="Gradient" id="Gradient_0owdw"]
+offsets = PackedFloat32Array(0.2777778, 0.71652424, 0.84757835)
+colors = PackedColorArray(0, 0, 0, 1, 0.77317554, 0.77317554, 0.77317554, 1, 1, 1, 1, 1)
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_fx4d5"]
+gradient = SubResource("Gradient_0owdw")
+width = 128
+height = 128
+fill = 3
+fill_from = Vector2(0.24268293, 0.7621951)
+fill_to = Vector2(0, 1)
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_fx4d5"]
+shader = ExtResource("4_rif2r")
+shader_parameter/color_gap = Color(0.3764706, 0.9019608, 0.75686276, 1)
+shader_parameter/color_stripe = Color(0.1764706, 0.4117647, 0.25882354, 1)
+shader_parameter/stripe_gradient = SubResource("GradientTexture2D_fx4d5")
+shader_parameter/divisions = 0.02
+shader_parameter/speed = 45.0
+shader_parameter/angle = 0.55
+shader_parameter/stripe_width = 1.0
+
+[sub_resource type="PlaceholderTexture2D" id="PlaceholderTexture2D_3xfu7"]
+size = Vector2(200, 15)
+
+[node name="SkillName" type="RichTextLabel" unique_id=808135523]
+custom_minimum_size = Vector2(200, 50)
+custom_maximum_size = Vector2(200, 50)
+clip_contents = false
+size_flags_vertical = 3
+offset_transform_position = Vector2(0, -5)
+theme_override_colors/font_outline_color = Color(0.19999999, 0.19999999, 0.19999999, 1)
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 0.25)
+theme_override_constants/shadow_outline_size = 3
+theme_override_constants/shadow_offset_x = 1
+theme_override_constants/shadow_offset_y = 1
+theme_override_constants/outline_size = 3
+theme_override_fonts/normal_font = ExtResource("1_j5ep6")
+theme_override_fonts/bold_font = SubResource("FontVariation_eb11i")
+theme_override_fonts/bold_italics_font = SubResource("FontVariation_rktvo")
+theme_override_fonts/italics_font = SubResource("FontVariation_rif2r")
+theme_override_font_sizes/normal_font_size = 22
+theme_override_font_sizes/bold_font_size = 22
+theme_override_font_sizes/bold_italics_font_size = 22
+theme_override_font_sizes/italics_font_size = 22
+theme_override_font_sizes/mono_font_size = 22
+bbcode_enabled = true
+text = "Bitwig"
+fit_content = true
+scroll_active = false
+script = ExtResource("2_j5ep6")
+metadata/_custom_type_script = "uid://2f4fi75scxes"
+
+[node name="blur" type="ColorRect" parent="." unique_id=762735534]
+z_index = 21
+material = ExtResource("3_rktvo")
+layout_mode = 1
+anchors_preset = -1
+anchor_top = 0.46100003
+anchor_right = 1.0
+anchor_bottom = 0.906
+
+[node name="ColorRect" type="Button" parent="." unique_id=2003545849]
+show_behind_parent = true
+layout_mode = 1
+anchors_preset = -1
+anchor_top = 0.46
+anchor_right = 1.0
+anchor_bottom = 0.90000004
+offset_left = 0.031723022
+offset_right = 0.031723022
+grow_horizontal = 2
+offset_transform_enabled = true
+theme = SubResource("Theme_h6xd7")
+theme_override_styles/normal = SubResource("StyleBoxFlat_337yx")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_337yx")
+theme_override_styles/hover = SubResource("StyleBoxFlat_337yx")
+theme_override_styles/disabled = SubResource("StyleBoxEmpty_mrbgn")
+theme_override_styles/focus = SubResource("StyleBoxEmpty_bv572")
+
+[node name="Bar" type="TextureProgressBar" parent="ColorRect" unique_id=2005527414]
+unique_name_in_owner = true
+show_behind_parent = true
+material = SubResource("ShaderMaterial_fx4d5")
+custom_minimum_size = Vector2(150, 15)
+custom_maximum_size = Vector2(200, 15)
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.015000001
+anchor_top = 0.185
+anchor_right = 0.98600006
+anchor_bottom = 0.88000005
+offset_top = 0.0039994717
+offset_right = -1.2000122
+offset_bottom = -0.008003235
+size_flags_horizontal = 0
+size_flags_stretch_ratio = 0.0
+offset_transform_enabled = true
+max_value = 8.0
+value = 6.0
+nine_patch_stretch = true
+texture_progress = SubResource("PlaceholderTexture2D_3xfu7")
+tint_under = Color(0.31008908, 0.3100891, 0.3100891, 1)

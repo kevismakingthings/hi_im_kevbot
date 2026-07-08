@@ -18,10 +18,17 @@ boot_splash/bg_color=Color(0.67200994, 0.48494917, 0.3154659, 1)
 boot_splash/image="uid://dp6wicnuayupf"
 config/icon="res://icon.svg"
 
+[audio]
+
+buses/default_bus_layout="uid://cd1dnoi7shkp0"
+
 [autoload]
 
 ShaderRegistry="*uid://b3mcg6cnmg7xf"
-LitManager="*uid://brf2hvdtyyw3q"
+AudioManager="*uid://h3e764aov8t1"
+SamplePreload="*uid://cn6jqwaxrghgo"
+DetailPanelVals="uid://b6i1tf21fti0u"
+SkillsConstants="*uid://dtqatnq5pofeq"
 
 [display]
 
@@ -34,7 +41,7 @@ window/stretch/scale_mode="integer"
 
 [editor_plugins]
 
-enabled=PackedStringArray("res://addons/lit/plugin.cfg", "res://addons/richtext2/plugin.cfg")
+enabled=PackedStringArray("res://addons/richtext2/plugin.cfg")
 
 [gui]
 

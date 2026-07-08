@@ -1,0 +1,14 @@
+[gd_resource type="ShaderMaterial" format=3 uid="uid://b1aceefe5857g"]
+
+[ext_resource type="Shader" uid="uid://dar0576cj1d1i" path="res://ASSETS/shaders/capsule_loading.gdshader" id="1_4kxxd"]
+
+[resource]
+shader = ExtResource("1_4kxxd")
+shader_parameter/value = 0.774000036765
+shader_parameter/fill_color = Color(0.3, 0.8, 1, 1)
+shader_parameter/bg_color = Color(0, 0, 0, 0.6784314)
+shader_parameter/border_width = 5.86
+shader_parameter/border_color = Color(1, 1, 1, 0)
+shader_parameter/use_dither = true
+shader_parameter/dither_scale = 4.0
+shader_parameter/rect_size = Vector2(200, 10)

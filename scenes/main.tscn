@@ -1,8 +1,8 @@
 [gd_scene format=3 uid="uid://b6ybu0ehebp2l"]
 
-[ext_resource type="Script" uid="uid://dka1iwwr2rpk5" path="res://scripts/main.gd" id="1_o5qli"]
-[ext_resource type="Script" uid="uid://bq6qtjhd5io2d" path="res://scripts/warmup_viewport.gd" id="3_sugp2"]
-[ext_resource type="Material" uid="uid://cc0qf51qyhvoa" path="res://ASSETS/shaders/blurdim_mat.tres" id="3_tefeu"]
+[ext_resource type="Script" uid="uid://dka1iwwr2rpk5" path="res://scripts/scene_logic/main.gd" id="1_o5qli"]
+[ext_resource type="Script" uid="uid://bq6qtjhd5io2d" path="res://scripts/util/warmup_viewport.gd" id="3_sugp2"]
+[ext_resource type="Material" uid="uid://cc0qf51qyhvoa" path="res://ASSETS/visual_presets/shaders/blurdim_mat.tres" id="3_tefeu"]
 
 [node name="Main" type="Node2D" unique_id=1089091352]
 process_mode = 3

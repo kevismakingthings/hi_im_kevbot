@@ -1,6 +1,6 @@
 [gd_resource type="Resource" script_class="TweenPreset" format=3 uid="uid://bt78qvhqyjitp"]
 
-[ext_resource type="Script" uid="uid://dtbw45hxo75yf" path="res://scripts/TweenPreset.gd" id="1_qyu2d"]
+[ext_resource type="Script" uid="uid://dtbw45hxo75yf" path="res://scripts/util/TweenPreset.gd" id="1_qyu2d"]
 
 [resource]
 script = ExtResource("1_qyu2d")
