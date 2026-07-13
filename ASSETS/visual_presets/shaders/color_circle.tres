@@ -85,23 +85,23 @@ void fragment() {
 
 [resource]
 shader = SubResource("Shader_ofbwx")
-shader_parameter/color_a = Color(0.26886633, 0.3402103, 0.42619738, 1)
-shader_parameter/color_b = Color(0, 0, 0, 1)
-shader_parameter/radius = 19.9
-shader_parameter/falloff = -0.01
-shader_parameter/rings = 11.67
+shader_parameter/color_a = Color(0.31431612, 0.31431612, 0.3143161, 0.8117647)
+shader_parameter/color_b = Color(0.12602448, 0.17753842, 0.16470268, 1)
+shader_parameter/radius = 0.15
+shader_parameter/falloff = -0.04
+shader_parameter/rings = 4.005
 shader_parameter/speed = -0.5
 shader_parameter/init_speed = 0.5
-shader_parameter/cell_size = 4.66
+shader_parameter/cell_size = 1.0
 shader_parameter/amplitude = 0.5
 shader_parameter/freq = 0.25
 shader_parameter/custom1_time = 0.0
 shader_parameter/custom2_time = 0.0
 shader_parameter/color_c = Color(0.34174296, 0.71798193, 0.68335444, 0.894)
 shader_parameter/color_d = Color(9.62615e-08, 0.59919435, 0.6536943, 0.45882353)
-shader_parameter/rings2 = 15.0
+shader_parameter/rings2 = 1.8199999999999998
 shader_parameter/speed2 = 0.0
 shader_parameter/init_speed2 = 0.0
-shader_parameter/shift = 0.0
-shader_parameter/aspect = 1.0
+shader_parameter/shift = 0.025
+shader_parameter/aspect = 0.0
 shader_parameter/center = Vector2(0.5, 0.5)

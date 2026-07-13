@@ -37,13 +37,13 @@ in_3d_space = true
 
 [sub_resource type="Gradient" id="Gradient_8suv6"]
 interpolation_mode = 2
-offsets = PackedFloat32Array(0.0072916667, 0.25928918, 0.40145397, 0.6357027)
-colors = PackedColorArray(0.30155596, 0.5093099, 2.8878452e-07, 1, 0.26110387, 0.08608318, 0.1456654, 1, 0.0011696073, 0.09606566, 0.20081058, 1, 0, 0, 0, 1)
+offsets = PackedFloat32Array(0.2195122, 0.6006098, 1)
+colors = PackedColorArray(0, 0, 0, 1, 0.0012690936, 0.101308204, 0.2096887, 1, 0.6593833, 0.8196988, 0.6305038, 1)
 
 [sub_resource type="GradientTexture2D" id="GradientTexture2D_wph2w"]
 gradient = SubResource("Gradient_8suv6")
-fill = 1
-fill_from = Vector2(0.5231707, 0.50365853)
+fill = 2
+fill_from = Vector2(0.5, 0.5)
 
 [sub_resource type="FastNoiseLite" id="FastNoiseLite_fndww"]
 noise_type = 3
@@ -61,10 +61,10 @@ noise = SubResource("FastNoiseLite_fndww")
 color_ramp = SubResource("Gradient_lqn8n")
 in_3d_space = true
 
-[sub_resource type="RichTextEffect" id="RichTextEffect_t4vb0"]
+[sub_resource type="RichTextEffect" id="RichTextEffect_qtab3"]
 resource_name = "prickle"
 script = ExtResource("6_t4vb0")
-metadata/rt = 1783787233804
+metadata/rt = 3521554488294
 
 [sub_resource type="FontVariation" id="FontVariation_h6xd7"]
 base_font = ExtResource("8_gx6fo")
@@ -128,10 +128,46 @@ tracks/2/keys = {
 "update": 0,
 "values": [0.0]
 }
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("SubViewportContainer/SubViewport/ColorRect2:material:shader_parameter/radius")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [0.15]
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("SubViewportContainer/SubViewport/ColorRect2:material:shader_parameter/aspect")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [0.0]
+}
+tracks/5/type = "value"
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/path = NodePath("SubViewportContainer/SubViewport/ColorRect2:material:shader_parameter/falloff")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [-0.04]
+}
 
 [sub_resource type="Animation" id="Animation_aj0wn"]
 resource_name = "start"
-length = 2.9666667
+length = 10.933333
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
@@ -168,6 +204,42 @@ tracks/2/keys = {
 "update": 0,
 "values": [0.0, 1.0]
 }
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("SubViewportContainer/SubViewport/ColorRect2:material:shader_parameter/radius")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(8.8, 10.733334),
+"transitions": PackedFloat32Array(0.46651652, 1),
+"update": 0,
+"values": [0.055, 0.85]
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("SubViewportContainer/SubViewport/ColorRect2:material:shader_parameter/aspect")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(8.733334, 9.966666),
+"transitions": PackedFloat32Array(0.59460336, 1),
+"update": 0,
+"values": [0.0, 1.0]
+}
+tracks/5/type = "value"
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/path = NodePath("SubViewportContainer/SubViewport/ColorRect2:material:shader_parameter/falloff")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/keys = {
+"times": PackedFloat32Array(0, 8.666667),
+"transitions": PackedFloat32Array(1.5157168, 1.5691684),
+"update": 0,
+"values": [-0.04, -0.57]
+}
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_5eiq6"]
 _data = {
@@ -194,11 +266,8 @@ material = ExtResource("2_6cdkw")
 custom_minimum_size = Vector2(640, 640)
 propagate_maximum_size = false
 layout_mode = 0
-offset_left = -27.999998
-offset_top = -22.0
-offset_right = 612.0
-offset_bottom = 618.0
-scale = Vector2(1.084327, 1.084327)
+offset_right = 640.0
+offset_bottom = 640.0
 stretch = true
 
 [node name="SubViewport" type="SubViewport" parent="SubViewportContainer" unique_id=672479010]
@@ -245,32 +314,33 @@ top_level = true
 z_index = -26
 z_as_relative = false
 material = ExtResource("6_qtab3")
-offset_right = 640.0
-offset_bottom = 640.0
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
 offset_transform_enabled = true
-offset_transform_scale = Vector2(4.26, 4.26)
 offset_transform_visual_only = false
 mouse_filter = 2
 mouse_default_cursor_shape = 2
 theme = SubResource("Theme_7pnlv")
 script = ExtResource("7_utcd1")
 
-[node name="rocks2" type="PointLight2D" parent="SubViewportContainer/SubViewport" unique_id=1501415865]
+[node name="r;mgj" type="PointLight2D" parent="SubViewportContainer/SubViewport/ColorRect2" unique_id=1501415865]
 modulate = Color(0, 0, 0, 1)
 top_level = true
 light_mask = 3
 visibility_layer = 3
 z_index = 488
-position = Vector2(289, 306)
-scale = Vector2(1.3360499, 1.271414)
-energy = 0.85
+position = Vector2(320, 320)
+energy = 3.4
 range_z_min = -1525
 range_z_max = 126
 range_item_cull_mask = 3
 shadow_enabled = true
 shadow_color = Color(0, 0, 0, 0.85490197)
 texture = SubResource("GradientTexture2D_wph2w")
-texture_scale = 11.12
+texture_scale = 10.06
 
 [node name="aboutbutton" type="Button" parent="SubViewportContainer/SubViewport" unique_id=1270099157]
 anchors_preset = 8
@@ -286,6 +356,7 @@ grow_horizontal = 2
 grow_vertical = 2
 focus_neighbor_top = NodePath("../startbutton")
 focus_neighbor_bottom = NodePath("../startbutton")
+mouse_default_cursor_shape = 2
 theme = ExtResource("3_6cdkw")
 theme_override_colors/font_color = Color(0.51774925, 0.51774925, 0.51774925, 1)
 theme_override_colors/font_pressed_color = Color(0.9999998, 0.90424305, 0.9565417, 1)
@@ -321,7 +392,7 @@ theme_override_font_sizes/italics_font_size = 63
 theme_override_font_sizes/mono_font_size = 63
 bbcode_enabled = true
 fit_content = true
-custom_effects = [SubResource("RichTextEffect_t4vb0")]
+custom_effects = [SubResource("RichTextEffect_qtab3")]
 script = ExtResource("7_wph2w")
 animation = "prickle"
 progress = 1.0
@@ -401,12 +472,12 @@ metadata/frame = 863085
 
 [node name="ColorRect" type="ColorRect" parent="SubViewportContainer/SubViewport" unique_id=1967811112]
 z_index = -58
-offset_left = -75.0
-offset_top = -56.0
-offset_right = 778.0
-offset_bottom = 772.0
+offset_left = -66.400635
+offset_top = -43.344856
+offset_right = 786.59937
+offset_bottom = 784.65515
 mouse_filter = 2
-color = Color(0.5764706, 0.5764706, 0.5764706, 0.6117647)
+color = Color(0, 0, 0, 1)
 
 [node name="RicherTextLabel" type="RichTextLabel" parent="SubViewportContainer/SubViewport" unique_id=1779814064]
 custom_minimum_size = Vector2(0, 36)
@@ -416,6 +487,7 @@ offset_top = 152.16812
 offset_right = 550.5924
 offset_bottom = 319.86804
 pivot_offset_ratio = Vector2(0.49, 0)
+mouse_filter = 2
 theme_override_colors/font_outline_color = Color(1, 1, 1, 1)
 theme_override_colors/font_shadow_color = Color(0, 0, 0, 0.25)
 theme_override_constants/shadow_outline_size = 4
