@@ -10,10 +10,10 @@
 [ext_resource type="Texture2D" uid="uid://dj4fypmx1keie" path="res://ASSETS/sprites/justk.png" id="8_2v31m"]
 [ext_resource type="Texture2D" uid="uid://bdaidrbh6bmqv" path="res://ASSETS/sprites/spotify.png" id="9_75ate"]
 
-[sub_resource type="RichTextEffect" id="RichTextEffect_xwumh"]
+[sub_resource type="RichTextEffect" id="RichTextEffect_n7ma8"]
 resource_name = "console"
 script = ExtResource("4_foi3d")
-metadata/rt = 150735165689426
+metadata/rt = 1740518792669
 
 [sub_resource type="FastNoiseLite" id="FastNoiseLite_337yx"]
 
@@ -382,7 +382,7 @@ bbcode_enabled = true
 fit_content = true
 scroll_active = false
 horizontal_alignment = 1
-custom_effects = [SubResource("RichTextEffect_xwumh")]
+custom_effects = [SubResource("RichTextEffect_n7ma8")]
 script = ExtResource("5_uor7k")
 animation = "console"
 progress = 1.0

@@ -8,15 +8,15 @@
 [ext_resource type="Script" uid="uid://2f4fi75scxes" path="res://addons/richtext2/richer_text_label.gd" id="6_umah0"]
 [ext_resource type="StyleBox" uid="uid://bjaqj5qxo70mh" path="res://ASSETS/visual_presets/style_box/blue.tres" id="7_1yjx4"]
 
-[sub_resource type="RichTextEffect" id="RichTextEffect_800u7"]
+[sub_resource type="RichTextEffect" id="RichTextEffect_hmgpn"]
 resource_name = "fader"
 script = ExtResource("3_y58c6")
-metadata/rt = 150740752473470
+metadata/rt = 1744260112171
 
-[sub_resource type="RichTextEffect" id="RichTextEffect_qyqi4"]
+[sub_resource type="RichTextEffect" id="RichTextEffect_eiqyj"]
 resource_name = "sparkle"
 script = ExtResource("5_t5gdy")
-metadata/rt = 150741171903806
+metadata/rt = 1744679542603
 
 [sub_resource type="Animation" id="Animation_0guim"]
 length = 0.001
@@ -372,7 +372,7 @@ fit_content = true
 scroll_active = false
 horizontal_alignment = 1
 vertical_alignment = 1
-custom_effects = [SubResource("RichTextEffect_800u7")]
+custom_effects = [SubResource("RichTextEffect_hmgpn")]
 script = ExtResource("4_l5x02")
 progress = 1.0
 visible_character = 12
@@ -469,7 +469,7 @@ theme_override_font_sizes/mono_font_size = 27
 bbcode_enabled = true
 fit_content = true
 scroll_following = true
-custom_effects = [SubResource("RichTextEffect_qyqi4")]
+custom_effects = [SubResource("RichTextEffect_eiqyj")]
 script = ExtResource("6_umah0")
 bbcode = "3+ years experience in music production, audio engineering, sound design. Always looking to find the [wave amp=15 freq=2;peach_puff;sparkle;hue 0.5]feeling[] within the waveforms."
 effects = 2

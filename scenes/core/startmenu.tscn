@@ -5,7 +5,9 @@
 [ext_resource type="Theme" uid="uid://bw8c8fo1kwtq2" path="res://ASSETS/visual_presets/style_box/new_theme.tres" id="3_6cdkw"]
 [ext_resource type="FontFile" uid="uid://brqopop4c63ot" path="res://ASSETS/fonts/TurretRoad-ExtraBold.ttf" id="4_utcd1"]
 [ext_resource type="Script" uid="uid://c10axptl1tx1s" path="res://scripts/object_logic/startmenubutton.gd" id="5_7pnlv"]
+[ext_resource type="Material" uid="uid://8ockfqhawrjt" path="res://ASSETS/visual_presets/shaders/color_circle.tres" id="6_qtab3"]
 [ext_resource type="Script" uid="uid://d16jnf3xho2be" path="res://addons/richtext2/text_effects/anims/rte_prickle.gd" id="6_t4vb0"]
+[ext_resource type="Script" uid="uid://dyghigei03vap" path="res://scripts/object_logic/color_rect.gd" id="7_utcd1"]
 [ext_resource type="Script" uid="uid://b6mbstaftpedd" path="res://addons/richtext2/rich_text_animation.gd" id="7_wph2w"]
 [ext_resource type="FontFile" uid="uid://6cav8337i5bf" path="res://ASSETS/fonts/Jersey10-Regular.ttf" id="8_gx6fo"]
 [ext_resource type="Script" uid="uid://i8bg2nawwnn0" path="res://addons/richtext2/text_effects/effects/rte_sin.gd" id="9_c2shr"]
@@ -31,6 +33,18 @@ noise = SubResource("FastNoiseLite_lqn8n")
 color_ramp = SubResource("Gradient_lqn8n")
 in_3d_space = true
 
+[sub_resource type="Theme" id="Theme_7pnlv"]
+
+[sub_resource type="Gradient" id="Gradient_8suv6"]
+interpolation_mode = 2
+offsets = PackedFloat32Array(0.0072916667, 0.25928918, 0.40145397, 0.6357027)
+colors = PackedColorArray(0.30155596, 0.5093099, 2.8878452e-07, 1, 0.26110387, 0.08608318, 0.1456654, 1, 0.0011696073, 0.09606566, 0.20081058, 1, 0, 0, 0, 1)
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_wph2w"]
+gradient = SubResource("Gradient_8suv6")
+fill = 1
+fill_from = Vector2(0.5231707, 0.50365853)
+
 [sub_resource type="FastNoiseLite" id="FastNoiseLite_fndww"]
 noise_type = 3
 seed = 22
@@ -47,10 +61,10 @@ noise = SubResource("FastNoiseLite_fndww")
 color_ramp = SubResource("Gradient_lqn8n")
 in_3d_space = true
 
-[sub_resource type="RichTextEffect" id="RichTextEffect_tkr72"]
+[sub_resource type="RichTextEffect" id="RichTextEffect_t4vb0"]
 resource_name = "prickle"
 script = ExtResource("6_t4vb0")
-metadata/rt = 148355116244523
+metadata/rt = 1783787233804
 
 [sub_resource type="FontVariation" id="FontVariation_h6xd7"]
 base_font = ExtResource("8_gx6fo")
@@ -195,6 +209,7 @@ size = Vector2i(640, 640)
 render_target_update_mode = 4
 
 [node name="startbutton" type="Button" parent="SubViewportContainer/SubViewport" unique_id=1885971184]
+z_index = 75
 anchors_preset = 8
 anchor_left = 0.5
 anchor_top = 0.5
@@ -223,6 +238,39 @@ text = "PLAY"
 icon = SubResource("NoiseTexture2D_fndww")
 icon_alignment = 1
 script = ExtResource("5_7pnlv")
+
+[node name="ColorRect2" type="ColorRect" parent="SubViewportContainer/SubViewport" unique_id=819302706]
+self_modulate = Color(0.96725255, 0.9672527, 0.9672527, 1)
+top_level = true
+z_index = -26
+z_as_relative = false
+material = ExtResource("6_qtab3")
+offset_right = 640.0
+offset_bottom = 640.0
+offset_transform_enabled = true
+offset_transform_scale = Vector2(4.26, 4.26)
+offset_transform_visual_only = false
+mouse_filter = 2
+mouse_default_cursor_shape = 2
+theme = SubResource("Theme_7pnlv")
+script = ExtResource("7_utcd1")
+
+[node name="rocks2" type="PointLight2D" parent="SubViewportContainer/SubViewport" unique_id=1501415865]
+modulate = Color(0, 0, 0, 1)
+top_level = true
+light_mask = 3
+visibility_layer = 3
+z_index = 488
+position = Vector2(289, 306)
+scale = Vector2(1.3360499, 1.271414)
+energy = 0.85
+range_z_min = -1525
+range_z_max = 126
+range_item_cull_mask = 3
+shadow_enabled = true
+shadow_color = Color(0, 0, 0, 0.85490197)
+texture = SubResource("GradientTexture2D_wph2w")
+texture_scale = 11.12
 
 [node name="aboutbutton" type="Button" parent="SubViewportContainer/SubViewport" unique_id=1270099157]
 anchors_preset = 8
@@ -260,6 +308,7 @@ offset_left = 52.567165
 offset_top = 84.84525
 offset_right = 590.56714
 offset_bottom = 260.84525
+mouse_filter = 2
 theme_override_colors/font_outline_color = Color(0.19999999, 0.19999999, 0.19999999, 1)
 theme_override_colors/font_shadow_color = Color(0, 0, 0, 0.249)
 theme_override_constants/shadow_outline_size = 7
@@ -272,7 +321,7 @@ theme_override_font_sizes/italics_font_size = 63
 theme_override_font_sizes/mono_font_size = 63
 bbcode_enabled = true
 fit_content = true
-custom_effects = [SubResource("RichTextEffect_tkr72")]
+custom_effects = [SubResource("RichTextEffect_t4vb0")]
 script = ExtResource("7_wph2w")
 animation = "prickle"
 progress = 1.0
@@ -350,6 +399,15 @@ metadata/rand = Array[int]([626026857, 10123811, 162284795, 2866109023, 21756060
 metadata/mouse_position = Vector2(1205.5029, 215.12231)
 metadata/frame = 863085
 
+[node name="ColorRect" type="ColorRect" parent="SubViewportContainer/SubViewport" unique_id=1967811112]
+z_index = -58
+offset_left = -75.0
+offset_top = -56.0
+offset_right = 778.0
+offset_bottom = 772.0
+mouse_filter = 2
+color = Color(0.5764706, 0.5764706, 0.5764706, 0.6117647)
+
 [node name="RicherTextLabel" type="RichTextLabel" parent="SubViewportContainer/SubViewport" unique_id=1779814064]
 custom_minimum_size = Vector2(0, 36)
 clip_contents = false
@@ -374,25 +432,14 @@ theme_override_font_sizes/bold_italics_font_size = 33
 theme_override_font_sizes/italics_font_size = 33
 theme_override_font_sizes/mono_font_size = 33
 bbcode_enabled = true
-text = "Version 0.2!"
+text = "Version 0.3!"
 fit_content = true
 custom_effects = [SubResource("RichTextEffect_dfktg")]
 visible_characters = 0
 visible_ratio = 0.0
 metadata/rand = Array[int]([626026857, 10123811, 162284795, 2866109023, 2175606039, 2048954, 1289825565, 1799902737, 3781716546, 937669608, 4266539988, 2039334840])
 
-[node name="ColorRect" type="ColorRect" parent="SubViewportContainer/SubViewport" unique_id=1967811112]
-visible = false
-z_index = -58
-offset_left = -75.0
-offset_top = -56.0
-offset_right = 778.0
-offset_bottom = 772.0
-mouse_filter = 2
-color = Color(0.5764706, 0.5764706, 0.5764706, 0.6117647)
-
 [node name="CanvasModulate" type="CanvasModulate" parent="SubViewportContainer" unique_id=1835783948]
-color = Color(0.7270304, 0.7270302, 0.7270302, 1)
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="." unique_id=2117445509]
 libraries/ = SubResource("AnimationLibrary_5eiq6")

@@ -1119,10 +1119,10 @@ _data = {
 &"new_animation": SubResource("Animation_pm01f")
 }
 
-[sub_resource type="RichTextEffect" id="RichTextEffect_xlkr3"]
+[sub_resource type="RichTextEffect" id="RichTextEffect_ej336"]
 resource_name = "sin"
 script = ExtResource("8_5il2b")
-metadata/rt = 1713322924881
+metadata/rt = 1748051762807
 
 [sub_resource type="CanvasItemMaterial" id="CanvasItemMaterial_mrbgn"]
 light_mode = 1
@@ -1275,13 +1275,13 @@ colors = PackedColorArray(0.31764707, 0.4745098, 0, 1, 0.9490196, 0.9490196, 0.9
 [sub_resource type="GradientTexture2D" id="GradientTexture2D_337yx"]
 gradient = SubResource("Gradient_6wnr6")
 
-[sub_resource type="Gradient" id="Gradient_8suv6"]
+[sub_resource type="Gradient" id="Gradient_0le6m"]
 interpolation_mode = 2
 offsets = PackedFloat32Array(0.0072916667, 0.25928918, 0.40145397, 0.6357027)
 colors = PackedColorArray(0.30155596, 0.5093099, 2.8878452e-07, 1, 0.26110387, 0.08608318, 0.1456654, 1, 0.0011696073, 0.09606566, 0.20081058, 1, 0, 0, 0, 1)
 
 [sub_resource type="GradientTexture2D" id="GradientTexture2D_xlkr3"]
-gradient = SubResource("Gradient_8suv6")
+gradient = SubResource("Gradient_0le6m")
 fill = 1
 fill_from = Vector2(0.5231707, 0.50365853)
 
@@ -1339,7 +1339,7 @@ theme_override_font_sizes/italics_font_size = 23
 theme_override_font_sizes/mono_font_size = 23
 bbcode_enabled = true
 fit_content = true
-custom_effects = [SubResource("RichTextEffect_xlkr3")]
+custom_effects = [SubResource("RichTextEffect_ej336")]
 script = ExtResource("9_sk1xn")
 bbcode = "So... [sin freq=0.3 speed=0.2]your[/] journey begins..."
 effects = 2
@@ -1521,10 +1521,10 @@ top_level = true
 z_index = -26
 z_as_relative = false
 material = ExtResource("11_ej336")
-offset_left = -264.0
-offset_top = -258.0
-offset_right = 376.0
-offset_bottom = 382.0
+offset_left = -239.99997
+offset_top = -262.0001
+offset_right = 400.00003
+offset_bottom = 377.9999
 scale = Vector2(0.8450827, 0.8450827)
 offset_transform_enabled = true
 offset_transform_scale = Vector2(4.26, 4.26)

@@ -13,11 +13,12 @@ const DETAIL_PANEL := preload("res://scenes/component/DetailPanel.tscn")
 @onready var dark: CanvasModulate = $fullpanel/CanvasModulate
 @onready var kev: AnimatedSprite2D = $fullpanel/kevMask/kevface
 @onready var dockbuttons: Control = $fullpanel/DockButtons
-@onready var dockanimation: AnimationPlayer = $fullpanel/Dock/DockAnimations
+@onready var sceneanimation: AnimationPlayer = $SceneAnimation
 @onready var musicaudiobutton: Button = $fullpanel/skillspassions/MusicAudio
 @onready var devtinkerbutton: Button = $fullpanel/skillspassions/DevTinker
 @onready var photoartbutton: Button = $fullpanel/skillspassions/PhotoArt
 @onready var skatefilmbutton: Button = $fullpanel/skillspassions/SkateFilm
+@onready var sceneaudio: AudioStreamPlayer2D = $SceneAudio
 
 const MUSIC_AUDIO = "MUSICAUDIO"
 const DEV_TINKER = "DEVTINKER"
@@ -47,12 +48,17 @@ func _ready() -> void:
 	var tween := create_tween().set_parallel()
 	tween.set_trans(Tween.TRANS_SPRING).set_ease(Tween.EASE_IN_OUT)
 	tween.tween_property(fullpanel, "position:x", 0.0, light_time).set_trans(Tween.TRANS_SPRING).set_ease(Tween.EASE_IN_OUT)
-	tween.tween_property(light, "energy", 1.2, light_time).set_trans(Tween.TRANS_QUAD).set_ease(Tween.EASE_IN_OUT).set_delay(0.5)
+	tween.tween_property(light, "energy", .9, light_time).set_trans(Tween.TRANS_QUAD).set_ease(Tween.EASE_IN_OUT).set_delay(0.5)
 	tween.tween_property(light, "position", Vector2(250,275), light_time).set_trans(Tween.TRANS_SINE).set_ease(Tween.EASE_IN_OUT).set_delay(0.5)
 	await tween.finished
 	tween = create_tween().set_trans(Tween.TRANS_BOUNCE).set_parallel().set_ease(Tween.EASE_OUT)
 	tween.tween_property(kev, "position", Vector2(130,173), 1.5)
 	tween.tween_property(kev, "rotation_degrees", 360, 1).set_trans(Tween.TRANS_CUBIC).set_ease(Tween.EASE_IN_OUT)
+	tween.tween_callback(sceneaudio.play).set_delay(0.55)
+	tween.tween_callback(func(): sceneaudio.set_pitch_scale(1.4)).set_delay(0.9)
+	tween.tween_callback(sceneaudio.play).set_delay(1.05)
+	tween.tween_callback(sceneaudio.stop).set_delay(1.11)	
+	
 	kev.play()
 
 
@@ -60,7 +66,7 @@ func exit() -> void:
 	var w := get_viewport_rect().size.x
 	var tween := create_tween().set_parallel()
 	dockbuttons._shift_down()
-	dockanimation.play("dockdisappear")
+	sceneanimation.play("dockdisappear")
 	tween.tween_property(kev, "position", Vector2(130,-100), 0.3).set_ease(Tween.EASE_IN_OUT)
 	tween.tween_property(fullpanel, "position:x", w, slide_time).set_trans(Tween.TRANS_SINE).set_ease(Tween.EASE_IN_OUT).set_delay(0.3)
 	tween.tween_property(light, "energy", 0, 0.2).set_trans(Tween.TRANS_SINE).set_ease(Tween.EASE_OUT)
@@ -91,6 +97,7 @@ func _on_photoinstabutton_pressed() -> void:
 
 func _unhandled_input(event: InputEvent) -> void:
 	if event.is_action_pressed("ui_cancel"):
+		AudioManager.play_sfx(SamplePreload.UI_KEY_ROLL, -4.0, 1.2)
 		if(!panel_open):
 			esc_pressed.emit()
 			get_viewport().set_input_as_handled()
@@ -103,6 +110,9 @@ func open_detail_panel(panel: DetailPanel) -> void:
 	current_panel.panel_esc_pressed.connect(esc_is_pressed)
 	current_panel.focus_released.connect(close_current_panel)
 	panel_open = true
+	await get_tree().create_timer(.3).timeout
+	AudioManager.play_sfx(SamplePreload.PAGE_TURNER)
+
 	
 func open_panel(type: String) -> void:
 	if type == MUSIC_AUDIO:
@@ -121,8 +131,9 @@ func close_current_panel() -> void:
 	self.grab_focus()
 	
 func esc_is_pressed() -> void:
-	current_panel.release_focus()
-	close_current_panel()
+	if panel_open:
+		current_panel.release_focus()
+		close_current_panel()
 
 func create_panel(vals: DetailPanelVals) -> DetailPanel:
 	var panel := DETAIL_PANEL.instantiate()

@@ -33,7 +33,7 @@ func _onlosefocus() -> void:
 
 
 func _on_button_down() -> void:
-	AudioManager.play_sfx(SamplePreload.BLIP_SELECT, 2.0)
+	AudioManager.play_sfx(SamplePreload.BLIP_SELECT, -5.0)
 	pass # Replace with function body.
 
 

@@ -1,0 +1,329 @@
+[gd_scene format=3 uid="uid://chi06tk2o3p48"]
+
+[ext_resource type="Shader" uid="uid://bscqtefngpyvk" path="res://ASSETS/shaders/animatedgradient.gdshader" id="2_58gr6"]
+[ext_resource type="Material" uid="uid://b1aceefe5857g" path="res://ASSETS/visual_presets/shaders/shiny.tres" id="3_5epav"]
+[ext_resource type="Script" uid="uid://2f4fi75scxes" path="res://addons/richtext2/richer_text_label.gd" id="3_upnnl"]
+[ext_resource type="Shader" uid="uid://dsiv3enn0perm" path="res://ASSETS/shaders/pixelscreen.gdshader" id="3_yxct8"]
+[ext_resource type="Script" uid="uid://5hv4pjs1xcht" path="res://addons/richtext2/text_effects/anims/rte_fader.gd" id="4_roi1h"]
+[ext_resource type="Script" uid="uid://b6mbstaftpedd" path="res://addons/richtext2/rich_text_animation.gd" id="5_h8p6f"]
+
+[sub_resource type="RichTextEffect" id="RichTextEffect_bihsq"]
+resource_name = "fader"
+script = ExtResource("4_roi1h")
+metadata/rt = 91474767221300
+
+[sub_resource type="Gradient" id="Gradient_r75da"]
+offsets = PackedFloat32Array(0, 0.5, 1)
+colors = PackedColorArray(1, 1, 1, 1, 0.48178947, 0.48178947, 0.48178947, 0.65882355, 0, 0, 0, 0)
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_337yx"]
+gradient = SubResource("Gradient_r75da")
+fill = 1
+fill_from = Vector2(0.54268295, 0.52804875)
+fill_to = Vector2(0.81341463, 0.20121951)
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_ujdrk"]
+shader = ExtResource("2_58gr6")
+shader_parameter/color_gap = Color(0.10891277, 0.066426024, 0.025414377, 1)
+shader_parameter/color_stripe = Color(0.47461176, 0.36046067, 0.13351992, 1)
+shader_parameter/stripe_gradient = SubResource("GradientTexture2D_337yx")
+shader_parameter/divisions = 12.0
+shader_parameter/speed = 0.115
+shader_parameter/angle = 1.61
+shader_parameter/stripe_width = 0.00999999977648
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_6hq1c"]
+bg_color = Color(0.6756437, 0.5618553, 0.1959888, 1)
+border_color = Color(0.3483517, 0.34835178, 0.34835148, 1)
+corner_radius_top_left = 48
+corner_radius_top_right = 48
+corner_radius_bottom_right = 48
+corner_radius_bottom_left = 48
+corner_detail = 20
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_h6xd7"]
+bg_color = Color(0.5644708, 0.5478548, 0.51878154, 1)
+border_color = Color(0.23908883, 0.2390888, 0.2390888, 1)
+corner_radius_top_left = 48
+corner_radius_top_right = 48
+corner_radius_bottom_right = 48
+corner_radius_bottom_left = 48
+corner_detail = 20
+
+[sub_resource type="Gradient" id="Gradient_2yiq5"]
+interpolation_mode = 2
+colors = PackedColorArray(0.5632439, 0.56324387, 0.56324387, 1, 0, 0, 0, 1)
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_h6xd7"]
+gradient = SubResource("Gradient_2yiq5")
+width = 128
+height = 128
+fill = 1
+fill_from = Vector2(0.5085366, 0.51585364)
+fill_to = Vector2(0.17439024, 0.8890244)
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_m1gvw"]
+shader = ExtResource("3_yxct8")
+shader_parameter/pixel_size = 16.0000007125
+shader_parameter/blur_lod = 0.182000008645
+shader_parameter/rect_size = Vector2(540, 540)
+shader_parameter/corners = Vector4(16, 16, 16, 16)
+shader_parameter/edge_width = 1.0
+
+[sub_resource type="Animation" id="Animation_yxct8"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Back:material:shader_parameter/color_stripe")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(0.47461176, 0.36046067, 0.13351992, 1)]
+}
+
+[sub_resource type="Animation" id="Animation_m1gvw"]
+resource_name = "patch_notes_rect"
+length = 2.1333
+loop_mode = 2
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Back:material:shader_parameter/color_stripe")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 2.0333333),
+"transitions": PackedFloat32Array(0.4665165, 0.28717452),
+"update": 0,
+"values": [Color(0.13943061, 0.097397365, 0.017928518, 1), Color(0.8688663, 0.689997, 0.34806946, 1)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_unl7t"]
+_data = {
+&"RESET": SubResource("Animation_yxct8"),
+&"patch_notes_rect": SubResource("Animation_m1gvw")
+}
+
+[node name="Control" type="Control" unique_id=414072144]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_right = -100.0
+offset_bottom = -100.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=1704581556]
+
+[node name="RichTextAnimation" type="RichTextLabel" parent="CanvasLayer" unique_id=29370611]
+custom_minimum_size = Vector2(0, 58)
+clip_contents = false
+anchors_preset = -1
+anchor_right = 0.85
+anchor_bottom = 0.84700006
+offset_left = 137.0
+offset_top = 33.0
+offset_right = -128.0
+offset_bottom = -451.08002
+theme_override_colors/font_outline_color = Color(0.19999999, 0.19999999, 0.19999999, 1)
+theme_override_font_sizes/normal_font_size = 53
+theme_override_font_sizes/bold_font_size = 53
+theme_override_font_sizes/bold_italics_font_size = 53
+theme_override_font_sizes/italics_font_size = 53
+theme_override_font_sizes/mono_font_size = 53
+bbcode_enabled = true
+fit_content = true
+custom_effects = [SubResource("RichTextEffect_bihsq")]
+script = ExtResource("5_h8p6f")
+progress = 1.0
+visible_character = 11
+_transforms = Array[Transform2D]([Transform2D(1, 0, 0, 1, 0, 0), Transform2D(1, 0, 0, 1, 49, 43), Transform2D(1, 0, 0, 1, 71, 43), Transform2D(1, 0, 0, 1, 88, 43), Transform2D(1, 0, 0, 1, 111, 43), Transform2D(1, 0, 0, 1, 134, 43), Transform2D(1, 0, 0, 1, 145, 43), Transform2D(1, 0, 0, 1, 171, 43), Transform2D(1, 0, 0, 1, 194, 43), Transform2D(1, 0, 0, 1, 211, 43), Transform2D(1, 0, 0, 1, 253, 43)])
+_char_size = Array[Vector2]([Vector2(0, 0), Vector2(22, 28), Vector2(17, 28), Vector2(22, 28), Vector2(22, 28), Vector2(0, 28), Vector2(25, 28), Vector2(22, 28), Vector2(17, 28), Vector2(22, 28), Vector2(0, 28)])
+_alpha = Array[float]([1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0])
+_alpha_goal = Array[float]([1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0])
+_forced_finish_delay = -0.01341100000444675
+default_wait_time = 1.0
+play_on_bbcode = true
+play_speed = 30.0
+fade_out = false
+fade_in_speed = 10.0
+fade_out_speed = 120.0
+ctc_offset = Vector2(1, -0.5)
+ctc_on_finished = false
+ctc_on_wait = false
+shortcut_expression = true
+shortcut_bookmark = true
+signal_quotes = true
+signal_stars = true
+bbcode = "Patch Notes"
+effects = 2
+alignment = 1
+color = Color(1, 1, 1, 1)
+emoji_scale = 1.0
+font = "Jersey10"
+font_auto_setup = true
+font_size = 53
+font_bold_weight = 1.5
+font_italics_slant = 0.25
+font_italics_weight = -0.25
+shadow_enabled = false
+shadow_offset = 0.08
+shadow_alpha = 0.25
+shadow_outline_size = 0.1
+outline_size = 0
+outline_mode = 1
+outline_adjust = 0.8
+outline_hue_adjust = 0.0125
+nicer_quotes_enabled = true
+nicer_quotes_format = "“%s”"
+markdown_enabled = true
+markdown_format_bold = "[b]%s[]"
+markdown_format_italics = "[i]%s[]"
+markdown_format_bold_italics = "[bi]%s[]"
+markdown_format_highlight = "[green;sin]%s[]"
+markdown_format_bold2 = "[b]*%s*[]"
+markdown_format_italics2 = "[i;gray]*%s*[]"
+markdown_format_bold_italics2 = "%s"
+context_enabled = true
+context_path = NodePath("/root/State")
+context_state = {}
+context_rich_objects = true
+context_rich_ints = true
+context_rich_array = true
+autostyle_numbers = true
+autostyle_numbers_tag = "[salmon]%s[]"
+autostyle_numbers_pad_decimals = true
+autostyle_numbers_decimals = 2
+autostyle_emojis = true
+effect_weight = 0.0
+image_path = "res://"
+image_resize_to_font_size = true
+image_scale = 1.0
+meta_auto_https = true
+meta_cursor = 2
+override_bbcodeEnabled = true
+override_clipContents = false
+override_fitContent = true
+metadata/_custom_type_script = "uid://b6mbstaftpedd"
+
+[node name="RichTextLabel" type="RichTextLabel" parent="CanvasLayer" unique_id=981019860]
+custom_minimum_size = Vector2(0, 69)
+offset_left = 43.0
+offset_top = 115.0
+offset_right = 433.0
+offset_bottom = 401.0
+theme_override_font_sizes/normal_font_size = 21
+theme_override_font_sizes/bold_font_size = 21
+theme_override_font_sizes/bold_italics_font_size = 21
+theme_override_font_sizes/italics_font_size = 21
+theme_override_font_sizes/mono_font_size = 21
+fit_content = true
+script = ExtResource("3_upnnl")
+bbcode = "v0.1 - 
+
+v0.2 - "
+effects = 2
+alignment = 0
+color = Color(1, 1, 1, 1)
+emoji_scale = 1.0
+font = "Jersey10"
+font_auto_setup = true
+font_size = 21
+font_bold_weight = 1.5
+font_italics_slant = 0.25
+font_italics_weight = -0.25
+shadow_enabled = false
+shadow_offset = 0.08
+shadow_alpha = 0.25
+shadow_outline_size = 0.1
+outline_size = 0
+outline_mode = 1
+outline_adjust = 0.8
+outline_hue_adjust = 0.0125
+nicer_quotes_enabled = true
+nicer_quotes_format = "“%s”"
+markdown_enabled = true
+markdown_format_bold = "[b]%s[]"
+markdown_format_italics = "[i]%s[]"
+markdown_format_bold_italics = "[bi]%s[]"
+markdown_format_highlight = "[green;sin]%s[]"
+markdown_format_bold2 = "[b]*%s*[]"
+markdown_format_italics2 = "[i;gray]*%s*[]"
+markdown_format_bold_italics2 = "%s"
+context_enabled = true
+context_path = NodePath("/root/State")
+context_state = {}
+context_rich_objects = true
+context_rich_ints = true
+context_rich_array = true
+autostyle_numbers = true
+autostyle_numbers_tag = "[salmon]%s[]"
+autostyle_numbers_pad_decimals = true
+autostyle_numbers_decimals = 2
+autostyle_emojis = true
+effect_weight = 0.0
+image_path = "res://"
+image_resize_to_font_size = true
+image_scale = 1.0
+meta_auto_https = true
+meta_cursor = 2
+override_bbcodeEnabled = true
+override_clipContents = false
+override_fitContent = true
+metadata/_custom_type_script = "uid://2f4fi75scxes"
+
+[node name="Back" type="Panel" parent="." unique_id=760324061]
+material = SubResource("ShaderMaterial_ujdrk")
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_6hq1c")
+
+[node name="shine" type="Panel" parent="Back" unique_id=332037120]
+material = ExtResource("3_5epav")
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_h6xd7")
+
+[node name="CanvasModulate" type="CanvasModulate" parent="." unique_id=239944052]
+z_index = 78
+color = Color(0.8211788, 0.8211788, 0.8211788, 1)
+
+[node name="PointLight2D" type="PointLight2D" parent="." unique_id=594391118]
+z_index = 25
+position = Vector2(271, 266)
+energy = 1.36
+texture = SubResource("GradientTexture2D_h6xd7")
+texture_scale = 5.63
+
+[node name="Border2" type="CanvasLayer" parent="." unique_id=627235709]
+layer = 0
+
+[node name="TextureRect" type="ColorRect" parent="Border2" unique_id=1126784787]
+material = SubResource("ShaderMaterial_m1gvw")
+custom_minimum_size = Vector2(540, 540)
+custom_maximum_size = Vector2(540, 540)
+anchors_preset = -1
+anchor_right = 0.84400004
+anchor_bottom = 0.84400004
+offset_right = -0.16003418
+offset_bottom = -0.16003418
+grow_horizontal = 2
+grow_vertical = 2
+metadata/_edit_use_anchors_ = true
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="." unique_id=871197714]
+libraries/ = SubResource("AnimationLibrary_unl7t")
+autoplay = &"patch_notes_rect"

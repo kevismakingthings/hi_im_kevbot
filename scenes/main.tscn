@@ -1,18 +1,27 @@
 [gd_scene format=3 uid="uid://b6ybu0ehebp2l"]
 
 [ext_resource type="Script" uid="uid://dka1iwwr2rpk5" path="res://scripts/scene_logic/main.gd" id="1_o5qli"]
-[ext_resource type="Script" uid="uid://bq6qtjhd5io2d" path="res://scripts/util/warmup_viewport.gd" id="3_sugp2"]
 [ext_resource type="Material" uid="uid://cc0qf51qyhvoa" path="res://ASSETS/visual_presets/shaders/blurdim_mat.tres" id="3_tefeu"]
+[ext_resource type="AudioStream" uid="uid://b3lylljrhwxir" path="res://ASSETS/sounds/bgm_percs.ogg" id="4_tbgi4"]
+[ext_resource type="AudioStream" uid="uid://cpigm0dwyv7e8" path="res://ASSETS/sounds/kevINTROSOFTER.ogg" id="4_tefeu"]
+[ext_resource type="AudioStream" uid="uid://ftmewopxumqn" path="res://ASSETS/sounds/bgm_guitar.ogg" id="5_tefeu"]
+
+[sub_resource type="AudioStreamSynchronized" id="AudioStreamSynchronized_tipki"]
+stream_count = 1
+stream_0/stream = ExtResource("4_tefeu")
+stream_0/volume = 0.0
+
+[sub_resource type="AudioStreamSynchronized" id="AudioStreamSynchronized_337yx"]
+stream_count = 2
+stream_0/stream = ExtResource("4_tbgi4")
+stream_0/volume = 0.0
+stream_1/stream = ExtResource("5_tefeu")
+stream_1/volume = 0.0
 
 [node name="Main" type="Node2D" unique_id=1089091352]
 process_mode = 3
 z_as_relative = false
 script = ExtResource("1_o5qli")
-
-[node name="warmup" type="SubViewport" parent="." unique_id=2061225792]
-size = Vector2i(2, 2)
-render_target_update_mode = 1
-script = ExtResource("3_sugp2")
 
 [node name="Game" type="Node" parent="." unique_id=1125625234]
 process_mode = 1
@@ -24,6 +33,7 @@ layer = 10
 [node name="BlurLayer" type="CanvasLayer" parent="." unique_id=1194453682]
 process_mode = 3
 layer = 20
+visible = false
 
 [node name="SecondBlur" type="ColorRect" parent="BlurLayer" unique_id=1235757847]
 visible = false
@@ -44,3 +54,13 @@ mouse_behavior_recursive = 1
 [node name="AboutLayer" type="CanvasLayer" parent="." unique_id=2025510304]
 process_mode = 3
 layer = 30
+
+[node name="StartMusic" type="AudioStreamPlayer" parent="." unique_id=1759760711]
+stream = SubResource("AudioStreamSynchronized_tipki")
+volume_db = -80.0
+bus = &"Music"
+
+[node name="AboutMusic" type="AudioStreamPlayer" parent="." unique_id=1221493293]
+stream = SubResource("AudioStreamSynchronized_337yx")
+volume_db = -80.0
+bus = &"Music"

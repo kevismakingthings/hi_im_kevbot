@@ -4,14 +4,20 @@
 [ext_resource type="StyleBox" uid="uid://cdbmtgpeu1uq1" path="res://ASSETS/visual_presets/style_box/musicaudiotop.tres" id="2_au1nl"]
 [ext_resource type="Script" uid="uid://5hv4pjs1xcht" path="res://addons/richtext2/text_effects/anims/rte_fader.gd" id="2_n4xg8"]
 [ext_resource type="Script" uid="uid://b6mbstaftpedd" path="res://addons/richtext2/rich_text_animation.gd" id="3_au1nl"]
+[ext_resource type="Script" uid="uid://diw5njl7cgqi5" path="res://addons/richtext2/text_effects/effects/rte_sparkle.gd" id="5_5n8jn"]
 [ext_resource type="Script" uid="uid://2f4fi75scxes" path="res://addons/richtext2/richer_text_label.gd" id="5_jjht0"]
 [ext_resource type="StyleBox" uid="uid://x3y35brutdat" path="res://ASSETS/visual_presets/style_box/musicaudiobottom.tres" id="7_2aaut"]
 [ext_resource type="Texture2D" uid="uid://ctus4vhmk8nbl" path="res://ASSETS/images/albumctry1.png" id="8_yfsjw"]
 
-[sub_resource type="RichTextEffect" id="RichTextEffect_k35ih"]
+[sub_resource type="RichTextEffect" id="RichTextEffect_5n8jn"]
 resource_name = "fader"
 script = ExtResource("2_n4xg8")
-metadata/rt = 221066245027854
+metadata/rt = 7300001635898
+
+[sub_resource type="RichTextEffect" id="RichTextEffect_yg330"]
+resource_name = "sparkle"
+script = ExtResource("5_5n8jn")
+metadata/rt = 7300421068982
 
 [sub_resource type="Animation" id="Animation_0guim"]
 length = 0.001
@@ -331,8 +337,7 @@ layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
-offset_top = 3.0
-offset_bottom = 23.0
+offset_bottom = 58.0
 grow_horizontal = 2
 grow_vertical = 2
 vertical = true
@@ -360,8 +365,14 @@ fit_content = true
 scroll_active = false
 horizontal_alignment = 1
 vertical_alignment = 1
-custom_effects = [SubResource("RichTextEffect_k35ih")]
+custom_effects = [SubResource("RichTextEffect_5n8jn")]
 script = ExtResource("3_au1nl")
+progress = 1.0
+visible_character = 4
+_transforms = Array[Transform2D]([Transform2D(1, 0, 0, 1, 0, 0), Transform2D(1, 0, 0, 1, 299, 50), Transform2D(1, 0, 0, 1, 325, 50), Transform2D(1, 0, 0, 1, 378, 50)])
+_char_size = Array[Vector2]([Vector2(0, 0), Vector2(26, 33), Vector2(26, 33), Vector2(0, 33)])
+_alpha = Array[float]([1.0, 1.0, 1.0, 1.0])
+_alpha_goal = Array[float]([1.0, 1.0, 1.0, 1.0])
 _forced_finish_delay = -0.02991977777777776
 default_wait_time = 0.3
 play_on_bbcode = true
@@ -376,7 +387,7 @@ shortcut_expression = true
 shortcut_bookmark = true
 signal_quotes = true
 signal_stars = true
-bbcode = ""
+bbcode = "Wave"
 effects = 2
 alignment = 1
 color = Color(1, 1, 1, 1)
@@ -432,7 +443,7 @@ metadata/rand = Array[int]([3097586401, 1309234114, 3830720363, 374577371, 34550
 
 [node name="Blurb" type="RichTextLabel" parent="TopPanel/BoxContainer" unique_id=1137182776]
 unique_name_in_owner = true
-custom_minimum_size = Vector2(0, 30)
+custom_minimum_size = Vector2(0, 90)
 clip_contents = false
 layout_mode = 2
 offset_transform_enabled = true
@@ -452,8 +463,9 @@ theme_override_font_sizes/mono_font_size = 27
 bbcode_enabled = true
 fit_content = true
 scroll_following = true
+custom_effects = [SubResource("RichTextEffect_yg330")]
 script = ExtResource("5_jjht0")
-bbcode = ""
+bbcode = "[b]3+ years experience in music production, audio engineering, sound design. Always looking to find the [wave amp=15 freq=2;peach_puff;sparkle;hue 0.5]feeling[] within the waveform."
 effects = 2
 alignment = 1
 color = Color(1, 1, 1, 1)
@@ -461,7 +473,7 @@ emoji_scale = 1.0
 font = "Jersey10"
 font_auto_setup = true
 font_size = 27
-font_bold_weight = 0.52
+font_bold_weight = -0.55
 font_italics_slant = 0.25
 font_italics_weight = -0.25
 shadow_enabled = true
@@ -570,16 +582,18 @@ theme_override_styles/panel = ExtResource("7_2aaut")
 [node name="ProjectImage" type="TextureRect" parent="TopPanel/ProjectsPanel" unique_id=141502822]
 unique_name_in_owner = true
 layout_mode = 1
-anchors_preset = 2
-anchor_top = 1.0
-anchor_bottom = 1.0
-offset_left = 21.0
-offset_top = -134.00201
-offset_right = 149.0
-offset_bottom = -6.002014
-grow_vertical = 0
+anchors_preset = -1
+anchor_left = 0.043
+anchor_top = 0.25
+anchor_right = 0.42900002
+anchor_bottom = 0.9250001
+offset_left = -0.04790306
+offset_top = -0.0005493164
+offset_right = 44.87091
+offset_bottom = 44.997955
 scale = Vector2(0.75, 0.75)
 texture = ExtResource("8_yfsjw")
+expand_mode = 1
 
 [node name="ProjectCaption" type="RichTextLabel" parent="TopPanel/ProjectsPanel" unique_id=1857982001]
 unique_name_in_owner = true
@@ -588,7 +602,9 @@ clip_contents = false
 layout_mode = 1
 anchors_preset = 10
 anchor_right = 1.0
+offset_left = -7.0
 offset_top = 10.0
+offset_right = -7.0
 offset_bottom = 82.0
 grow_horizontal = 2
 theme_override_colors/font_outline_color = Color(0.19999999, 0.19999999, 0.19999999, 1)
@@ -605,7 +621,7 @@ theme_override_font_sizes/mono_font_size = 33
 bbcode_enabled = true
 fit_content = true
 script = ExtResource("5_jjht0")
-bbcode = ""
+bbcode = "That's my dog."
 effects = 2
 alignment = 1
 color = Color(1, 1, 1, 1)
@@ -658,38 +674,38 @@ metadata/_custom_type_script = "uid://2f4fi75scxes"
 
 [node name="ProjectBlurb" type="RichTextLabel" parent="TopPanel/ProjectsPanel" unique_id=1359479914]
 unique_name_in_owner = true
-custom_minimum_size = Vector2(0, 36)
+custom_minimum_size = Vector2(0, 69)
 clip_contents = false
 layout_mode = 1
 anchors_preset = 10
 anchor_right = 1.0
-offset_left = 140.0
-offset_top = 76.0
-offset_right = -26.951233
-offset_bottom = 164.0
+offset_left = 155.0
+offset_top = 51.0
+offset_right = -11.951233
+offset_bottom = 185.0
 grow_horizontal = 2
 theme_override_colors/font_outline_color = Color(0.19999999, 0.19999999, 0.19999999, 1)
 theme_override_colors/font_shadow_color = Color(0, 0, 0, 0.25)
-theme_override_constants/shadow_outline_size = 4
-theme_override_constants/shadow_offset_x = 3
-theme_override_constants/shadow_offset_y = 3
+theme_override_constants/shadow_outline_size = 2
+theme_override_constants/shadow_offset_x = 2
+theme_override_constants/shadow_offset_y = 2
 theme_override_constants/outline_size = 3
-theme_override_font_sizes/normal_font_size = 33
-theme_override_font_sizes/bold_font_size = 33
-theme_override_font_sizes/bold_italics_font_size = 33
-theme_override_font_sizes/italics_font_size = 33
-theme_override_font_sizes/mono_font_size = 33
+theme_override_font_sizes/normal_font_size = 20
+theme_override_font_sizes/bold_font_size = 20
+theme_override_font_sizes/bold_italics_font_size = 20
+theme_override_font_sizes/italics_font_size = 20
+theme_override_font_sizes/mono_font_size = 20
 bbcode_enabled = true
 fit_content = true
 script = ExtResource("5_jjht0")
-bbcode = ""
+bbcode = "[b]Here's a direct link to my full gallery if you're interested: [url=https://kev-bot.me/gallery/]Click me![/url]"
 effects = 2
 alignment = 1
 color = Color(1, 1, 1, 1)
 emoji_scale = 1.0
 font = "Jersey10"
 font_auto_setup = true
-font_size = 33
+font_size = 20
 font_bold_weight = -0.41
 font_italics_slant = 0.25
 font_italics_weight = -0.25

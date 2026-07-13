@@ -25,7 +25,7 @@ func _ready() -> void:
 	pass
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
-func _process(delta: float) -> void:
+func _process(_delta: float) -> void:
 	pass
 
 func setup_panel() -> void:
@@ -49,12 +49,14 @@ func setup_panel() -> void:
 		bar_container.add_child(skill_bar)
 
 func _on_focus_exited() -> void:
+	AudioManager.play_sfx(SamplePreload.DOCK_RAISE, -7, 1.3)
 	animation.play("hidedetailpanel")
 	focus_released.emit()
 
 
 func _on_gui_input(event: InputEvent) -> void:
 	if event.is_action_pressed("ui_cancel"):
+		AudioManager.play_sfx(SamplePreload.UI_KEY_ROLL, -7.0, -1.5)
 		panel_esc_pressed.emit()
 
 

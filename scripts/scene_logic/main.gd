@@ -10,20 +10,18 @@ const GAME := preload("res://scenes/core/kev.tscn")
 @onready var blur_layer: CanvasLayer = $BlurLayer
 @onready var about_layer: CanvasLayer = $AboutLayer
 @onready var blur: ColorRect = $BlurLayer/SecondBlur
-@onready var warmup_vp: SubViewport = $warmup
+@onready var start_music: AudioStreamPlayer = $StartMusic
+@onready var about_music: AudioStreamPlayer = $AboutMusic
 
 var start_menu = null
 var game_scene = null
 
 func _ready() -> void:
-	SkillsConstants.set_constants()
-	await warmup_vp.warmup(ShaderRegistry.all_shaders)
-	get_window().content_scale_factor = 1.25
-	
-	game_scene = GAME.instantiate()
-	game_scene.pause_pressed.connect(pause_game)
-	game.add_child(game_scene)
-	game.get_tree().paused = false
+	SkillsConstants.set_constants()	
+	#game_scene = GAME.instantiate()
+	#game_scene.pause_pressed.connect(pause_game)
+	#game.add_child(game_scene)
+	#game.get_tree().paused = false
 	show_start_menu()
 
 
@@ -57,8 +55,6 @@ func pause_game() -> void:
 
 func show_about() -> void:
 	play_about()
-
-	
 	var about := ABOUT.instantiate()
 	about.back_pressed.connect(back_to_main)
 	about.esc_pressed.connect(back_to_main)
@@ -84,13 +80,15 @@ func back_to_main() -> void:
 			await child.exit()
 		child.queue_free()
 	play_start()
+	
 func play_about() -> void:
-	AudioManager.stop_sfx()
-	AudioManager.play_music(SamplePreload.ABOUT_GUITAR, 2.0)
-	AudioManager.play_sfx(SamplePreload.ABOUT_PERCS)
+	about_music.play()
+	var t := create_tween().set_parallel().set_ease(Tween.EASE_OUT)
+	t.tween_property(about_music, "volume_db", 0.0, 0.7)
+	t.tween_property(start_music, "volume_db", -80.0, 0.7)
 	
 func play_start() -> void:
-	AudioManager.stop_sfx()
-	AudioManager.play_music(SamplePreload.BGM_BASS, 2.0)
-	AudioManager.play_sfx(SamplePreload.BGM_XYLO)
-	AudioManager.play_sfx(SamplePreload.BGM_SAW)
+	start_music.play()
+	var t := create_tween().set_parallel().set_ease(Tween.EASE_OUT)
+	t.tween_property(start_music, "volume_db", 0.0, 0.7)
+	t.tween_property(about_music, "volume_db", -80.0, 0.7)

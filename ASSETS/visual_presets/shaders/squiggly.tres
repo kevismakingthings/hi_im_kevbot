@@ -1,6 +1,6 @@
 [gd_resource type="ShaderMaterial" format=3 uid="uid://c8yg2nbsdsrju"]
 
-[ext_resource type="Shader" uid="uid://clcv012uaynww" path="res://ASSETS/shaders/squiggle.gdshader" id="1_robou"]
+[ext_resource type="Shader" uid="uid://clcv012uaynww" path="res://ASSETS/shaders/squiggle.gdshader" id="1_cpsyw"]
 
 [sub_resource type="FastNoiseLite" id="FastNoiseLite_lfv4p"]
 noise_type = 0
@@ -11,8 +11,8 @@ seamless = true
 seamless_blend_skirt = 1.0
 
 [resource]
-shader = ExtResource("1_robou")
-shader_parameter/scale = Vector2(1, 1)
-shader_parameter/strength = 0.35
-shader_parameter/fps = 6.0
+shader = ExtResource("1_cpsyw")
+shader_parameter/scale = Vector2(0.5, 0.5)
+shader_parameter/strength = 0.12
+shader_parameter/fps = 5.0
 shader_parameter/noise = SubResource("NoiseTexture2D_sqf45")

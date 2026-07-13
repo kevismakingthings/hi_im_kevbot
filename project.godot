@@ -11,7 +11,7 @@ config_version=5
 [application]
 
 config/name="kev_bot_skate"
-run/main_scene="uid://b6ybu0ehebp2l"
+run/main_scene="uid://clgkqs8p6a4h7"
 config/features=PackedStringArray("4.7", "Forward Plus")
 run/max_fps=120
 boot_splash/bg_color=Color(0.67200994, 0.48494917, 0.3154659, 1)

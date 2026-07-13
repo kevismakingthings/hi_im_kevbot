@@ -73,6 +73,7 @@ func focus_or_hover() -> void:
 		pass
 	if t != null:
 		t.kill()
+	AudioManager.play_sfx(SamplePreload.BLIP_SELECT, -25.0, 1.5)
 	t = create_tween().set_parallel()
 	t.set_trans(Tween.TRANS_SINE).set_ease(Tween.EASE_OUT)
 	if frames:

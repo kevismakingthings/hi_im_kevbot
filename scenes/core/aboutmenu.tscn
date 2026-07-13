@@ -2,9 +2,11 @@
 
 [ext_resource type="Script" uid="uid://b0ovc8k4xa5g2" path="res://scripts/scene_logic/aboutmenu.gd" id="1_ontn0"]
 [ext_resource type="Theme" uid="uid://bw8c8fo1kwtq2" path="res://ASSETS/visual_presets/style_box/new_theme.tres" id="2_5jp5k"]
+[ext_resource type="AudioStream" uid="uid://c7u5j1i4wofiv" path="res://ASSETS/sounds/low-bounce-5.wav" id="2_aoio4"]
 [ext_resource type="Texture2D" uid="uid://dwmrj6iftjvjt" path="res://ASSETS/sprites/kevjig.png" id="2_haoiw"]
 [ext_resource type="Texture2D" uid="uid://dl6hq1glwssvp" path="res://ASSETS/sprites/kevshake.png" id="2_oeksf"]
 [ext_resource type="Material" uid="uid://bnv4c5fcrrhiv" path="res://ASSETS/visual_presets/shaders/about_backdrop.tres" id="2_q1idn"]
+[ext_resource type="AudioStream" uid="uid://3w88ei2rv2lm" path="res://ASSETS/sounds/skatesound-bounce-8.wav" id="3_ep5mx"]
 [ext_resource type="FontFile" uid="uid://6cav8337i5bf" path="res://ASSETS/fonts/Jersey10-Regular.ttf" id="4_0ji0d"]
 [ext_resource type="Shader" uid="uid://clcv012uaynww" path="res://ASSETS/shaders/squiggle.gdshader" id="6_fhdrp"]
 [ext_resource type="Script" uid="uid://cheklf3dc1f7d" path="res://scripts/object_logic/skillspassionsbutton.gd" id="6_q1idn"]
@@ -18,9 +20,280 @@
 [ext_resource type="Material" uid="uid://c8yg2nbsdsrju" path="res://ASSETS/visual_presets/shaders/squiggly.tres" id="11_q5b0x"]
 [ext_resource type="Texture2D" uid="uid://bdaidrbh6bmqv" path="res://ASSETS/sprites/spotify.png" id="12_0ji0d"]
 [ext_resource type="Script" uid="uid://bf3vfy3rir883" path="res://scripts/object_logic/icon_hover.gd" id="12_geruh"]
+[ext_resource type="AudioStream" uid="uid://dwfxe1mrx5g1w" path="res://ASSETS/sounds/kev_talks.ogg" id="12_re2i3"]
 [ext_resource type="Texture2D" uid="uid://dt6n0c4wos4ow" path="res://ASSETS/sprites/soundcloud-export.png" id="14_t6kni"]
 [ext_resource type="Texture2D" uid="uid://dibvipk6enk5t" path="res://ASSETS/sprites/frames.png" id="15_q80qm"]
 [ext_resource type="Texture2D" uid="uid://dy43xlfbdwb5i" path="res://ASSETS/sprites/camera-export.png" id="16_q1idn"]
+
+[sub_resource type="Animation" id="Animation_q5b0x"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 1)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath(".:size")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(607, 17)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath(".:position")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(20, 598)]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("../backpanel:material:shader_parameter/bands")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [2.83]
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("../backpanel:material:shader_parameter/color_b")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(0.4, 0.7294118, 0.627451, 0.58431375)]
+}
+tracks/5/type = "value"
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/path = NodePath("../backpanel2:modulate")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 0)]
+}
+tracks/6/type = "value"
+tracks/6/imported = false
+tracks/6/enabled = true
+tracks/6/path = NodePath("../backpanel2:texture:gradient:offsets")
+tracks/6/interp = 1
+tracks/6/loop_wrap = true
+tracks/6/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [PackedFloat32Array(0, 0.821, 1)]
+}
+tracks/7/type = "value"
+tracks/7/imported = false
+tracks/7/enabled = true
+tracks/7/path = NodePath("../skillspassions:modulate")
+tracks/7/interp = 1
+tracks/7/loop_wrap = true
+tracks/7/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 1)]
+}
+tracks/8/type = "value"
+tracks/8/imported = false
+tracks/8/enabled = true
+tracks/8/path = NodePath("../skillspassions:offset_transform_rotation")
+tracks/8/interp = 1
+tracks/8/loop_wrap = true
+tracks/8/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [0.0]
+}
+
+[sub_resource type="Animation" id="Animation_fhdrp"]
+resource_name = "dockappear"
+length = 5.266667
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0.8, 1.7),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 0.05490196), Color(1, 1, 1, 1)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath(".:size")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0.8, 1.1333334, 1.8000002),
+"transitions": PackedFloat32Array(1.6245048, 0.4665165, 1),
+"update": 0,
+"values": [Vector2(30, 17), Vector2(158.81934, 17), Vector2(607, 17)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath(".:position")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0.8, 1.7666669),
+"transitions": PackedFloat32Array(0.40612617, 1),
+"update": 0,
+"values": [Vector2(20, 670), Vector2(20, 598)]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("../backpanel:material:shader_parameter/bands")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0.1, 2.7333333),
+"transitions": PackedFloat32Array(0.37892923, 1),
+"update": 0,
+"values": [0.3, 2.83]
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("../backpanel:material:shader_parameter/color_b")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0, 2.7333333),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(0.4, 0.7294118, 0.627451, 0.58431375), Color(0.4, 0.7294118, 0.627451, 0.58431375)]
+}
+tracks/5/type = "value"
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/path = NodePath("../backpanel2:modulate")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/keys = {
+"times": PackedFloat32Array(-0.03333333, 1.5333333),
+"transitions": PackedFloat32Array(1.8660661, 1),
+"update": 0,
+"values": [Color(0.029506557, 0.029506557, 0.029506557, 1), Color(1, 1, 1, 0.99215686)]
+}
+tracks/6/type = "value"
+tracks/6/imported = false
+tracks/6/enabled = true
+tracks/6/path = NodePath("../backpanel2:texture:gradient:offsets")
+tracks/6/interp = 1
+tracks/6/loop_wrap = true
+tracks/6/keys = {
+"times": PackedFloat32Array(),
+"transitions": PackedFloat32Array(),
+"update": 0,
+"values": []
+}
+tracks/7/type = "value"
+tracks/7/imported = false
+tracks/7/enabled = true
+tracks/7/path = NodePath("../skillspassions:modulate")
+tracks/7/interp = 1
+tracks/7/loop_wrap = true
+tracks/7/keys = {
+"times": PackedFloat32Array(0.53333336, 1.5666667),
+"transitions": PackedFloat32Array(0.46651644, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 0), Color(1, 1, 1, 1)]
+}
+tracks/8/type = "value"
+tracks/8/imported = false
+tracks/8/enabled = true
+tracks/8/path = NodePath("../skillspassions:offset_transform_rotation")
+tracks/8/interp = 1
+tracks/8/loop_wrap = true
+tracks/8/keys = {
+"times": PackedFloat32Array(0.6333333, 0.96666664, 1.3666667, 1.9333333),
+"transitions": PackedFloat32Array(-2.0000002, -1.4142135, -2, 1),
+"update": 0,
+"values": [-0.33161255787892263, 0.0, -0.04886921905584143, 0.0]
+}
+
+[sub_resource type="Animation" id="Animation_d400r"]
+resource_name = "dockdisappear"
+length = 0.73333335
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.6),
+"transitions": PackedFloat32Array(0.40612623, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 1), Color(1, 1, 1, 0.05490196)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath(".:position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.2, 0.6),
+"transitions": PackedFloat32Array(1.5157169, 0.4352752, 1.6245048),
+"update": 0,
+"values": [Vector2(20, 598), Vector2(20.852133, 604.1354), Vector2(30, 670)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath(".:size")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0, 0.6),
+"transitions": PackedFloat32Array(0.28717452, 0.40612617),
+"update": 0,
+"values": [Vector2(607, 17), Vector2(20, 17)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_d400r"]
+_data = {
+&"RESET": SubResource("Animation_q5b0x"),
+&"dockappear": SubResource("Animation_fhdrp"),
+&"dockdisappear": SubResource("Animation_d400r")
+}
 
 [sub_resource type="Gradient" id="Gradient_lg8x2"]
 offsets = PackedFloat32Array(0, 0.77904564)
@@ -32,6 +305,18 @@ fill = 1
 fill_from = Vector2(0.50365853, 0.49634147)
 fill_to = Vector2(0.1402439, 0.11829268)
 
+[sub_resource type="Gradient" id="Gradient_1yfh2"]
+offsets = PackedFloat32Array(0, 0.821, 1)
+colors = PackedColorArray(1, 1, 1, 0.2509804, 0.102675594, 0.3293986, 0.24857897, 0.88235295, 0.65745515, 1.0591882, 0.83554304, 1)
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_h6xd7"]
+gradient = SubResource("Gradient_1yfh2")
+width = 32
+height = 32
+fill = 2
+fill_from = Vector2(0.5, 0.5)
+fill_to = Vector2(1, 1)
+
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_pcwul"]
 bg_color = Color(0.6, 0.6, 0.6, 0)
 anti_aliasing = false
@@ -39,7 +324,7 @@ anti_aliasing = false
 [sub_resource type="Theme" id="Theme_lg8x2"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_t6kni"]
-bg_color = Color(0.40392157, 0.6117647, 0.6901961, 0.81960785)
+bg_color = Color(0.40392157, 0.6117647, 0.6901961, 1)
 border_width_left = 2
 border_width_top = 2
 border_width_right = 14
@@ -93,49 +378,49 @@ spacing_glyph = 2
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_0ji0d"]
 bg_color = Color(0.14117648, 0.25882354, 0.19607843, 0.7607843)
 border_width_right = 13
-border_color = Color(0.2980765, 0.4908592, 0.38964322, 1)
+border_color = Color(0.29870802, 0.4935071, 0.39143196, 1)
 corner_radius_top_left = 14
 corner_radius_bottom_left = 13
 
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_q5b0x"]
-bg_color = Color(0.3137255, 0.5176471, 0.40784314, 0.9372549)
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_ep5mx"]
+bg_color = Color(0.18290827, 0.322271, 0.2464765, 0.7607843)
 border_width_right = 13
-border_color = Color(0.2980765, 0.4908592, 0.38964322, 1)
-corner_radius_top_left = 14
-corner_radius_bottom_left = 13
-
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_fhdrp"]
-bg_color = Color(0.3137255, 0.5176471, 0.40784314, 0.9372549)
-border_width_right = 13
-border_color = Color(0.2980765, 0.4908592, 0.38964322, 1)
+border_color = Color(0.48742366, 0.7226664, 0.59481716, 1)
 corner_radius_top_left = 14
 corner_radius_bottom_left = 13
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_q1idn"]
 bg_color = Color(0.37254903, 0.26666668, 0.13725491, 0.8862745)
 border_width_right = 13
-border_color = Color(0.9140168, 0.57710326, 0.2154918, 1)
+border_color = Color(0.7379657, 0.4460191, 0.1087253, 1)
 corner_radius_top_left = 14
 corner_radius_bottom_left = 13
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_obb54"]
-bg_color = Color(0.78272367, 0.5987239, 0.38035023, 0.8862745)
+bg_color = Color(0.49175632, 0.35814834, 0.1946224, 0.8862745)
 border_width_right = 13
-border_color = Color(0.9140168, 0.57710326, 0.2154918, 1)
+border_color = Color(0.9446766, 0.6096008, 0.26292598, 1)
 corner_radius_top_left = 14
 corner_radius_bottom_left = 13
 
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_gv0m5"]
-bg_color = Color(0.63274944, 0.4689867, 0.27105975, 0.8862745)
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_q7iws"]
+bg_color = Color(0.4392157, 0.25490198, 0.34117648, 0.7137255)
 border_width_right = 13
-border_color = Color(0.9140168, 0.57710326, 0.2154918, 1)
+border_color = Color(0.46539885, 0.31348944, 0.402204, 1)
 corner_radius_top_left = 14
 corner_radius_bottom_left = 13
 
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_gybju"]
-bg_color = Color(0.37254903, 0.26666668, 0.13725491, 0.8862745)
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_tu5c7"]
+bg_color = Color(0.5127556, 0.30645192, 0.40268755, 0.80784315)
 border_width_right = 13
-border_color = Color(0.9140168, 0.57710326, 0.2154918, 1)
+border_color = Color(0.6282441, 0.44456238, 0.5468888, 1)
+corner_radius_top_left = 14
+corner_radius_bottom_left = 13
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_02rg4"]
+bg_color = Color(0.5617872, 0.3407598, 0.44223663, 0.80784315)
+border_width_right = 13
+border_color = Color(0.7517589, 0.58225733, 0.6764084, 1)
 corner_radius_top_left = 14
 corner_radius_bottom_left = 13
 
@@ -170,7 +455,7 @@ anti_aliasing_size = 0.01
 [sub_resource type="FastNoiseLite" id="FastNoiseLite_lfv4p"]
 noise_type = 0
 
-[sub_resource type="NoiseTexture2D" id="NoiseTexture2D_sqf45"]
+[sub_resource type="NoiseTexture2D" id="NoiseTexture2D_ep5mx"]
 noise = SubResource("FastNoiseLite_lfv4p")
 seamless = true
 seamless_blend_skirt = 1.0
@@ -180,7 +465,7 @@ shader = ExtResource("6_fhdrp")
 shader_parameter/scale = Vector2(1, 1)
 shader_parameter/strength = 0.13
 shader_parameter/fps = 6.0
-shader_parameter/noise = SubResource("NoiseTexture2D_sqf45")
+shader_parameter/noise = SubResource("NoiseTexture2D_ep5mx")
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_pcwul"]
 atlas = ExtResource("2_haoiw")
@@ -501,6 +786,102 @@ spacing_glyph = 1
 
 [sub_resource type="Animation" id="Animation_kle74"]
 length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("../../../SceneAudio:pitch_scale")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [1.5]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("../../../SceneAudio:volume_db")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [-4.457]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("../../../SceneAudio:stream")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [ExtResource("2_aoio4")]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("../../../SceneAudio:playing")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("../../../SceneAudio:stream_paused")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+tracks/5/type = "value"
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/path = NodePath("../../../AudioListener2D:position")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(193, 208)]
+}
+tracks/6/type = "value"
+tracks/6/imported = false
+tracks/6/enabled = true
+tracks/6/path = NodePath("../../../Slide:playing")
+tracks/6/interp = 1
+tracks/6/loop_wrap = true
+tracks/6/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+tracks/7/type = "value"
+tracks/7/imported = false
+tracks/7/enabled = true
+tracks/7/path = NodePath("../../../Slide:pitch_scale")
+tracks/7/interp = 1
+tracks/7/loop_wrap = true
+tracks/7/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [0.59]
+}
 
 [sub_resource type="Animation" id="Animation_geruh"]
 resource_name = "kevtalk"
@@ -542,6 +923,102 @@ tracks/2/keys = {
 "update": 0,
 "values": [Vector2(25, 180), Vector2(25, 230), Vector2(25, 220)]
 }
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("../../../SceneAudio:pitch_scale")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0, 3.0833333, 3.1666667),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [1.5, 1.5, 1.35]
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("../../../SceneAudio:volume_db")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0, 3.0833333, 3.2083333),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [0.6209999999999951, -0.597999999999999, 9.114999999999997]
+}
+tracks/5/type = "value"
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/path = NodePath("../../../SceneAudio:stream")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/keys = {
+"times": PackedFloat32Array(0, 3.125),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [ExtResource("2_aoio4"), ExtResource("12_re2i3")]
+}
+tracks/6/type = "value"
+tracks/6/imported = false
+tracks/6/enabled = true
+tracks/6/path = NodePath("../../../SceneAudio:playing")
+tracks/6/interp = 1
+tracks/6/loop_wrap = true
+tracks/6/keys = {
+"times": PackedFloat32Array(3.2310658, 5.0416665),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [true, false]
+}
+tracks/7/type = "value"
+tracks/7/imported = false
+tracks/7/enabled = true
+tracks/7/path = NodePath("../../../SceneAudio:stream_paused")
+tracks/7/interp = 1
+tracks/7/loop_wrap = true
+tracks/7/keys = {
+"times": PackedFloat32Array(3.25, 5.0184913),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [false, true]
+}
+tracks/8/type = "value"
+tracks/8/imported = false
+tracks/8/enabled = true
+tracks/8/path = NodePath("../../../AudioListener2D:position")
+tracks/8/interp = 1
+tracks/8/loop_wrap = true
+tracks/8/keys = {
+"times": PackedFloat32Array(0.125, 0.375, 1.6899111),
+"transitions": PackedFloat32Array(0.5, 1, 1),
+"update": 0,
+"values": [Vector2(640, 320), Vector2(0, 320), Vector2(193, 208)]
+}
+tracks/9/type = "value"
+tracks/9/imported = false
+tracks/9/enabled = true
+tracks/9/path = NodePath("../../../Slide:playing")
+tracks/9/interp = 1
+tracks/9/loop_wrap = true
+tracks/9/keys = {
+"times": PackedFloat32Array(0.125, 0.16666667, 0.375),
+"transitions": PackedFloat32Array(1, 0.49999997, 1),
+"update": 1,
+"values": [false, true, false]
+}
+tracks/10/type = "value"
+tracks/10/imported = false
+tracks/10/enabled = true
+tracks/10/path = NodePath("../../../Slide:pitch_scale")
+tracks/10/interp = 1
+tracks/10/loop_wrap = true
+tracks/10/keys = {
+"times": PackedFloat32Array(0.04166667, 0.5833334),
+"transitions": PackedFloat32Array(0.7578583, 1),
+"update": 0,
+"values": [0.25, 0.6900000000000001]
+}
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_q80qm"]
 _data = {
@@ -569,132 +1046,6 @@ shadow_size = 1
 shadow_offset = Vector2(5.41, 4.68)
 anti_aliasing = false
 anti_aliasing_size = 0.01
-
-[sub_resource type="Animation" id="Animation_q5b0x"]
-length = 0.001
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath(".:modulate")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [Color(1, 1, 1, 1)]
-}
-tracks/1/type = "value"
-tracks/1/imported = false
-tracks/1/enabled = true
-tracks/1/path = NodePath(".:size")
-tracks/1/interp = 1
-tracks/1/loop_wrap = true
-tracks/1/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [Vector2(607, 17)]
-}
-tracks/2/type = "value"
-tracks/2/imported = false
-tracks/2/enabled = true
-tracks/2/path = NodePath(".:position")
-tracks/2/interp = 1
-tracks/2/loop_wrap = true
-tracks/2/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [Vector2(20, 598)]
-}
-
-[sub_resource type="Animation" id="Animation_fhdrp"]
-resource_name = "dockappear"
-length = 2.4333334
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath(".:modulate")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0.8666667, 2.1666665),
-"transitions": PackedFloat32Array(1, 1),
-"update": 0,
-"values": [Color(1, 1, 1, 0.05490196), Color(1, 1, 1, 1)]
-}
-tracks/1/type = "value"
-tracks/1/imported = false
-tracks/1/enabled = true
-tracks/1/path = NodePath(".:size")
-tracks/1/interp = 1
-tracks/1/loop_wrap = true
-tracks/1/keys = {
-"times": PackedFloat32Array(0.8666667, 1.2, 2.2666667),
-"transitions": PackedFloat32Array(1.6245048, 0.4665165, 1),
-"update": 0,
-"values": [Vector2(30, 17), Vector2(158.81934, 17), Vector2(607, 17)]
-}
-tracks/2/type = "value"
-tracks/2/imported = false
-tracks/2/enabled = true
-tracks/2/path = NodePath(".:position")
-tracks/2/interp = 1
-tracks/2/loop_wrap = true
-tracks/2/keys = {
-"times": PackedFloat32Array(0.8666667, 2.2333333),
-"transitions": PackedFloat32Array(0.40612617, 1),
-"update": 0,
-"values": [Vector2(20, 670), Vector2(20, 598)]
-}
-
-[sub_resource type="Animation" id="Animation_d400r"]
-resource_name = "dockdisappear"
-length = 0.73333335
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath(".:modulate")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0, 0.6),
-"transitions": PackedFloat32Array(0.40612623, 1),
-"update": 0,
-"values": [Color(1, 1, 1, 1), Color(1, 1, 1, 0.05490196)]
-}
-tracks/1/type = "value"
-tracks/1/imported = false
-tracks/1/enabled = true
-tracks/1/path = NodePath(".:position")
-tracks/1/interp = 1
-tracks/1/loop_wrap = true
-tracks/1/keys = {
-"times": PackedFloat32Array(0, 0.2, 0.6),
-"transitions": PackedFloat32Array(1.5157169, 0.4352752, 1.6245048),
-"update": 0,
-"values": [Vector2(20, 598), Vector2(20.852133, 604.1354), Vector2(30, 670)]
-}
-tracks/2/type = "value"
-tracks/2/imported = false
-tracks/2/enabled = true
-tracks/2/path = NodePath(".:size")
-tracks/2/interp = 1
-tracks/2/loop_wrap = true
-tracks/2/keys = {
-"times": PackedFloat32Array(0, 0.6),
-"transitions": PackedFloat32Array(0.28717452, 0.40612617),
-"update": 0,
-"values": [Vector2(607, 17), Vector2(20, 17)]
-}
-
-[sub_resource type="AnimationLibrary" id="AnimationLibrary_d400r"]
-_data = {
-&"RESET": SubResource("Animation_q5b0x"),
-&"dockappear": SubResource("Animation_fhdrp"),
-&"dockdisappear": SubResource("Animation_d400r")
-}
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_pbq4o"]
 
@@ -789,6 +1140,33 @@ script = ExtResource("1_ontn0")
 metadata/_edit_horizontal_guides_ = [640.0, 603.0]
 metadata/_edit_vertical_guides_ = [640.0]
 
+[node name="SceneAnimation" type="AnimationPlayer" parent="." unique_id=636911906]
+root_node = NodePath("../fullpanel/Dock")
+libraries/ = SubResource("AnimationLibrary_d400r")
+autoplay = &"dockappear"
+
+[node name="SceneAudio" type="AudioStreamPlayer2D" parent="." unique_id=1069818302]
+stream = ExtResource("2_aoio4")
+volume_db = -4.457
+pitch_scale = 1.5
+max_distance = 640.0
+attenuation = 1.1486983
+panning_strength = 0.59
+bus = &"SFX"
+
+[node name="Slide" type="AudioStreamPlayer2D" parent="." unique_id=541150757]
+stream = ExtResource("3_ep5mx")
+volume_db = 14.31
+pitch_scale = 0.59
+max_distance = 635.0
+attenuation = 0.87055063
+panning_strength = 1.11
+bus = &"SFX"
+
+[node name="AudioListener2D" type="AudioListener2D" parent="." unique_id=1459643298]
+position = Vector2(193, 208)
+current = true
+
 [node name="PointLight2D" type="PointLight2D" parent="." unique_id=292769176]
 top_level = true
 z_index = 47
@@ -806,7 +1184,25 @@ top_level = true
 visibility_layer = 1040
 z_index = 100
 
+[node name="backpanel2" type="TextureRect" parent="fullpanel" unique_id=1945500293]
+modulate = Color(1, 1, 1, 0)
+z_index = -7
+material = ExtResource("11_q5b0x")
+offset_left = -1.0
+offset_top = 1.0
+offset_right = 639.0
+offset_bottom = 641.0
+scale = Vector2(1.06, 1.06)
+pivot_offset = Vector2(320, 320)
+focus_neighbor_left = NodePath("../DockButtons/photoinstabutton")
+focus_neighbor_top = NodePath("../skillspassions/MusicAudio")
+focus_neighbor_right = NodePath("../skillspassions/MusicAudio")
+focus_neighbor_bottom = NodePath("../DockButtons/back_button")
+focus_mode = 2
+texture = SubResource("GradientTexture2D_h6xd7")
+
 [node name="backpanel" type="Panel" parent="fullpanel" unique_id=303823066]
+modulate = Color(1, 1, 1, 0.49411765)
 z_index = -8
 material = ExtResource("2_q1idn")
 offset_left = -1.0
@@ -823,15 +1219,17 @@ theme_override_styles/panel = SubResource("StyleBoxFlat_pcwul")
 
 [node name="skillspassions" type="Panel" parent="fullpanel" unique_id=973015777]
 visibility_layer = 2
-z_index = -8
+z_index = -7
 anchors_preset = 2
 anchor_top = 1.0
 anchor_bottom = 1.0
 offset_left = 387.0
 offset_top = 25.0
 offset_right = 602.0
-offset_bottom = 333.0
+offset_bottom = 317.0
 grow_vertical = 0
+offset_transform_enabled = true
+offset_transform_pivot_ratio = Vector2(0, 0)
 theme = SubResource("Theme_lg8x2")
 theme_override_styles/panel = SubResource("StyleBoxFlat_t6kni")
 
@@ -857,10 +1255,10 @@ text_direction = 1
 [node name="learn more" type="RichTextLabel" parent="fullpanel/skillspassions" unique_id=1108793293]
 z_index = 7
 layout_mode = 0
-offset_left = 17.000006
-offset_top = 349.0
-offset_right = 270.09158
-offset_bottom = 382.01617
+offset_left = 15.000006
+offset_top = 265.0
+offset_right = 268.09158
+offset_bottom = 298.01617
 scale = Vector2(0.95617557, 1.0297984)
 theme = ExtResource("2_5jp5k")
 theme_override_colors/font_shadow_color = Color(0, 0, 0, 0)
@@ -925,8 +1323,8 @@ focus_neighbor_right = NodePath("../../DockButtons/back_button")
 focus_neighbor_bottom = NodePath("../PhotoArt")
 mouse_default_cursor_shape = 2
 theme_override_styles/normal = SubResource("StyleBoxFlat_0ji0d")
-theme_override_styles/hover = SubResource("StyleBoxFlat_q5b0x")
-theme_override_styles/focus = SubResource("StyleBoxFlat_fhdrp")
+theme_override_styles/hover = SubResource("StyleBoxFlat_ep5mx")
+theme_override_styles/focus = SubResource("StyleBoxFlat_ep5mx")
 script = ExtResource("6_q1idn")
 
 [node name="DevTinkerText" type="RichTextLabel" parent="fullpanel/skillspassions/DevTinker" unique_id=2043742304]
@@ -939,7 +1337,7 @@ offset_bottom = 41.102966
 scale = Vector2(0.95617557, 1.0297984)
 mouse_filter = 2
 theme = ExtResource("2_5jp5k")
-theme_override_colors/default_color = Color(0.29803923, 0.49019608, 0.3882353, 1)
+theme_override_colors/default_color = Color(0.3680558, 0.58485186, 0.46904105, 1)
 theme_override_colors/font_selected_color = Color(1, 1, 1, 0)
 theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
 theme_override_colors/font_shadow_color = Color(0, 0, 0, 0)
@@ -964,9 +1362,8 @@ offset_right = 230.0
 offset_bottom = 195.0
 mouse_default_cursor_shape = 2
 theme_override_styles/normal = SubResource("StyleBoxFlat_q1idn")
-theme_override_styles/pressed = SubResource("StyleBoxFlat_obb54")
-theme_override_styles/hover = SubResource("StyleBoxFlat_gv0m5")
-theme_override_styles/focus = SubResource("StyleBoxFlat_gybju")
+theme_override_styles/hover = SubResource("StyleBoxFlat_obb54")
+theme_override_styles/focus = SubResource("StyleBoxFlat_obb54")
 script = ExtResource("6_q1idn")
 
 [node name="PhotoArtText" type="RichTextLabel" parent="fullpanel/skillspassions/PhotoArt" unique_id=1469015519]
@@ -1003,6 +1400,10 @@ focus_neighbor_left = NodePath("../../DockButtons/back_button")
 focus_neighbor_top = NodePath("../PhotoArt")
 focus_neighbor_right = NodePath("../../DockButtons/back_button")
 focus_neighbor_bottom = NodePath("../MusicAudio")
+mouse_default_cursor_shape = 2
+theme_override_styles/normal = SubResource("StyleBoxFlat_q7iws")
+theme_override_styles/hover = SubResource("StyleBoxFlat_tu5c7")
+theme_override_styles/focus = SubResource("StyleBoxFlat_02rg4")
 script = ExtResource("6_q1idn")
 
 [node name="SkateFilmText" type="RichTextLabel" parent="fullpanel/skillspassions/SkateFilm" unique_id=1282882859]
@@ -1011,11 +1412,12 @@ layout_mode = 0
 offset_left = 20.99997
 offset_top = 11.0
 offset_right = 223.89157
-offset_bottom = 201.32852
+offset_bottom = 38.189774
 scale = Vector2(0.95617557, 1.0297984)
+mouse_filter = 2
 theme = ExtResource("2_5jp5k")
-theme_override_colors/default_color = Color(0.28694552, 0.28694552, 0.28694552, 1)
-theme_override_colors/font_outline_color = Color(0.7458934, 0.67529994, 0.811885, 1)
+theme_override_colors/default_color = Color(0.62455744, 0.48794836, 0.64399576, 1)
+theme_override_colors/font_outline_color = Color(0.40111285, 0.21977893, 0.4127328, 1)
 theme_override_colors/font_shadow_color = Color(0, 0, 0, 0)
 theme_override_constants/line_separation = 1
 theme_override_constants/paragraph_separation = -1
@@ -1032,10 +1434,10 @@ text_direction = 1
 [node name="kevPanel" type="Panel" parent="fullpanel" unique_id=908046048]
 clip_children = 2
 visibility_layer = 4
-z_index = -3
-offset_left = 42.0
+z_index = -7
+offset_left = 43.0
 offset_top = 32.0
-offset_right = 329.0
+offset_right = 330.0
 offset_bottom = 219.0
 mouse_default_cursor_shape = 2
 theme = SubResource("Theme_lg8x2")
@@ -1062,18 +1464,19 @@ material = SubResource("ShaderMaterial_d400r")
 position = Vector2(118, -49.358963)
 scale = Vector2(6.015625, 3.8561692)
 sprite_frames = SubResource("SpriteFrames_h6xd7")
+frame = 37
+frame_progress = 1.0
 
 [node name="talkpanel" type="Panel" parent="fullpanel" unique_id=987746952]
-modulate = Color(1, 1, 1, 0)
 visibility_layer = 2
 z_index = 221
 anchors_preset = 2
 anchor_top = 1.0
 anchor_bottom = 1.0
 offset_left = 25.0
-offset_top = 180.0
+offset_top = 220.0
 offset_right = 353.48657
-offset_bottom = 237.9999
+offset_bottom = 277.99988
 grow_vertical = 0
 scale = Vector2(0.99851876, 1)
 mouse_default_cursor_shape = 2
@@ -1098,9 +1501,9 @@ theme_override_fonts/normal_font = SubResource("FontVariation_mdjd3")
 theme_override_font_sizes/normal_font_size = 24
 text = "Hi there, name's Kev_Bot! This is where I live! Pretty cozy, huh?"
 scroll_active = false
-visible_characters = 0
+visible_characters = 10
 visible_characters_behavior = 1
-visible_ratio = 0.0
+visible_ratio = 0.16352372
 text_direction = 1
 
 [node name="kevtalk" type="AnimationPlayer" parent="fullpanel/talkpanel" unique_id=762014616]
@@ -1110,7 +1513,7 @@ autoplay = &"kevtalk"
 
 [node name="Dock" type="Panel" parent="fullpanel" unique_id=2063453390]
 top_level = true
-z_index = -10
+z_index = 238
 anchors_preset = 2
 anchor_top = 1.0
 anchor_bottom = 1.0
@@ -1122,10 +1525,6 @@ grow_vertical = 0
 mouse_default_cursor_shape = 2
 theme = SubResource("Theme_lg8x2")
 theme_override_styles/panel = SubResource("StyleBoxFlat_ontn0")
-
-[node name="DockAnimations" type="AnimationPlayer" parent="fullpanel/Dock" unique_id=636911906]
-libraries/ = SubResource("AnimationLibrary_d400r")
-autoplay = &"dockappear"
 
 [node name="DockButtons" type="Control" parent="fullpanel" unique_id=520735069]
 layout_mode = 3
@@ -1593,13 +1992,28 @@ vertical_alignment = 1
 [node name="CanvasModulate" type="CanvasModulate" parent="fullpanel" unique_id=479103861]
 z_index = 250
 rotation = -1.350044
-color = Color(0.2723073, 0.2723077, 0.27230757, 1)
+color = Color(0.49074256, 0.49074268, 0.4907425, 1)
 
 [connection signal="gui_input" from="." to="." method="_on_gui_input"]
+[connection signal="button_down" from="fullpanel/skillspassions/MusicAudio" to="fullpanel/skillspassions/MusicAudio" method="_on_button_down"]
+[connection signal="focus_entered" from="fullpanel/skillspassions/MusicAudio" to="fullpanel/skillspassions/MusicAudio" method="_on_focus_entered"]
 [connection signal="mouse_entered" from="fullpanel/skillspassions/MusicAudio" to="fullpanel/skillspassions/MusicAudio" method="_on_mouse_entered"]
+[connection signal="mouse_exited" from="fullpanel/skillspassions/MusicAudio" to="fullpanel/skillspassions/MusicAudio" method="_on_mouse_exited"]
 [connection signal="pressed" from="fullpanel/skillspassions/MusicAudio" to="fullpanel/skillspassions/MusicAudio" method="_on_pressed"]
+[connection signal="button_down" from="fullpanel/skillspassions/DevTinker" to="fullpanel/skillspassions/DevTinker" method="_on_button_down"]
+[connection signal="focus_entered" from="fullpanel/skillspassions/DevTinker" to="fullpanel/skillspassions/DevTinker" method="_on_focus_entered"]
+[connection signal="mouse_entered" from="fullpanel/skillspassions/DevTinker" to="fullpanel/skillspassions/DevTinker" method="_on_mouse_entered"]
+[connection signal="mouse_exited" from="fullpanel/skillspassions/DevTinker" to="fullpanel/skillspassions/DevTinker" method="_on_mouse_exited"]
 [connection signal="pressed" from="fullpanel/skillspassions/DevTinker" to="fullpanel/skillspassions/DevTinker" method="_on_pressed"]
+[connection signal="button_down" from="fullpanel/skillspassions/PhotoArt" to="fullpanel/skillspassions/PhotoArt" method="_on_button_down"]
+[connection signal="focus_entered" from="fullpanel/skillspassions/PhotoArt" to="fullpanel/skillspassions/PhotoArt" method="_on_focus_entered"]
+[connection signal="mouse_entered" from="fullpanel/skillspassions/PhotoArt" to="fullpanel/skillspassions/PhotoArt" method="_on_mouse_entered"]
+[connection signal="mouse_exited" from="fullpanel/skillspassions/PhotoArt" to="fullpanel/skillspassions/PhotoArt" method="_on_mouse_exited"]
 [connection signal="pressed" from="fullpanel/skillspassions/PhotoArt" to="fullpanel/skillspassions/PhotoArt" method="_on_pressed"]
+[connection signal="button_down" from="fullpanel/skillspassions/SkateFilm" to="fullpanel/skillspassions/SkateFilm" method="_on_button_down"]
+[connection signal="focus_entered" from="fullpanel/skillspassions/SkateFilm" to="fullpanel/skillspassions/SkateFilm" method="_on_focus_entered"]
+[connection signal="mouse_entered" from="fullpanel/skillspassions/SkateFilm" to="fullpanel/skillspassions/SkateFilm" method="_on_mouse_entered"]
+[connection signal="mouse_exited" from="fullpanel/skillspassions/SkateFilm" to="fullpanel/skillspassions/SkateFilm" method="_on_mouse_exited"]
 [connection signal="pressed" from="fullpanel/skillspassions/SkateFilm" to="fullpanel/skillspassions/SkateFilm" method="_on_pressed"]
 [connection signal="button_down" from="fullpanel/DockButtons/back_button" to="fullpanel/DockButtons/back_button" method="_on_button_down"]
 [connection signal="button_up" from="fullpanel/DockButtons/back_button" to="fullpanel/DockButtons/back_button" method="_on_button_up"]

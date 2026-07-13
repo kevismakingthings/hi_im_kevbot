@@ -117,5 +117,6 @@ func start_the_game() -> void:
 	
 func _unhandled_input(event: InputEvent) -> void:
 	if event.is_action_pressed("ui_cancel"):
+		AudioManager.play_sfx(SamplePreload.UI_KEY_ROLL, -7.0, -1.5)
 		pause_pressed.emit()
 		get_viewport().set_input_as_handled()

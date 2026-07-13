@@ -1,3 +1,4 @@
+@tool
 extends RicherTextLabel
 class_name SkillBarDisplay
 
@@ -14,7 +15,7 @@ func _ready() -> void:
 	mat.set_shader_parameter("color_gap", colors[0])
 	mat.set_shader_parameter("color_stripe", colors[1])
 	bar.value = skill_val
-	text = skill_name
+	bbcode = skill_name
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(_delta: float) -> void:
