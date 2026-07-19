@@ -4,6 +4,7 @@ extends Control
 signal play_pressed
 signal about_pressed
 @onready var container: SubViewportContainer = $SubViewportContainer
+@onready var kevsprite: AnimatedSprite2D = %Kevsprite
 
 func _on_quitbutton_pressed() -> void:
 	get_tree().quit()
@@ -20,10 +21,14 @@ func _on_aboutbutton_pressed() -> void:
 func _ready() -> void:               
 	var mat := container.material as ShaderMaterial
 	mat.set_shader_parameter("pixel_size", 32)
-	mat.set_shader_parameter("blur_amount", 2)	
+	mat.set_shader_parameter("blur_amount", 2)
 	var t := create_tween().set_parallel().set_trans(Tween.TRANS_QUAD)
 	t.tween_method(func(v): mat.set_shader_parameter("pixel_size", v), 16, 1, 1.2).set_ease(Tween.EASE_OUT)
 	t.tween_method(func(v): mat.set_shader_parameter("blur_amount", v), 1, 0, 1.2).set_ease(Tween.EASE_OUT)
+	await get_tree().create_timer(9).timeout
+	var loopt := create_tween().set_loops().set_ease(Tween.EASE_OUT).set_trans(Tween.TRANS_CUBIC)
+	loopt.tween_method(func(v): mat.set_shader_parameter("pixel_size", v), 6, 1, 2.1)
+	kevsprite.play("skate")
 
 func exit() -> void:
 	var mat := container.material as ShaderMaterial

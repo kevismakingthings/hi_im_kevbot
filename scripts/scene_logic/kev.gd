@@ -32,26 +32,26 @@ func _ready() -> void:
 	_last_pos = global_position
 	particles.emitting = false
 	$Kevsprite.visible = false
-
+	start_the_game()
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
 	_t += delta
-	if Input.is_action_pressed("move_down") || \
-	   Input.is_action_pressed("move_right") || \
-	   Input.is_action_pressed("move_left") || \
-	   Input.is_action_pressed("move_up") :
-		increment += 0.05
-		decrement -= 0.3
-		speed += increment
+	#if Input.is_action_pressed("move_down") || \
+	   #Input.is_action_pressed("move_right") || \
+	   #Input.is_action_pressed("move_left") || \
+	   #Input.is_action_pressed("move_up") :
+		#increment += 0.05
+		#decrement -= 0.3
+		#speed += increment
 
-	else: 
-		speed -= decrement
-		increment -= 0.1
-		decrement += 0.5
-	speed = clampi(speed, 0, 400)
-	increment = clampf(increment, 1, 15)
-	decrement = clampf(decrement, 1, 5)
+	#else: 
+		#speed -= decrement
+		#increment -= 0.1
+		#decrement += 0.5
+	#speed = clampi(speed, 0, 400)
+	#increment = clampf(increment, 1, 15)
+	#decrement = clampf(decrement, 1, 5)
 	velocity = velocity.normalized()
 	if Input.is_action_pressed("move_right"):
 		velocity.x += 1
@@ -74,7 +74,7 @@ func _process(delta: float) -> void:
 		$Kevsprite.rotation_degrees = 0
 		$Kevsprite.animation = "skateback"	
 	else:
-		$Kevsprite.animation = "talk"
+		$Kevsprite.animation = "skateback"
 
 	if velocity.length() > 0:
 		velocity = velocity.normalized() * speed
@@ -111,8 +111,8 @@ func start_the_game() -> void:
 	print("game starting!")
 	$Kevsprite.visible = true
 	var tween = create_tween().set_parallel()
-	tween.tween_property(camera, "position", Vector2(32,32), 1.0).set_ease(Tween.EASE_IN_OUT).set_trans(Tween.TRANS_QUAD)
-	tween.tween_property(camera, "zoom", Vector2(1.4, 1.4), 1.5).set_ease(Tween.EASE_IN_OUT).set_trans(Tween.TRANS_EXPO)
+	#tween.tween_property(camera, "position", Vector2(32,32), 1.0).set_ease(Tween.EASE_IN_OUT).set_trans(Tween.TRANS_QUAD)
+	#tween.tween_property(camera, "zoom", Vector2(1.4, 1.4), 1.5).set_ease(Tween.EASE_IN_OUT).set_trans(Tween.TRANS_EXPO)
 	tween.tween_property(spotlight, "energy", 0.5, 1).set_ease(Tween.EASE_IN_OUT).set_trans(Tween.TRANS_EXPO).set_delay(0.4)
 	
 func _unhandled_input(event: InputEvent) -> void:

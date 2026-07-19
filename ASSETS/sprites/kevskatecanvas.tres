@@ -1,9 +1,9 @@
 [gd_resource type="CanvasTexture" format=3 uid="uid://d1phsgbgh215m"]
 
-[ext_resource type="Texture2D" uid="uid://bvfeslfcqqtip" path="res://ASSETS/sprites/kevskate_SHEET.png" id="1_cwj3t"]
-[ext_resource type="Texture2D" uid="uid://70oxid7j561k" path="res://ASSETS/sprites/normap4.png" id="2_cwj3t"]
+[ext_resource type="Texture2D" uid="uid://dniinmtal7ywu" path="res://ASSETS/sprites/kevskate_SHEET_BIG.png" id="1_jvxc3"]
+[ext_resource type="Texture2D" uid="uid://buhj2y36qexpa" path="res://ASSETS/sprites/normap4-export_BIG.png" id="2_v2ec7"]
 
 [resource]
-diffuse_texture = ExtResource("1_cwj3t")
-normal_texture = ExtResource("2_cwj3t")
+diffuse_texture = ExtResource("1_jvxc3")
+normal_texture = ExtResource("2_v2ec7")
 specular_shininess = 0.0

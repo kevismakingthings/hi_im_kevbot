@@ -1,5 +1,5 @@
 extends Button
-
+@onready var lock: AnimatedSprite2D = %locksprite
 var t = null
 
 # Called when the node enters the scene tree for the first time.
@@ -33,9 +33,17 @@ func _onlosefocus() -> void:
 
 
 func _on_button_down() -> void:
-	AudioManager.play_sfx(SamplePreload.BLIP_SELECT, -5.0)
+	if self.name == "startbutton":
+		lock.play()
+	else:
+		AudioManager.play_sfx(SamplePreload.BLIP_SELECT, -5.0)
+
 	pass # Replace with function body.
 
 
 func _on_button_up() -> void:
 	pass # Replace with function body.
+
+
+func _on_mouse_entered() -> void:
+	lock.play()

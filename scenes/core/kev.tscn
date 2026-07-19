@@ -7,10 +7,11 @@
 [ext_resource type="Texture2D" uid="uid://cipghpt03ryy1" path="res://ASSETS/sprites/kevskateback.png" id="5_fklrf"]
 [ext_resource type="Texture2D" uid="uid://cfj5x6sjiqxgr" path="res://ASSETS/sprites/kevstop.png" id="6_yxf0e"]
 [ext_resource type="Texture2D" uid="uid://hh0luyaejkqr" path="res://ASSETS/sprites/kevtalk_SHEETE.png" id="7_7f1yx"]
+[ext_resource type="Script" uid="uid://budo1qo0rc6is" path="res://scripts/object_logic/movingnoise.gd" id="8_0le6m"]
 [ext_resource type="Script" uid="uid://i8bg2nawwnn0" path="res://addons/richtext2/text_effects/effects/rte_sin.gd" id="8_5il2b"]
 [ext_resource type="Script" uid="uid://2f4fi75scxes" path="res://addons/richtext2/richer_text_label.gd" id="9_sk1xn"]
 [ext_resource type="Texture2D" uid="uid://jiyg24kh6jne" path="res://ASSETS/sprites/handjumble.png" id="10_2qugc"]
-[ext_resource type="Material" uid="uid://8ockfqhawrjt" path="res://ASSETS/visual_presets/shaders/color_circle.tres" id="11_ej336"]
+[ext_resource type="Shader" uid="uid://b28jh7eskonpb" path="res://ASSETS/shaders/color_trans_circle.gdshader" id="12_gepue"]
 [ext_resource type="Script" uid="uid://dyghigei03vap" path="res://scripts/object_logic/color_rect.gd" id="12_nklv3"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_6wnr6"]
@@ -970,24 +971,37 @@ animations = [{
 "speed": 12.0
 }]
 
-[sub_resource type="FastNoiseLite" id="FastNoiseLite_ng4i4"]
-noise_type = 2
+[sub_resource type="Gradient" id="Gradient_h0elx"]
+interpolation_mode = 1
+offsets = PackedFloat32Array(0, 0.20522387, 0.3420398)
+colors = PackedColorArray(0.01091916, 0, 0.16758631, 1, 0.57574195, 0.79118675, 0.90779257, 0.016404152, 0.10078751, 0.10078751, 0.10078751, 1)
+
+[sub_resource type="FastNoiseLite" id="FastNoiseLite_ej336"]
+noise_type = 5
 seed = -26
-frequency = 0.0039
+frequency = 0.0107
 fractal_type = 3
-fractal_octaves = 10
-fractal_lacunarity = 0.2
+fractal_octaves = 3
+fractal_lacunarity = 1.89
 fractal_gain = 6.57
-fractal_weighted_strength = 0.02
+fractal_weighted_strength = 1.0
 fractal_ping_pong_strength = 0.16
+domain_warp_enabled = true
+domain_warp_type = 2
+domain_warp_amplitude = 8.5
+domain_warp_frequency = 10.32
+domain_warp_fractal_type = 2
+domain_warp_fractal_octaves = 1
+domain_warp_fractal_lacunarity = 15.21
+domain_warp_fractal_gain = 4.05
 metadata/_preview_in_3d_space_ = true
 
 [sub_resource type="NoiseTexture2D" id="NoiseTexture2D_ofbwx"]
 width = 160
 height = 160
-noise = SubResource("FastNoiseLite_ng4i4")
+noise = SubResource("FastNoiseLite_ej336")
+color_ramp = SubResource("Gradient_h0elx")
 in_3d_space = true
-as_normal_map = true
 seamless_blend_skirt = 0.113
 bump_strength = 15.8
 
@@ -1044,7 +1058,7 @@ tracks/3/keys = {
 
 [sub_resource type="Animation" id="Animation_xr45c"]
 resource_name = "mountains"
-length = 2.1333334
+length = 11.633333
 loop_mode = 2
 tracks/0/type = "value"
 tracks/0/imported = false
@@ -1119,10 +1133,44 @@ _data = {
 &"new_animation": SubResource("Animation_pm01f")
 }
 
-[sub_resource type="RichTextEffect" id="RichTextEffect_ej336"]
+[sub_resource type="Gradient" id="Gradient_6747a"]
+interpolation_mode = 2
+offsets = PackedFloat32Array(0.68532336, 0.8768657, 1)
+colors = PackedColorArray(0, 0, 0, 1, 0.5647059, 0.827451, 0.95686275, 1, 0, 0, 0, 1)
+
+[sub_resource type="FastNoiseLite" id="FastNoiseLite_fklrf"]
+noise_type = 5
+seed = -26
+frequency = 0.0107
+fractal_type = 3
+fractal_octaves = 3
+fractal_lacunarity = 1.89
+fractal_gain = 6.57
+fractal_weighted_strength = 1.0
+fractal_ping_pong_strength = 0.16
+domain_warp_enabled = true
+domain_warp_type = 2
+domain_warp_amplitude = 8.5
+domain_warp_frequency = 10.32
+domain_warp_fractal_type = 2
+domain_warp_fractal_octaves = 1
+domain_warp_fractal_lacunarity = 15.21
+domain_warp_fractal_gain = 4.05
+metadata/_preview_in_3d_space_ = true
+
+[sub_resource type="NoiseTexture2D" id="NoiseTexture2D_0le6m"]
+width = 160
+height = 160
+noise = SubResource("FastNoiseLite_fklrf")
+color_ramp = SubResource("Gradient_6747a")
+in_3d_space = true
+seamless_blend_skirt = 0.113
+bump_strength = 32.0
+
+[sub_resource type="RichTextEffect" id="RichTextEffect_yxf0e"]
 resource_name = "sin"
 script = ExtResource("8_5il2b")
-metadata/rt = 1748051762807
+metadata/rt = 1755651841696
 
 [sub_resource type="CanvasItemMaterial" id="CanvasItemMaterial_mrbgn"]
 light_mode = 1
@@ -1277,13 +1325,37 @@ gradient = SubResource("Gradient_6wnr6")
 
 [sub_resource type="Gradient" id="Gradient_0le6m"]
 interpolation_mode = 2
-offsets = PackedFloat32Array(0.0072916667, 0.25928918, 0.40145397, 0.6357027)
+offsets = PackedFloat32Array(0.0072916667, 0.25928918, 0.40920398, 0.68532336)
 colors = PackedColorArray(0.30155596, 0.5093099, 2.8878452e-07, 1, 0.26110387, 0.08608318, 0.1456654, 1, 0.0011696073, 0.09606566, 0.20081058, 1, 0, 0, 0, 1)
 
 [sub_resource type="GradientTexture2D" id="GradientTexture2D_xlkr3"]
 gradient = SubResource("Gradient_0le6m")
 fill = 1
-fill_from = Vector2(0.5231707, 0.50365853)
+fill_from = Vector2(0.5378049, 1)
+fill_to = Vector2(1, 0.035365853)
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_ej336"]
+shader = ExtResource("12_gepue")
+shader_parameter/color_a = Color(1, 1, 1, 0)
+shader_parameter/color_b = Color(1, 1, 1, 0.16078432)
+shader_parameter/radius = -15.29
+shader_parameter/falloff = 1.62
+shader_parameter/rings = -0.875
+shader_parameter/speed = -0.5
+shader_parameter/init_speed = 0.5
+shader_parameter/cell_size = 8.0
+shader_parameter/amplitude = 0.5
+shader_parameter/freq = 0.25
+shader_parameter/custom1_time = 0.0
+shader_parameter/custom2_time = 0.0
+shader_parameter/color_c = Color(0.9607843, 0.39215687, 0.41568628, 0)
+shader_parameter/color_d = Color(0, 0.6, 0.654902, 0)
+shader_parameter/rings2 = 10.62
+shader_parameter/speed2 = 0.0
+shader_parameter/init_speed2 = 0.0
+shader_parameter/shift = 9.66
+shader_parameter/aspect = 1.0
+shader_parameter/center = Vector2(0.5, 0.5)
 
 [sub_resource type="Theme" id="Theme_8suv6"]
 
@@ -1295,18 +1367,22 @@ metadata/_edit_horizontal_guides_ = [1280.0]
 metadata/_edit_vertical_guides_ = [1280.0]
 
 [node name="Kevsprite" type="AnimatedSprite2D" parent="." unique_id=1882423272]
+position = Vector2(297, 468.00003)
+scale = Vector2(5.452472, 5.4689507)
 sprite_frames = SubResource("SpriteFrames_h6xd7")
-animation = &"jig"
+animation = &"skateback"
+frame = 43
+frame_progress = 0.42328718
 
 [node name="TextureRect" type="TextureRect" parent="." unique_id=1484250993]
 top_level = true
-z_index = -29
+z_index = -7
 anchors_preset = -1
-offset_left = -373.99994
-offset_top = -425.00003
-offset_right = 956.00006
-offset_bottom = 1020.0
-scale = Vector2(0.55048347, 0.55048347)
+offset_left = 1.0000001
+offset_top = 395.99997
+offset_right = 616.3433
+offset_bottom = 615.559
+scale = Vector2(1.0384448, 1.0384448)
 size_flags_vertical = 3
 size_flags_stretch_ratio = 0.0
 offset_transform_enabled = true
@@ -1316,6 +1392,20 @@ texture = SubResource("NoiseTexture2D_ofbwx")
 libraries/ = SubResource("AnimationLibrary_xr45c")
 autoplay = &"mountains"
 speed_scale = 0.091
+
+[node name="TextureRect2" type="TextureRect" parent="." unique_id=1280878562]
+top_level = true
+z_index = -84
+anchors_preset = -1
+offset_left = 1.0000001
+offset_right = 616.3433
+offset_bottom = 395.7842
+scale = Vector2(1.0384448, 1.0384448)
+size_flags_vertical = 3
+size_flags_stretch_ratio = 0.0
+offset_transform_enabled = true
+texture = SubResource("NoiseTexture2D_0le6m")
+script = ExtResource("8_0le6m")
 
 [node name="Captions" type="RichTextLabel" parent="." unique_id=1464364168]
 visible = false
@@ -1339,7 +1429,7 @@ theme_override_font_sizes/italics_font_size = 23
 theme_override_font_sizes/mono_font_size = 23
 bbcode_enabled = true
 fit_content = true
-custom_effects = [SubResource("RichTextEffect_ej336")]
+custom_effects = [SubResource("RichTextEffect_yxf0e")]
 script = ExtResource("9_sk1xn")
 bbcode = "So... [sin freq=0.3 speed=0.2]your[/] journey begins..."
 effects = 2
@@ -1395,7 +1485,7 @@ metadata/_custom_type_script = "uid://2f4fi75scxes"
 [node name="HandSprite" type="AnimatedSprite2D" parent="." unique_id=1922025399]
 top_level = true
 material = SubResource("CanvasItemMaterial_mrbgn")
-position = Vector2(1, 1.0000029)
+position = Vector2(337.99997, 166.99998)
 scale = Vector2(5, 5)
 sprite_frames = SubResource("SpriteFrames_337yx")
 frame_progress = 0.8176723
@@ -1403,6 +1493,7 @@ frame_progress = 0.8176723
 [node name="Spotlight" type="PointLight2D" parent="." unique_id=917433055]
 light_mask = 3
 z_index = 139
+position = Vector2(311, 323)
 scale = Vector2(1.01, 1)
 energy = 0.0
 range_z_max = 55
@@ -1505,8 +1596,8 @@ top_level = true
 light_mask = 3
 visibility_layer = 3
 z_index = 488
-position = Vector2(1, 10)
-energy = 1.64
+position = Vector2(308, 360)
+energy = 3.15
 range_z_min = -1525
 range_z_max = 126
 range_item_cull_mask = 3
@@ -1520,30 +1611,14 @@ self_modulate = Color(0.96725255, 0.9672527, 0.9672527, 1)
 top_level = true
 z_index = -26
 z_as_relative = false
-material = ExtResource("11_ej336")
-offset_left = -239.99997
-offset_top = -262.0001
-offset_right = 400.00003
-offset_bottom = 377.9999
-scale = Vector2(0.8450827, 0.8450827)
+material = SubResource("ShaderMaterial_ej336")
+offset_right = 640.0
+offset_bottom = 640.0
 offset_transform_enabled = true
-offset_transform_scale = Vector2(4.26, 4.26)
 offset_transform_visual_only = false
 mouse_default_cursor_shape = 2
 theme = SubResource("Theme_8suv6")
 script = ExtResource("12_nklv3")
 
-[node name="Camera2D" type="Camera2D" parent="." unique_id=229373574]
-position = Vector2(149, 229)
-rotation = -0.010471975
-zoom = Vector2(2.54, 2.54)
-position_smoothing_enabled = true
-drag_horizontal_enabled = true
-drag_vertical_enabled = true
-drag_horizontal_offset = -0.72
-drag_vertical_offset = -0.54
-drag_left_margin = 0.0
-drag_right_margin = 0.4
-
 [node name="CanvasModulate" type="CanvasModulate" parent="." unique_id=1852695806]
-color = Color(0.20409128, 0.20409131, 0.20409125, 1)
+color = Color(0.679534, 0.679534, 0.67953384, 1)
