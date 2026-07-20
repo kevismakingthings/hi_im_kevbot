@@ -33,12 +33,12 @@ func _process(delta: float) -> void:
 	c2_time += c2_freq * delta
 	material.set_shader_parameter("custom1_time", c1_time)
 	material.set_shader_parameter("custom2_time", c2_time)
-	if sprite.frame == 37 and not looped and syncing:
+	if sprite.frame == 32 and not looped and syncing:
 		var mat := self.material as ShaderMaterial
 		var t2 = create_tween().set_parallel().set_trans(Tween.TRANS_QUART)
 		t2.tween_method(func(v): mat.set_shader_parameter("shift", v), .5, 0, 2.1).set_ease(Tween.EASE_OUT)
 		t2.tween_method(func(v): mat.set_shader_parameter("rings2", v), 5, 12, 2.1).set_ease(Tween.EASE_OUT)
-		t2.tween_method(func(v): mat.set_shader_parameter("color_b", v), Color(1,1,1,0.3), Color(randf_range(0,0.1),randf_range(0,0.1),randf_range(0,0.1),1), 2.1).set_ease(Tween.EASE_OUT)
+		#t2.tween_method(func(v): mat.set_shader_parameter("color_b", v), Color(1,1,1,0.1), Color(randf_range(0,0.1),randf_range(0,0.1),randf_range(0,0.1),0.2), 2.1).set_ease(Tween.EASE_OUT)
 	elif sprite.frame == 0:
 		looped = false
 	#await sprite.tree_entered

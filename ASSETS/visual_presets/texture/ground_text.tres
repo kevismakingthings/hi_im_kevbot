@@ -1,31 +1,33 @@
 [gd_resource type="NoiseTexture2D" format=3 uid="uid://buugvhm7dpg35"]
 
 [sub_resource type="Gradient" id="Gradient_h0elx"]
-offsets = PackedFloat32Array(0.1380597, 0.5062189, 0.54850745)
-colors = PackedColorArray(0.03194926, 0.08194508, 0.038710978, 1, 0.20748515, 0.35743845, 0.18338554, 1, 0.09628987, 0.22029237, 0.104465865, 1)
+interpolation_mode = 2
+offsets = PackedFloat32Array(0.38414633, 0.4054878, 0.4237805)
+colors = PackedColorArray(0.8800545, 0.8702599, 0.875947, 0.76500005, 0.6302477, 0.60209715, 0.57487106, 0.68700004, 0.13816993, 0.12835406, 0.12315822, 0)
 
 [sub_resource type="FastNoiseLite" id="FastNoiseLite_ng4i4"]
 noise_type = 3
-seed = -56
-frequency = 0.0061
-offset = Vector3(0, -514.7, 0)
+seed = -20
+frequency = 0.0095
+offset = Vector3(0, -100.29, 0)
 fractal_octaves = 2
 fractal_lacunarity = 1.89
 fractal_gain = 6.0
 fractal_weighted_strength = 0.86
 fractal_ping_pong_strength = 1.41
 domain_warp_enabled = true
-domain_warp_amplitude = 9.03
-domain_warp_frequency = 5.39
+domain_warp_type = 2
+domain_warp_amplitude = 10.92
+domain_warp_frequency = 2.815
 domain_warp_fractal_type = 2
 domain_warp_fractal_octaves = 1
-domain_warp_fractal_lacunarity = 12.7
-domain_warp_fractal_gain = 1.73
+domain_warp_fractal_lacunarity = 4.255
+domain_warp_fractal_gain = -0.98
 metadata/_preview_in_3d_space_ = true
 
 [resource]
-width = 161
-height = 274
+width = 160
+height = 160
 noise = SubResource("FastNoiseLite_ng4i4")
 color_ramp = SubResource("Gradient_h0elx")
 in_3d_space = true

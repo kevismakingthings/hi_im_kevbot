@@ -2,8 +2,10 @@
 
 [ext_resource type="Script" uid="uid://cttnat7ld7epu" path="res://scripts/scene_logic/startmenu.gd" id="1_6cdkw"]
 [ext_resource type="Material" uid="uid://bfjqwmmb5s8n" path="res://ASSETS/visual_presets/shaders/start_pixel.tres" id="2_6cdkw"]
+[ext_resource type="Material" uid="uid://c8yg2nbsdsrju" path="res://ASSETS/visual_presets/shaders/squiggly.tres" id="3_0nij1"]
 [ext_resource type="Theme" uid="uid://bw8c8fo1kwtq2" path="res://ASSETS/visual_presets/style_box/new_theme.tres" id="3_6cdkw"]
 [ext_resource type="Script" uid="uid://budo1qo0rc6is" path="res://scripts/object_logic/movingnoise.gd" id="3_443le"]
+[ext_resource type="Texture2D" uid="uid://b3gtmw5p785p" path="res://ASSETS/background.png" id="4_qshap"]
 [ext_resource type="FontFile" uid="uid://brqopop4c63ot" path="res://ASSETS/fonts/TurretRoad-ExtraBold.ttf" id="4_utcd1"]
 [ext_resource type="Script" uid="uid://c10axptl1tx1s" path="res://scripts/object_logic/startmenubutton.gd" id="5_7pnlv"]
 [ext_resource type="Material" uid="uid://8ockfqhawrjt" path="res://ASSETS/visual_presets/shaders/color_circle.tres" id="6_qtab3"]
@@ -21,19 +23,20 @@
 [ext_resource type="Script" uid="uid://ch003gw8ufcjs" path="res://scripts/object_logic/movingground.gd" id="11_ma73r"]
 [ext_resource type="Texture2D" uid="uid://cfj5x6sjiqxgr" path="res://ASSETS/sprites/kevstop.png" id="12_bu2y4"]
 [ext_resource type="Texture2D" uid="uid://hh0luyaejkqr" path="res://ASSETS/sprites/kevtalk_SHEETE.png" id="13_2pa27"]
+[ext_resource type="Texture2D" uid="uid://dniinmtal7ywu" path="res://ASSETS/sprites/kevskate_SHEET_BIG.png" id="15_op8tj"]
 [ext_resource type="Texture2D" uid="uid://cdykuubmydws7" path="res://ASSETS/sprites/key.png" id="22_6srev"]
 [ext_resource type="Texture2D" uid="uid://cac0jejlgsg2a" path="res://ASSETS/sprites/locked.png" id="24_0nij1"]
 [ext_resource type="Texture2D" uid="uid://ctyx0ybhiv05d" path="res://ASSETS/sprites/unlock.png" id="24_6srev"]
+[ext_resource type="Texture2D" uid="uid://dj4fypmx1keie" path="res://ASSETS/sprites/justk.png" id="27_qshap"]
 
 [sub_resource type="Gradient" id="Gradient_ej336"]
 interpolation_mode = 2
-offsets = PackedFloat32Array(0.68532336, 0.8768657, 1)
-colors = PackedColorArray(0, 0, 0, 1, 0.5647059, 0.827451, 0.95686275, 1, 0, 0, 0, 1)
+offsets = PackedFloat32Array(0.6006098, 0.6371951, 0.7652439)
+colors = PackedColorArray(0.1148968, 0.11489681, 0.11489674, 1, 1.0493648, 1.5169408, 1.7482158, 1, 0.105963215, 0.105963215, 0.105963215, 1)
 
 [sub_resource type="FastNoiseLite" id="FastNoiseLite_ng4i4"]
-noise_type = 5
 seed = -26
-frequency = 0.0107
+frequency = 0.0021
 fractal_type = 3
 fractal_octaves = 3
 fractal_lacunarity = 1.89
@@ -51,56 +54,63 @@ domain_warp_fractal_gain = 4.05
 metadata/_preview_in_3d_space_ = true
 
 [sub_resource type="NoiseTexture2D" id="NoiseTexture2D_ma73r"]
-width = 320
-height = 320
+width = 640
+height = 640
 noise = SubResource("FastNoiseLite_ng4i4")
 color_ramp = SubResource("Gradient_ej336")
 in_3d_space = true
 seamless_blend_skirt = 0.113
 bump_strength = 32.0
 
-[sub_resource type="Gradient" id="Gradient_lqn8n"]
-offsets = PackedFloat32Array(0, 0.6167048, 0.74485123)
-colors = PackedColorArray(0.06839872, 0.17319503, 0.23709422, 1, 0.20203337, 0.26048717, 0.35192364, 1, 0.21709338, 0.34103617, 0.6614291, 1)
-
-[sub_resource type="FastNoiseLite" id="FastNoiseLite_lqn8n"]
-noise_type = 3
-seed = 22
-frequency = 0.0487
-offset = Vector3(0, 0, 218.22)
-fractal_lacunarity = 0.78
-fractal_gain = 16.56
-fractal_ping_pong_strength = 2.35
-
-[sub_resource type="NoiseTexture2D" id="NoiseTexture2D_fndww"]
-width = 200
-height = 63
-noise = SubResource("FastNoiseLite_lqn8n")
-color_ramp = SubResource("Gradient_lqn8n")
-in_3d_space = true
-
-[sub_resource type="FastNoiseLite" id="FastNoiseLite_fndww"]
-noise_type = 3
-seed = 22
-frequency = 0.0487
-offset = Vector3(0, 0, -265.04)
-fractal_lacunarity = 0.78
-fractal_gain = 16.56
-fractal_ping_pong_strength = 2.35
-
-[sub_resource type="NoiseTexture2D" id="NoiseTexture2D_2qj7i"]
-width = 200
-height = 63
-noise = SubResource("FastNoiseLite_fndww")
-color_ramp = SubResource("Gradient_lqn8n")
-in_3d_space = true
-
 [sub_resource type="Theme" id="Theme_7pnlv"]
 
-[sub_resource type="RichTextEffect" id="RichTextEffect_ma73r"]
-resource_name = "prickle"
-script = ExtResource("6_t4vb0")
-metadata/rt = 1782260507062
+[sub_resource type="Curve" id="Curve_xuvi7"]
+_data = [Vector2(0.074193545, 1), 0.0, 0.0, 0, 0, Vector2(1, 0), 0.0, 0.0, 0, 0]
+point_count = 2
+
+[sub_resource type="CurveTexture" id="CurveTexture_f2tsi"]
+texture_mode = 1
+curve = SubResource("Curve_xuvi7")
+
+[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_6j1us"]
+lifetime_randomness = 0.35
+particle_flag_rotate_y = true
+particle_flag_disable_z = true
+emission_shape_offset = Vector3(8.46, 0, 0)
+emission_shape_scale = Vector3(3.58, 1, 1)
+emission_shape = 3
+emission_box_extents = Vector3(93.96, 17.15, 8.015)
+angle_min = -148.99998
+angle_max = 29.000011
+direction = Vector3(0, -1.695, 0)
+spread = 36.867
+flatness = 0.759
+initial_velocity_min = -1.02
+initial_velocity_max = -1.02
+orbit_velocity_min = 9.49949e-08
+orbit_velocity_max = 9.49949e-08
+gravity = Vector3(0, -146.82, 0)
+linear_accel_min = -8.030002
+linear_accel_max = 12.649998
+scale_min = 0.0
+scale_max = 0.099999994
+scale_over_velocity_min = 267.24
+scale_over_velocity_max = 922.42
+color = Color(3.560706, 3.5083253, 3.4638364, 1)
+alpha_curve = SubResource("CurveTexture_f2tsi")
+anim_speed_max = 0.049999997
+
+[sub_resource type="Theme" id="Theme_f2tsi"]
+
+[sub_resource type="Gradient" id="Gradient_8suv6"]
+interpolation_mode = 2
+offsets = PackedFloat32Array(0.17378049, 0.8171642, 1)
+colors = PackedColorArray(1.0315711, 0.96731734, 1.224127, 1, 0.0012690936, 0.101308204, 0.2096887, 1, 0.6593833, 0.8196988, 0.6305038, 1)
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_wph2w"]
+gradient = SubResource("Gradient_8suv6")
+fill = 2
+fill_from = Vector2(0.5, 0.5)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_6wnr6"]
 atlas = ExtResource("8_c2shr")
@@ -510,6 +520,194 @@ region = Rect2(192, 384, 64, 64)
 atlas = ExtResource("11_443le")
 region = Rect2(256, 384, 64, 64)
 
+[sub_resource type="AtlasTexture" id="AtlasTexture_sxona"]
+atlas = ExtResource("15_op8tj")
+region = Rect2(0, 0, 512, 512)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_vgh2g"]
+atlas = ExtResource("15_op8tj")
+region = Rect2(512, 0, 512, 512)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_sqcfb"]
+atlas = ExtResource("15_op8tj")
+region = Rect2(1024, 0, 512, 512)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_lh1j0"]
+atlas = ExtResource("15_op8tj")
+region = Rect2(1536, 0, 512, 512)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_a476a"]
+atlas = ExtResource("15_op8tj")
+region = Rect2(2048, 0, 512, 512)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_542ow"]
+atlas = ExtResource("15_op8tj")
+region = Rect2(2560, 0, 512, 512)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_16lfe"]
+atlas = ExtResource("15_op8tj")
+region = Rect2(3072, 0, 512, 512)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_6tmyo"]
+atlas = ExtResource("15_op8tj")
+region = Rect2(0, 512, 512, 512)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_dltwa"]
+atlas = ExtResource("15_op8tj")
+region = Rect2(512, 512, 512, 512)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_k81f8"]
+atlas = ExtResource("15_op8tj")
+region = Rect2(1024, 512, 512, 512)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_36ldo"]
+atlas = ExtResource("15_op8tj")
+region = Rect2(1536, 512, 512, 512)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_33ape"]
+atlas = ExtResource("15_op8tj")
+region = Rect2(2048, 512, 512, 512)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_bq741"]
+atlas = ExtResource("15_op8tj")
+region = Rect2(2560, 512, 512, 512)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_050ff"]
+atlas = ExtResource("15_op8tj")
+region = Rect2(3072, 512, 512, 512)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_w3scw"]
+atlas = ExtResource("15_op8tj")
+region = Rect2(0, 1024, 512, 512)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_t7e8w"]
+atlas = ExtResource("15_op8tj")
+region = Rect2(512, 1024, 512, 512)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ifco3"]
+atlas = ExtResource("15_op8tj")
+region = Rect2(1024, 1024, 512, 512)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_53ddt"]
+atlas = ExtResource("15_op8tj")
+region = Rect2(1536, 1024, 512, 512)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_yyp8s"]
+atlas = ExtResource("15_op8tj")
+region = Rect2(2048, 1024, 512, 512)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_beu8l"]
+atlas = ExtResource("15_op8tj")
+region = Rect2(2560, 1024, 512, 512)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_bj4jl"]
+atlas = ExtResource("15_op8tj")
+region = Rect2(3072, 1024, 512, 512)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_r1fhh"]
+atlas = ExtResource("15_op8tj")
+region = Rect2(0, 1536, 512, 512)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_8fdck"]
+atlas = ExtResource("15_op8tj")
+region = Rect2(512, 1536, 512, 512)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_d2akn"]
+atlas = ExtResource("15_op8tj")
+region = Rect2(1024, 1536, 512, 512)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_qq8hn"]
+atlas = ExtResource("15_op8tj")
+region = Rect2(1536, 1536, 512, 512)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ym04u"]
+atlas = ExtResource("15_op8tj")
+region = Rect2(2048, 1536, 512, 512)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_a13lk"]
+atlas = ExtResource("15_op8tj")
+region = Rect2(2560, 1536, 512, 512)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ebbn3"]
+atlas = ExtResource("15_op8tj")
+region = Rect2(3072, 1536, 512, 512)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_25y36"]
+atlas = ExtResource("15_op8tj")
+region = Rect2(0, 2048, 512, 512)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_wvs6h"]
+atlas = ExtResource("15_op8tj")
+region = Rect2(512, 2048, 512, 512)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_pdlhu"]
+atlas = ExtResource("15_op8tj")
+region = Rect2(1024, 2048, 512, 512)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_88yi1"]
+atlas = ExtResource("15_op8tj")
+region = Rect2(1536, 2048, 512, 512)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_upux1"]
+atlas = ExtResource("15_op8tj")
+region = Rect2(2048, 2048, 512, 512)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_wq1ah"]
+atlas = ExtResource("15_op8tj")
+region = Rect2(2560, 2048, 512, 512)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_6ouw6"]
+atlas = ExtResource("15_op8tj")
+region = Rect2(3072, 2048, 512, 512)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_wy5y2"]
+atlas = ExtResource("15_op8tj")
+region = Rect2(0, 2560, 512, 512)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_q28sb"]
+atlas = ExtResource("15_op8tj")
+region = Rect2(512, 2560, 512, 512)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_pbo62"]
+atlas = ExtResource("15_op8tj")
+region = Rect2(1024, 2560, 512, 512)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_gddwd"]
+atlas = ExtResource("15_op8tj")
+region = Rect2(1536, 2560, 512, 512)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_vra3r"]
+atlas = ExtResource("15_op8tj")
+region = Rect2(2048, 2560, 512, 512)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_mprbv"]
+atlas = ExtResource("15_op8tj")
+region = Rect2(2560, 2560, 512, 512)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_6y48q"]
+atlas = ExtResource("15_op8tj")
+region = Rect2(3072, 2560, 512, 512)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_2j8m1"]
+atlas = ExtResource("15_op8tj")
+region = Rect2(0, 3072, 512, 512)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_a2nqd"]
+atlas = ExtResource("15_op8tj")
+region = Rect2(512, 3072, 512, 512)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_c3ja1"]
+atlas = ExtResource("15_op8tj")
+region = Rect2(1024, 3072, 512, 512)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_dk6qj"]
+atlas = ExtResource("15_op8tj")
+region = Rect2(1536, 3072, 512, 512)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_2lgco"]
+atlas = ExtResource("15_op8tj")
+region = Rect2(2048, 3072, 512, 512)
+
 [sub_resource type="AtlasTexture" id="AtlasTexture_xhmb0"]
 atlas = ExtResource("12_bu2y4")
 region = Rect2(0, 0, 64, 64)
@@ -810,7 +1008,7 @@ animations = [{
 }],
 "loop": 1,
 "name": &"skate",
-"speed": 36.0
+"speed": 24.0
 }, {
 "frames": [{
 "duration": 1.0,
@@ -953,6 +1151,147 @@ animations = [{
 }, {
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_ujfcv")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_sxona")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_vgh2g")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_sqcfb")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_lh1j0")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_a476a")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_542ow")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_16lfe")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_6tmyo")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_dltwa")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_k81f8")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_36ldo")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_33ape")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_bq741")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_050ff")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_w3scw")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_t7e8w")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ifco3")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_53ddt")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_yyp8s")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_beu8l")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_bj4jl")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_r1fhh")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_8fdck")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_d2akn")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_qq8hn")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ym04u")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_a13lk")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ebbn3")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_25y36")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_wvs6h")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_pdlhu")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_88yi1")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_upux1")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_wq1ah")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_6ouw6")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_wy5y2")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_q28sb")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_pbo62")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_gddwd")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_vra3r")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_mprbv")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_6y48q")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_2j8m1")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_a2nqd")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_c3ja1")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_dk6qj")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_2lgco")
 }],
 "loop": 1,
 "name": &"skateback",
@@ -1059,16 +1398,6 @@ animations = [{
 "speed": 12.0
 }]
 
-[sub_resource type="Gradient" id="Gradient_8suv6"]
-interpolation_mode = 2
-offsets = PackedFloat32Array(0.19527364, 0.8171642, 1)
-colors = PackedColorArray(0.7175865, 0.6718348, 0.8540974, 1, 0.0012690936, 0.101308204, 0.2096887, 1, 0.6593833, 0.8196988, 0.6305038, 1)
-
-[sub_resource type="GradientTexture2D" id="GradientTexture2D_wph2w"]
-gradient = SubResource("Gradient_8suv6")
-fill = 2
-fill_from = Vector2(0.5, 0.5)
-
 [sub_resource type="FontVariation" id="FontVariation_h6xd7"]
 base_font = ExtResource("8_gx6fo")
 variation_embolden = -0.45
@@ -1093,12 +1422,53 @@ resource_name = "sin"
 script = ExtResource("9_c2shr")
 metadata/rt = 1743068929560
 
+[sub_resource type="RichTextEffect" id="RichTextEffect_op8tj"]
+resource_name = "prickle"
+script = ExtResource("6_t4vb0")
+metadata/rt = 1585816083677
+
+[sub_resource type="Gradient" id="Gradient_lqn8n"]
+offsets = PackedFloat32Array(0, 0.6167048, 0.74485123)
+colors = PackedColorArray(0.06839872, 0.17319503, 0.23709422, 1, 0.20203337, 0.26048717, 0.35192364, 1, 0.21709338, 0.34103617, 0.6614291, 1)
+
+[sub_resource type="FastNoiseLite" id="FastNoiseLite_fndww"]
+noise_type = 3
+seed = 22
+frequency = 0.0487
+offset = Vector3(0, 0, -265.04)
+fractal_lacunarity = 0.78
+fractal_gain = 16.56
+fractal_ping_pong_strength = 2.35
+
+[sub_resource type="NoiseTexture2D" id="NoiseTexture2D_2qj7i"]
+width = 200
+height = 63
+noise = SubResource("FastNoiseLite_fndww")
+color_ramp = SubResource("Gradient_lqn8n")
+in_3d_space = true
+
+[sub_resource type="FastNoiseLite" id="FastNoiseLite_lqn8n"]
+noise_type = 3
+seed = 22
+frequency = 0.0487
+offset = Vector3(0, 0, 218.22)
+fractal_lacunarity = 0.78
+fractal_gain = 16.56
+fractal_ping_pong_strength = 2.35
+
+[sub_resource type="NoiseTexture2D" id="NoiseTexture2D_fndww"]
+width = 200
+height = 63
+noise = SubResource("FastNoiseLite_lqn8n")
+color_ramp = SubResource("Gradient_lqn8n")
+in_3d_space = true
+
 [sub_resource type="Animation" id="Animation_qpdwg"]
 length = 0.001
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
-tracks/0/path = NodePath("SubViewportContainer/SubViewport/RicherTextLabel:scale")
+tracks/0/path = NodePath("RicherTextLabel:scale")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
@@ -1122,7 +1492,7 @@ tracks/1/keys = {
 tracks/2/type = "value"
 tracks/2/imported = false
 tracks/2/enabled = true
-tracks/2/path = NodePath("SubViewportContainer/SubViewport/RicherTextLabel:visible_ratio")
+tracks/2/path = NodePath("RicherTextLabel:visible_ratio")
 tracks/2/interp = 1
 tracks/2/loop_wrap = true
 tracks/2/keys = {
@@ -1201,6 +1571,30 @@ tracks/8/keys = {
 "update": 0,
 "values": [Color(1, 1, 1, 0)]
 }
+tracks/9/type = "value"
+tracks/9/imported = false
+tracks/9/enabled = true
+tracks/9/path = NodePath("SubViewportContainer/SubViewport/Kevsprite:position")
+tracks/9/interp = 1
+tracks/9/loop_wrap = true
+tracks/9/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(428, -193)]
+}
+tracks/10/type = "value"
+tracks/10/imported = false
+tracks/10/enabled = true
+tracks/10/path = NodePath("SubViewportContainer/SubViewport/movingground:modulate")
+tracks/10/interp = 1
+tracks/10/loop_wrap = true
+tracks/10/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 1)]
+}
 
 [sub_resource type="Animation" id="Animation_aj0wn"]
 resource_name = "start"
@@ -1208,7 +1602,7 @@ length = 24.266666
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
-tracks/0/path = NodePath("SubViewportContainer/SubViewport/RicherTextLabel:scale")
+tracks/0/path = NodePath("RicherTextLabel:scale")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
@@ -1232,7 +1626,7 @@ tracks/1/keys = {
 tracks/2/type = "value"
 tracks/2/imported = false
 tracks/2/enabled = true
-tracks/2/path = NodePath("SubViewportContainer/SubViewport/RicherTextLabel:visible_ratio")
+tracks/2/path = NodePath("RicherTextLabel:visible_ratio")
 tracks/2/interp = 1
 tracks/2/loop_wrap = true
 tracks/2/keys = {
@@ -1295,9 +1689,9 @@ tracks/7/path = NodePath("SubViewportContainer/SubViewport/movingground:position
 tracks/7/interp = 1
 tracks/7/loop_wrap = true
 tracks/7/keys = {
-"handle_modes": PackedInt32Array(0, 0, 0, 0),
-"points": PackedFloat32Array(883, -0.25, 0, 0.25, 0, 778.1029, 0, 0, 0.13011742, -14.911133, 389.0586, -0.17060049, 14.105126, 0.16146183, -13.349548, 400.7543, -0.07187176, -6.6787415, 0.062126447, 5.773151),
-"times": PackedFloat32Array(0, 8.9, 9.466666, 9.833333)
+"handle_modes": PackedInt32Array(0),
+"points": PackedFloat32Array(0, -0.07187176, -6.6787415, 0.062126447, 5.773151),
+"times": PackedFloat32Array(9.833333)
 }
 tracks/8/type = "value"
 tracks/8/imported = false
@@ -1308,6 +1702,30 @@ tracks/8/loop_wrap = true
 tracks/8/keys = {
 "times": PackedFloat32Array(9.266666, 11.433333),
 "transitions": PackedFloat32Array(0.26794332, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 0), Color(1, 1, 1, 1)]
+}
+tracks/9/type = "value"
+tracks/9/imported = false
+tracks/9/enabled = true
+tracks/9/path = NodePath("SubViewportContainer/SubViewport/Kevsprite:position")
+tracks/9/interp = 1
+tracks/9/loop_wrap = true
+tracks/9/keys = {
+"times": PackedFloat32Array(10.033334, 11.266666),
+"transitions": PackedFloat32Array(0.3789293, 1),
+"update": 0,
+"values": [Vector2(428, -193), Vector2(428, 450)]
+}
+tracks/10/type = "value"
+tracks/10/imported = false
+tracks/10/enabled = true
+tracks/10/path = NodePath("SubViewportContainer/SubViewport/movingground:modulate")
+tracks/10/interp = 1
+tracks/10/loop_wrap = true
+tracks/10/keys = {
+"times": PackedFloat32Array(10.466666, 11.433333),
+"transitions": PackedFloat32Array(1, 1),
 "update": 0,
 "values": [Color(1, 1, 1, 0), Color(1, 1, 1, 1)]
 }
@@ -1697,83 +2115,32 @@ handle_input_locally = false
 size = Vector2i(640, 640)
 render_target_update_mode = 4
 
+[node name="Background" type="Sprite2D" parent="SubViewportContainer/SubViewport" unique_id=527092706]
+visible = false
+z_index = -27
+material = ExtResource("3_0nij1")
+position = Vector2(320.175, 319.975)
+texture = ExtResource("4_qshap")
+
 [node name="TextureRect2" type="TextureRect" parent="SubViewportContainer/SubViewport" unique_id=2018509697]
+visible = false
 modulate = Color(1, 1, 1, 0)
 top_level = true
-z_index = -28
+z_index = -29
 anchors_preset = -1
 offset_left = 1.0000001
 offset_right = 616.3433
-offset_bottom = 395.7842
+offset_bottom = 617.2693
 scale = Vector2(1.0384448, 1.0384448)
 size_flags_vertical = 3
 size_flags_stretch_ratio = 0.0
 offset_transform_enabled = true
 texture = SubResource("NoiseTexture2D_ma73r")
+stretch_mode = 1
 script = ExtResource("3_443le")
 
-[node name="startbutton" type="Button" parent="SubViewportContainer/SubViewport" unique_id=1885971184]
-z_index = 75
-anchors_preset = 8
-anchor_left = 0.5
-anchor_top = 0.5
-anchor_right = 0.5
-anchor_bottom = 0.5
-offset_left = -291.0
-offset_top = 112.0
-offset_right = -83.0
-offset_bottom = 183.0
-grow_horizontal = 2
-grow_vertical = 2
-focus_neighbor_top = NodePath("../aboutbutton")
-focus_neighbor_bottom = NodePath("../aboutbutton")
-mouse_default_cursor_shape = 2
-theme = ExtResource("3_6cdkw")
-theme_override_colors/font_color = Color(0.5449751, 0.5449739, 0.5449743, 1)
-theme_override_colors/font_pressed_color = Color(0.9999998, 0.90424305, 0.9565417, 1)
-theme_override_colors/font_hover_color = Color(0.9197499, 0.91975, 0.9197499, 1)
-theme_override_colors/font_outline_color = Color(0.038457446, 0.16453803, 0.16453782, 1)
-theme_override_colors/icon_normal_color = Color(0.5042184, 0.50421846, 0.50421846, 1)
-theme_override_colors/icon_pressed_color = Color(0.86504203, 0.69648564, 0.9192285, 1)
-theme_override_constants/outline_size = 2
-theme_override_fonts/font = ExtResource("4_utcd1")
-theme_override_font_sizes/font_size = 27
-text = "PLAY"
-icon = SubResource("NoiseTexture2D_fndww")
-icon_alignment = 1
-script = ExtResource("5_7pnlv")
-
-[node name="aboutbutton" type="Button" parent="SubViewportContainer/SubViewport" unique_id=1270099157]
-anchors_preset = 8
-anchor_left = 0.5
-anchor_top = 0.5
-anchor_right = 0.5
-anchor_bottom = 0.5
-offset_left = -291.0
-offset_top = 209.0
-offset_right = -83.0
-offset_bottom = 280.0
-grow_horizontal = 2
-grow_vertical = 2
-focus_neighbor_top = NodePath("../startbutton")
-focus_neighbor_bottom = NodePath("../startbutton")
-mouse_default_cursor_shape = 2
-theme = ExtResource("3_6cdkw")
-theme_override_colors/font_color = Color(0.51774925, 0.51774925, 0.51774925, 1)
-theme_override_colors/font_pressed_color = Color(0.9999998, 0.90424305, 0.9565417, 1)
-theme_override_colors/font_hover_color = Color(0.9272218, 0.9272217, 0.9272217, 1)
-theme_override_colors/font_outline_color = Color(0.055151723, 0.2029885, 0.20583361, 1)
-theme_override_colors/icon_normal_color = Color(0.5132329, 0.5132329, 0.5132329, 1)
-theme_override_colors/icon_pressed_color = Color(0.86504203, 0.69648564, 0.9192285, 1)
-theme_override_constants/outline_size = 2
-theme_override_fonts/font = ExtResource("4_utcd1")
-theme_override_font_sizes/font_size = 27
-text = "ABOUT"
-icon = SubResource("NoiseTexture2D_2qj7i")
-icon_alignment = 1
-script = ExtResource("5_7pnlv")
-
 [node name="backcirc" type="ColorRect" parent="SubViewportContainer/SubViewport" unique_id=819302706]
+modulate = Color(1, 1, 1, 0.060000002)
 self_modulate = Color(0.96725255, 0.9672527, 0.9672527, 1)
 top_level = true
 z_index = -26
@@ -1791,9 +2158,116 @@ mouse_default_cursor_shape = 2
 theme = SubResource("Theme_7pnlv")
 script = ExtResource("7_utcd1")
 
-[node name="RicherTextLabel2" type="RichTextLabel" parent="SubViewportContainer/SubViewport" unique_id=1739330355]
+[node name="GPUParticles2D" type="GPUParticles2D" parent="SubViewportContainer/SubViewport" unique_id=1381351294]
+visible = false
+z_index = -5
+position = Vector2(325, 632)
+scale = Vector2(1.0014127, 1)
+amount = 287
+texture = ExtResource("27_qshap")
+lifetime = 3.4899999999999998
+interp_to_end = 0.016
+speed_scale = 1.28
+randomness = 0.58
+fixed_fps = 60
+collision_base_size = 0.0
+visibility_rect = Rect2(-107.67, -100, 200, 197.32)
+process_material = SubResource("ParticleProcessMaterial_6j1us")
+
+[node name="movingground" type="TextureRect" parent="SubViewportContainer/SubViewport" unique_id=1708855656]
+top_level = true
+z_index = -1
+anchors_preset = -1
+offset_top = 883.0
+offset_right = 640.0
+offset_bottom = 1718.967
+grow_horizontal = 2
+grow_vertical = 0
+size_flags_vertical = 3
+size_flags_stretch_ratio = 0.0
+offset_transform_enabled = true
+mouse_filter = 2
+theme = SubResource("Theme_f2tsi")
+texture = ExtResource("10_bu2y4")
+script = ExtResource("11_ma73r")
+
+[node name="borderlight" type="PointLight2D" parent="SubViewportContainer/SubViewport/movingground" unique_id=1501415865]
+modulate = Color(0, 0, 0, 1)
+top_level = true
+light_mask = 3
+visibility_layer = 3
+z_index = 263
+position = Vector2(320, 320)
+energy = 0.0
+range_z_min = -1525
+range_z_max = 126
+range_item_cull_mask = 3
+shadow_enabled = true
+shadow_color = Color(0, 0, 0, 0.85490197)
+texture = SubResource("GradientTexture2D_wph2w")
+texture_scale = 10.06
+
+[node name="Kevsprite" type="AnimatedSprite2D" parent="SubViewportContainer/SubViewport" unique_id=1428792865]
+unique_name_in_owner = true
+z_index = -6
+position = Vector2(428, -193)
+scale = Vector2(0.389, 0.389)
+sprite_frames = SubResource("SpriteFrames_6srev")
+animation = &"skateback"
+frame_progress = 0.9105063
+speed_scale = 1.08
+
+[node name="ColorRect" type="ColorRect" parent="SubViewportContainer/SubViewport" unique_id=1967811112]
+z_index = -58
+offset_left = -66.400635
+offset_top = -43.344856
+offset_right = 786.59937
+offset_bottom = 784.65515
+mouse_filter = 2
+color = Color(0, 0, 0, 1)
+
+[node name="CanvasModulate" type="CanvasModulate" parent="SubViewportContainer/SubViewport" unique_id=1835783948]
+position = Vector2(-3.0517578e-05, 0)
+color = Color(0.27387258, 0.2738728, 0.27387258, 1)
+
+[node name="RicherTextLabel" type="RichTextLabel" parent="." unique_id=1779814064]
+custom_minimum_size = Vector2(0, 36)
+clip_contents = false
+layout_mode = 0
+offset_left = 396.55936
+offset_top = 152.16812
+offset_right = 550.5924
+offset_bottom = 319.86804
+pivot_offset_ratio = Vector2(0.49, 0)
+mouse_filter = 2
+theme_override_colors/font_outline_color = Color(1, 1, 1, 1)
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 0.25)
+theme_override_constants/shadow_outline_size = 4
+theme_override_constants/shadow_offset_x = 3
+theme_override_constants/shadow_offset_y = 3
+theme_override_constants/outline_size = 1
+theme_override_fonts/normal_font = SubResource("FontVariation_h6xd7")
+theme_override_fonts/bold_font = SubResource("FontVariation_aj0wn")
+theme_override_fonts/bold_italics_font = SubResource("FontVariation_5eiq6")
+theme_override_fonts/italics_font = SubResource("FontVariation_2egik")
+theme_override_font_sizes/normal_font_size = 33
+theme_override_font_sizes/bold_font_size = 33
+theme_override_font_sizes/bold_italics_font_size = 33
+theme_override_font_sizes/italics_font_size = 33
+theme_override_font_sizes/mono_font_size = 33
+bbcode_enabled = true
+text = "Version 0.3!"
+fit_content = true
+custom_effects = [SubResource("RichTextEffect_dfktg")]
+visible_characters = 0
+visible_ratio = 0.0
+metadata/rand = Array[int]([626026857, 10123811, 162284795, 2866109023, 2175606039, 2048954, 1289825565, 1799902737, 3781716546, 937669608, 4266539988, 2039334840])
+
+[node name="RicherTextLabel2" type="RichTextLabel" parent="." unique_id=1739330355]
+z_index = 42
 custom_minimum_size = Vector2(0, 70)
 clip_contents = false
+layout_mode = 0
 offset_left = 52.567165
 offset_top = 84.84525
 offset_right = 590.56714
@@ -1811,7 +2285,7 @@ theme_override_font_sizes/italics_font_size = 63
 theme_override_font_sizes/mono_font_size = 63
 bbcode_enabled = true
 fit_content = true
-custom_effects = [SubResource("RichTextEffect_ma73r")]
+custom_effects = [SubResource("RichTextEffect_op8tj")]
 script = ExtResource("7_wph2w")
 animation = "prickle"
 progress = 1.0
@@ -1889,91 +2363,66 @@ metadata/rand = Array[int]([626026857, 10123811, 162284795, 2866109023, 21756060
 metadata/mouse_position = Vector2(1205.5029, 215.12231)
 metadata/frame = 863085
 
-[node name="movingground" type="TextureRect" parent="SubViewportContainer/SubViewport" unique_id=1708855656]
-top_level = true
-z_index = -7
-anchors_preset = -1
-offset_top = 883.0
-offset_right = 640.0
-offset_bottom = 1182.9995
+[node name="aboutbutton" type="Button" parent="." unique_id=1270099157]
+layout_mode = 0
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -291.0
+offset_top = 209.0
+offset_right = -83.0
+offset_bottom = 280.0
 grow_horizontal = 2
 grow_vertical = 2
-size_flags_vertical = 3
-size_flags_stretch_ratio = 0.0
-offset_transform_enabled = true
-mouse_filter = 2
-texture = ExtResource("10_bu2y4")
-script = ExtResource("11_ma73r")
+focus_neighbor_top = NodePath("../startbutton")
+focus_neighbor_bottom = NodePath("../startbutton")
+mouse_default_cursor_shape = 2
+theme = ExtResource("3_6cdkw")
+theme_override_colors/font_color = Color(0.51774925, 0.51774925, 0.51774925, 1)
+theme_override_colors/font_pressed_color = Color(0.9999998, 0.90424305, 0.9565417, 1)
+theme_override_colors/font_hover_color = Color(0.9272218, 0.9272217, 0.9272217, 1)
+theme_override_colors/font_outline_color = Color(0.055151723, 0.2029885, 0.20583361, 1)
+theme_override_colors/icon_normal_color = Color(0.5132329, 0.5132329, 0.5132329, 1)
+theme_override_colors/icon_pressed_color = Color(0.86504203, 0.69648564, 0.9192285, 1)
+theme_override_constants/outline_size = 2
+theme_override_fonts/font = ExtResource("4_utcd1")
+theme_override_font_sizes/font_size = 27
+text = "ABOUT"
+icon = SubResource("NoiseTexture2D_2qj7i")
+icon_alignment = 1
+script = ExtResource("5_7pnlv")
 
-[node name="Kevsprite" type="AnimatedSprite2D" parent="SubViewportContainer/SubViewport/movingground" unique_id=1428792865]
-unique_name_in_owner = true
-position = Vector2(420, 20)
-scale = Vector2(0.71942675, 0.71942675)
-sprite_frames = SubResource("SpriteFrames_6srev")
-animation = &"skate"
-frame = 39
-frame_progress = 0.1416234
-
-[node name="borderlight" type="PointLight2D" parent="SubViewportContainer/SubViewport/movingground" unique_id=1501415865]
-modulate = Color(0, 0, 0, 1)
-top_level = true
-light_mask = 3
-visibility_layer = 3
-z_index = 263
-position = Vector2(320, 320)
-energy = 1.34
-range_z_min = -1525
-range_z_max = 126
-range_item_cull_mask = 3
-shadow_enabled = true
-shadow_color = Color(0, 0, 0, 0.85490197)
-texture = SubResource("GradientTexture2D_wph2w")
-texture_scale = 10.06
-
-[node name="ColorRect" type="ColorRect" parent="SubViewportContainer/SubViewport" unique_id=1967811112]
-z_index = -58
-offset_left = -66.400635
-offset_top = -43.344856
-offset_right = 786.59937
-offset_bottom = 784.65515
-mouse_filter = 2
-color = Color(0, 0, 0, 1)
-
-[node name="RicherTextLabel" type="RichTextLabel" parent="SubViewportContainer/SubViewport" unique_id=1779814064]
-custom_minimum_size = Vector2(0, 36)
-clip_contents = false
-offset_left = 396.55936
-offset_top = 152.16812
-offset_right = 550.5924
-offset_bottom = 319.86804
-pivot_offset_ratio = Vector2(0.49, 0)
-mouse_filter = 2
-theme_override_colors/font_outline_color = Color(1, 1, 1, 1)
-theme_override_colors/font_shadow_color = Color(0, 0, 0, 0.25)
-theme_override_constants/shadow_outline_size = 4
-theme_override_constants/shadow_offset_x = 3
-theme_override_constants/shadow_offset_y = 3
-theme_override_constants/outline_size = 1
-theme_override_fonts/normal_font = SubResource("FontVariation_h6xd7")
-theme_override_fonts/bold_font = SubResource("FontVariation_aj0wn")
-theme_override_fonts/bold_italics_font = SubResource("FontVariation_5eiq6")
-theme_override_fonts/italics_font = SubResource("FontVariation_2egik")
-theme_override_font_sizes/normal_font_size = 33
-theme_override_font_sizes/bold_font_size = 33
-theme_override_font_sizes/bold_italics_font_size = 33
-theme_override_font_sizes/italics_font_size = 33
-theme_override_font_sizes/mono_font_size = 33
-bbcode_enabled = true
-text = "Version 0.3!"
-fit_content = true
-custom_effects = [SubResource("RichTextEffect_dfktg")]
-visible_characters = 0
-visible_ratio = 0.0
-metadata/rand = Array[int]([626026857, 10123811, 162284795, 2866109023, 2175606039, 2048954, 1289825565, 1799902737, 3781716546, 937669608, 4266539988, 2039334840])
-
-[node name="CanvasModulate" type="CanvasModulate" parent="SubViewportContainer/SubViewport" unique_id=1835783948]
-position = Vector2(-3.0517578e-05, 0)
-color = Color(0.57700837, 0.5770084, 0.57700825, 1)
+[node name="startbutton" type="Button" parent="." unique_id=1885971184]
+z_index = 75
+layout_mode = 0
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -291.0
+offset_top = 112.0
+offset_right = -83.0
+offset_bottom = 183.0
+grow_horizontal = 2
+grow_vertical = 2
+focus_neighbor_top = NodePath("../aboutbutton")
+focus_neighbor_bottom = NodePath("../aboutbutton")
+mouse_default_cursor_shape = 2
+theme = ExtResource("3_6cdkw")
+theme_override_colors/font_color = Color(0.5449751, 0.5449739, 0.5449743, 1)
+theme_override_colors/font_pressed_color = Color(0.9999998, 0.90424305, 0.9565417, 1)
+theme_override_colors/font_hover_color = Color(0.9197499, 0.91975, 0.9197499, 1)
+theme_override_colors/font_outline_color = Color(0.038457446, 0.16453803, 0.16453782, 1)
+theme_override_colors/icon_normal_color = Color(0.5042184, 0.50421846, 0.50421846, 1)
+theme_override_colors/icon_pressed_color = Color(0.86504203, 0.69648564, 0.9192285, 1)
+theme_override_constants/outline_size = 2
+theme_override_fonts/font = ExtResource("4_utcd1")
+theme_override_font_sizes/font_size = 27
+text = "PLAY"
+icon = SubResource("NoiseTexture2D_fndww")
+icon_alignment = 1
+script = ExtResource("5_7pnlv")
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="." unique_id=2117445509]
 libraries/ = SubResource("AnimationLibrary_5eiq6")
@@ -1996,10 +2445,10 @@ animation = &"unlock"
 frame = 13
 frame_progress = 0.2868945
 
-[connection signal="button_down" from="SubViewportContainer/SubViewport/startbutton" to="SubViewportContainer/SubViewport/startbutton" method="_on_button_down"]
-[connection signal="button_up" from="SubViewportContainer/SubViewport/startbutton" to="SubViewportContainer/SubViewport/startbutton" method="_on_button_up"]
-[connection signal="mouse_entered" from="SubViewportContainer/SubViewport/startbutton" to="SubViewportContainer/SubViewport/startbutton" method="_on_mouse_entered"]
-[connection signal="pressed" from="SubViewportContainer/SubViewport/startbutton" to="." method="_on_startbutton_pressed"]
-[connection signal="button_down" from="SubViewportContainer/SubViewport/aboutbutton" to="SubViewportContainer/SubViewport/aboutbutton" method="_on_button_down"]
-[connection signal="button_up" from="SubViewportContainer/SubViewport/aboutbutton" to="SubViewportContainer/SubViewport/aboutbutton" method="_on_button_up"]
-[connection signal="pressed" from="SubViewportContainer/SubViewport/aboutbutton" to="." method="_on_aboutbutton_pressed"]
+[connection signal="button_down" from="aboutbutton" to="aboutbutton" method="_on_button_down"]
+[connection signal="button_up" from="aboutbutton" to="aboutbutton" method="_on_button_up"]
+[connection signal="pressed" from="aboutbutton" to="." method="_on_aboutbutton_pressed"]
+[connection signal="button_down" from="startbutton" to="startbutton" method="_on_button_down"]
+[connection signal="button_up" from="startbutton" to="startbutton" method="_on_button_up"]
+[connection signal="mouse_entered" from="startbutton" to="startbutton" method="_on_mouse_entered"]
+[connection signal="pressed" from="startbutton" to="." method="_on_startbutton_pressed"]

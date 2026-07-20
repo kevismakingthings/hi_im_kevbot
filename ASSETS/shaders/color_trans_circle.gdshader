@@ -77,5 +77,5 @@ void fragment() {
     vec3 oh = rgb2hsv(over_col.rgb);
     bh.x = fract(bh.x + oh.x * oh.y * shift);
 
-    COLOR = vec4(hsv2rgb(bh), base_col.w + over_col.w * (1.0 - base_col.w));
+    COLOR = vec4(hsv2rgb(bh), (base_col.w + over_col.w) * (1.0 - base_col.w));
 }

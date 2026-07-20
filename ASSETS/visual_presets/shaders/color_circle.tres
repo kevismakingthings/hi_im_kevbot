@@ -4,23 +4,23 @@
 
 [resource]
 shader = ExtResource("1_f2tsi")
-shader_parameter/color_a = Color(0.3137255, 0.3137255, 0.3137255, 0.67058825)
-shader_parameter/color_b = Color(0.1254902, 0.1764706, 0.16470589, 0.69803923)
+shader_parameter/color_a = Color(1, 1, 1, 0.2784314)
+shader_parameter/color_b = Color(1, 1, 1, 0)
 shader_parameter/radius = 0.15
 shader_parameter/falloff = -0.04
-shader_parameter/rings = 2.0
-shader_parameter/speed = -0.5
+shader_parameter/rings = 1.3599999999999999
+shader_parameter/speed = 2.31
 shader_parameter/init_speed = 0.5
 shader_parameter/cell_size = 1.0
 shader_parameter/amplitude = 0.5
 shader_parameter/freq = 0.25
 shader_parameter/custom1_time = 0.0
 shader_parameter/custom2_time = 0.0
-shader_parameter/color_c = Color(0.34117648, 0.7176471, 0.68235296, 0.81960785)
-shader_parameter/color_d = Color(0, 0.6, 0.654902, 0.25490198)
+shader_parameter/color_c = Color(1, 1, 1, 0.12156863)
+shader_parameter/color_d = Color(1, 1, 1, 0.15294118)
 shader_parameter/rings2 = 1.82
 shader_parameter/speed2 = 0.0
 shader_parameter/init_speed2 = 0.0
-shader_parameter/shift = 0.025
+shader_parameter/shift = -1.155
 shader_parameter/aspect = 0.0
 shader_parameter/center = Vector2(0.5, 0.5)

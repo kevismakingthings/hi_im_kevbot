@@ -484,7 +484,7 @@ animations = [{
 [sub_resource type="RichTextEffect" id="RichTextEffect_vluch"]
 resource_name = "console"
 script = ExtResource("12_23s4d")
-metadata/rt = 1788249973302
+metadata/rt = 1583031065757
 
 [sub_resource type="FontVariation" id="FontVariation_pqg0r"]
 base_font = ExtResource("14_kvcky")
